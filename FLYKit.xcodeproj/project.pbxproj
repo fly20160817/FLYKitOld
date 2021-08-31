@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407512926D896D5005A97FF /* NSArray+FLYUnicode.m */; };
+		0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407512D26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m */; };
+		0407513426D8B892005A97FF /* UIImage+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407513326D8B892005A97FF /* UIImage+FLYExtension.m */; };
+		0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407513926D8C98C005A97FF /* UIImageView+FLYExtension.m */; };
+		0407513E26D8CC67005A97FF /* NSDate+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407513D26D8CC67005A97FF /* NSDate+FLYExtension.m */; };
+		0407514126DDD82E005A97FF /* NSString+FLYEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407514026DDD82E005A97FF /* NSString+FLYEncryption.m */; };
 		041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D6E6A26C3698E008015B6 /* FLYTools.m */; };
 		042A999526C64D50000B58CF /* FLYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A999326C64D50000B58CF /* FLYButton.m */; };
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
@@ -32,6 +38,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0407512926D896D5005A97FF /* NSArray+FLYUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FLYUnicode.m"; sourceTree = "<group>"; };
+		0407512A26D896D5005A97FF /* NSArray+FLYUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FLYUnicode.h"; sourceTree = "<group>"; };
+		0407512C26D8AFAC005A97FF /* NSDictionary+FLYUnicode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FLYUnicode.h"; sourceTree = "<group>"; };
+		0407512D26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FLYUnicode.m"; sourceTree = "<group>"; };
+		0407513226D8B892005A97FF /* UIImage+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FLYExtension.h"; sourceTree = "<group>"; };
+		0407513326D8B892005A97FF /* UIImage+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FLYExtension.m"; sourceTree = "<group>"; };
+		0407513826D8C98C005A97FF /* UIImageView+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FLYExtension.h"; sourceTree = "<group>"; };
+		0407513926D8C98C005A97FF /* UIImageView+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FLYExtension.m"; sourceTree = "<group>"; };
+		0407513C26D8CC67005A97FF /* NSDate+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+FLYExtension.h"; sourceTree = "<group>"; };
+		0407513D26D8CC67005A97FF /* NSDate+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FLYExtension.m"; sourceTree = "<group>"; };
+		0407513F26DDD82E005A97FF /* NSString+FLYEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLYEncryption.h"; sourceTree = "<group>"; };
+		0407514026DDD82E005A97FF /* NSString+FLYEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYEncryption.m"; sourceTree = "<group>"; };
 		041D6E6926C3698E008015B6 /* FLYTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTools.h; sourceTree = "<group>"; };
 		041D6E6A26C3698E008015B6 /* FLYTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTools.m; sourceTree = "<group>"; };
 		042A999326C64D50000B58CF /* FLYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYButton.m; sourceTree = "<group>"; };
@@ -89,6 +107,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0407512F26D8B496005A97FF /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				0407512A26D896D5005A97FF /* NSArray+FLYUnicode.h */,
+				0407512926D896D5005A97FF /* NSArray+FLYUnicode.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		0407513026D8B4FB005A97FF /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				0407512C26D8AFAC005A97FF /* NSDictionary+FLYUnicode.h */,
+				0407512D26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		0407513126D8B608005A97FF /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				0407513226D8B892005A97FF /* UIImage+FLYExtension.h */,
+				0407513326D8B892005A97FF /* UIImage+FLYExtension.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		0407513726D8C753005A97FF /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0407513826D8C98C005A97FF /* UIImageView+FLYExtension.h */,
+				0407513926D8C98C005A97FF /* UIImageView+FLYExtension.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		0407513B26D8CC35005A97FF /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				0407513C26D8CC67005A97FF /* NSDate+FLYExtension.h */,
+				0407513D26D8CC67005A97FF /* NSDate+FLYExtension.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
 		041D6E6626C3681A008015B6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,11 +163,16 @@
 		041D6E6726C3683E008015B6 /* Gategroy */ = {
 			isa = PBXGroup;
 			children = (
+				0407513026D8B4FB005A97FF /* NSDictionary */,
+				0407512F26D8B496005A97FF /* NSArray */,
+				0494584126C4C12000A81B70 /* NSString */,
+				0407513B26D8CC35005A97FF /* NSDate */,
 				044EC99126C67E21006BB549 /* UIColor */,
 				044EC98026C65D0D006BB549 /* UIAlertController */,
 				044EC97F26C65AF8006BB549 /* UIView */,
 				0494584526C6211000A81B70 /* UIButton */,
-				0494584126C4C12000A81B70 /* NSString */,
+				0407513126D8B608005A97FF /* UIImage */,
+				0407513726D8C753005A97FF /* UIImageView */,
 			);
 			path = Gategroy;
 			sourceTree = "<group>";
@@ -262,6 +330,8 @@
 			children = (
 				0494583E26C4C10900A81B70 /* NSString+FLYVerification.h */,
 				0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */,
+				0407513F26DDD82E005A97FF /* NSString+FLYEncryption.h */,
+				0407514026DDD82E005A97FF /* NSString+FLYEncryption.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -348,17 +418,23 @@
 				041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */,
 				045F047D26CA4FB100EAFFD9 /* FLYCountdownButton.m in Sources */,
 				042A999526C64D50000B58CF /* FLYButton.m in Sources */,
+				0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */,
 				04803E6926051C4B006EA35B /* ViewController.m in Sources */,
 				045F047926CA42AA00EAFFD9 /* FLYPhotoManager.m in Sources */,
 				04803E6326051C4A006EA35B /* AppDelegate.m in Sources */,
+				0407514126DDD82E005A97FF /* NSString+FLYEncryption.m in Sources */,
 				044EC98726C66975006BB549 /* FLYPopupView.m in Sources */,
 				044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */,
+				0407513E26D8CC67005A97FF /* NSDate+FLYExtension.m in Sources */,
 				044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */,
 				044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */,
 				0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
+				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
+				0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */,
+				0407513426D8B892005A97FF /* UIImage+FLYExtension.m in Sources */,
 				044EC99026C67C45006BB549 /* UIColor+HEX.m in Sources */,
 				045F047126CA3DE400EAFFD9 /* FLYTime.m in Sources */,
 				04803E6626051C4B006EA35B /* SceneDelegate.m in Sources */,
