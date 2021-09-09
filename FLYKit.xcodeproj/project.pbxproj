@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,12 @@
 		0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407513926D8C98C005A97FF /* UIImageView+FLYExtension.m */; };
 		0407513E26D8CC67005A97FF /* NSDate+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407513D26D8CC67005A97FF /* NSDate+FLYExtension.m */; };
 		0407514126DDD82E005A97FF /* NSString+FLYEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407514026DDD82E005A97FF /* NSString+FLYEncryption.m */; };
+		0407514626DE21F3005A97FF /* UICollectionView+FLYRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407514426DE21F3005A97FF /* UICollectionView+FLYRefresh.m */; };
+		0407514926DE2200005A97FF /* UITableView+FLYRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407514726DE2200005A97FF /* UITableView+FLYRefresh.m */; };
+		0407514D26DE3476005A97FF /* FLYExceptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407514B26DE3476005A97FF /* FLYExceptionView.m */; };
+		0407515126DF1B67005A97FF /* FLYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515026DF1B67005A97FF /* FLYTextView.m */; };
+		0407515526E0A91C005A97FF /* FLYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515426E0A91B005A97FF /* FLYLabel.m */; };
+		0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515726E5ADF6005A97FF /* FLYDeviceManager.m */; };
 		041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D6E6A26C3698E008015B6 /* FLYTools.m */; };
 		042A999526C64D50000B58CF /* FLYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A999326C64D50000B58CF /* FLYButton.m */; };
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
@@ -25,16 +31,24 @@
 		045F047526CA41D800EAFFD9 /* FLYAudioTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047426CA41D800EAFFD9 /* FLYAudioTools.m */; };
 		045F047926CA42AA00EAFFD9 /* FLYPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047826CA42AA00EAFFD9 /* FLYPhotoManager.m */; };
 		045F047D26CA4FB100EAFFD9 /* FLYCountdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047C26CA4FB100EAFFD9 /* FLYCountdownButton.m */; };
+		046D192F26E620A300D9FD46 /* FLYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D192E26E620A300D9FD46 /* FLYTabBarController.m */; };
+		046D193226E620C700D9FD46 /* FLYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D193126E620C700D9FD46 /* FLYNavigationController.m */; };
+		046D19B226E707A100D9FD46 /* Tabbar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 046D19B126E707A000D9FD46 /* Tabbar.plist */; };
+		046D19C326E733AB00D9FD46 /* UIBarButtonItem+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19C126E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.m */; };
+		046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19CC26E7379F00D9FD46 /* FLYViewController.m */; };
+		046D19D426E7382600D9FD46 /* FLYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D326E7382600D9FD46 /* FLYBaseViewController.m */; };
+		046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */; };
+		046D19DA26E7389000D9FD46 /* FLYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D926E7389000D9FD46 /* FLYMessageViewController.m */; };
+		046D19DD26E738A100D9FD46 /* FLYMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19DC26E738A100D9FD46 /* FLYMyViewController.m */; };
 		04803E6326051C4A006EA35B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E6226051C4A006EA35B /* AppDelegate.m */; };
-		04803E6626051C4B006EA35B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E6526051C4B006EA35B /* SceneDelegate.m */; };
-		04803E6926051C4B006EA35B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E6826051C4B006EA35B /* ViewController.m */; };
-		04803E6C26051C4B006EA35B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04803E6A26051C4B006EA35B /* Main.storyboard */; };
 		04803E6E26051C4F006EA35B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04803E6D26051C4F006EA35B /* Assets.xcassets */; };
 		04803E7126051C4F006EA35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04803E6F26051C4F006EA35B /* LaunchScreen.storyboard */; };
 		04803E7426051C4F006EA35B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E7326051C4F006EA35B /* main.m */; };
 		0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */; };
 		0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */; };
+		04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */; };
 		04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDB5C1264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m */; };
+		5B7D65D46AD254B7CE6E58ED /* Pods_FLYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452E49C9F5336ED66B640F99 /* Pods_FLYKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +64,18 @@
 		0407513D26D8CC67005A97FF /* NSDate+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FLYExtension.m"; sourceTree = "<group>"; };
 		0407513F26DDD82E005A97FF /* NSString+FLYEncryption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLYEncryption.h"; sourceTree = "<group>"; };
 		0407514026DDD82E005A97FF /* NSString+FLYEncryption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYEncryption.m"; sourceTree = "<group>"; };
+		0407514426DE21F3005A97FF /* UICollectionView+FLYRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+FLYRefresh.m"; sourceTree = "<group>"; };
+		0407514526DE21F3005A97FF /* UICollectionView+FLYRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+FLYRefresh.h"; sourceTree = "<group>"; };
+		0407514726DE2200005A97FF /* UITableView+FLYRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FLYRefresh.m"; sourceTree = "<group>"; };
+		0407514826DE2200005A97FF /* UITableView+FLYRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FLYRefresh.h"; sourceTree = "<group>"; };
+		0407514B26DE3476005A97FF /* FLYExceptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYExceptionView.m; sourceTree = "<group>"; };
+		0407514C26DE3476005A97FF /* FLYExceptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYExceptionView.h; sourceTree = "<group>"; };
+		0407514F26DF1B67005A97FF /* FLYTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTextView.h; sourceTree = "<group>"; };
+		0407515026DF1B67005A97FF /* FLYTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTextView.m; sourceTree = "<group>"; };
+		0407515326E0A91B005A97FF /* FLYLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYLabel.h; sourceTree = "<group>"; };
+		0407515426E0A91B005A97FF /* FLYLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYLabel.m; sourceTree = "<group>"; };
+		0407515626E5ADF6005A97FF /* FLYDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYDeviceManager.h; sourceTree = "<group>"; };
+		0407515726E5ADF6005A97FF /* FLYDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYDeviceManager.m; sourceTree = "<group>"; };
 		041D6E6926C3698E008015B6 /* FLYTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTools.h; sourceTree = "<group>"; };
 		041D6E6A26C3698E008015B6 /* FLYTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTools.m; sourceTree = "<group>"; };
 		042A999326C64D50000B58CF /* FLYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYButton.m; sourceTree = "<group>"; };
@@ -76,14 +102,26 @@
 		045F047826CA42AA00EAFFD9 /* FLYPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYPhotoManager.m; sourceTree = "<group>"; };
 		045F047B26CA4FB100EAFFD9 /* FLYCountdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYCountdownButton.h; sourceTree = "<group>"; };
 		045F047C26CA4FB100EAFFD9 /* FLYCountdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYCountdownButton.m; sourceTree = "<group>"; };
+		046D192D26E620A300D9FD46 /* FLYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTabBarController.h; sourceTree = "<group>"; };
+		046D192E26E620A300D9FD46 /* FLYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTabBarController.m; sourceTree = "<group>"; };
+		046D193026E620C700D9FD46 /* FLYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYNavigationController.h; sourceTree = "<group>"; };
+		046D193126E620C700D9FD46 /* FLYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYNavigationController.m; sourceTree = "<group>"; };
+		046D19B126E707A000D9FD46 /* Tabbar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tabbar.plist; sourceTree = "<group>"; };
+		046D19C126E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FLYExtension.m"; sourceTree = "<group>"; };
+		046D19C226E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FLYExtension.h"; sourceTree = "<group>"; };
+		046D19CC26E7379F00D9FD46 /* FLYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYViewController.m; sourceTree = "<group>"; };
+		046D19CD26E7379F00D9FD46 /* FLYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYViewController.h; sourceTree = "<group>"; };
+		046D19D226E7382600D9FD46 /* FLYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYBaseViewController.h; sourceTree = "<group>"; };
+		046D19D326E7382600D9FD46 /* FLYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYBaseViewController.m; sourceTree = "<group>"; };
+		046D19D526E7385F00D9FD46 /* FLYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYHomeViewController.h; sourceTree = "<group>"; };
+		046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYHomeViewController.m; sourceTree = "<group>"; };
+		046D19D826E7389000D9FD46 /* FLYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYMessageViewController.h; sourceTree = "<group>"; };
+		046D19D926E7389000D9FD46 /* FLYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYMessageViewController.m; sourceTree = "<group>"; };
+		046D19DB26E738A100D9FD46 /* FLYMyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYMyViewController.h; sourceTree = "<group>"; };
+		046D19DC26E738A100D9FD46 /* FLYMyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYMyViewController.m; sourceTree = "<group>"; };
 		04803E5E26051C4A006EA35B /* FLYKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLYKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04803E6126051C4A006EA35B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04803E6226051C4A006EA35B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04803E6426051C4B006EA35B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		04803E6526051C4B006EA35B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		04803E6726051C4B006EA35B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04803E6826051C4B006EA35B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04803E6B26051C4B006EA35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04803E6D26051C4F006EA35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04803E7026051C4F006EA35B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04803E7226051C4F006EA35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,8 +130,13 @@
 		0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYVerification.m"; sourceTree = "<group>"; };
 		0494584626C63E3D00A81B70 /* UIButton+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+FLYExtension.h"; sourceTree = "<group>"; };
 		0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FLYExtension.m"; sourceTree = "<group>"; };
+		04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYKeyValueModel.h; sourceTree = "<group>"; };
+		04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYKeyValueModel.m; sourceTree = "<group>"; };
 		04FDB5C0264B7A26006B3B11 /* UIView+FLYLayoutConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYLayoutConstraint.h"; sourceTree = "<group>"; };
 		04FDB5C1264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYLayoutConstraint.m"; sourceTree = "<group>"; };
+		452E49C9F5336ED66B640F99 /* Pods_FLYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E828D598E39EC551AD67AE /* Pods-FLYKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYKit.debug.xcconfig"; path = "Target Support Files/Pods-FLYKit/Pods-FLYKit.debug.xcconfig"; sourceTree = "<group>"; };
+		E2D3712E6CCF21F7E410653D /* Pods-FLYKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLYKit.release.xcconfig"; path = "Target Support Files/Pods-FLYKit/Pods-FLYKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7D65D46AD254B7CE6E58ED /* Pods_FLYKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +196,56 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
+		0407514226DE20C4005A97FF /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0407514526DE21F3005A97FF /* UICollectionView+FLYRefresh.h */,
+				0407514426DE21F3005A97FF /* UICollectionView+FLYRefresh.m */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		0407514326DE2169005A97FF /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				0407514826DE2200005A97FF /* UITableView+FLYRefresh.h */,
+				0407514726DE2200005A97FF /* UITableView+FLYRefresh.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		0407514A26DE3431005A97FF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0407514E26DF1B3F005A97FF /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				0407514F26DF1B67005A97FF /* FLYTextView.h */,
+				0407515026DF1B67005A97FF /* FLYTextView.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		0407515226E0A8FF005A97FF /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				0407515326E0A91B005A97FF /* FLYLabel.h */,
+				0407515426E0A91B005A97FF /* FLYLabel.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		041D6E6626C3681A008015B6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				0407515226E0A8FF005A97FF /* UILabel */,
+				0407514E26DF1B3F005A97FF /* UITextView */,
 				045F047A26CA4E0600EAFFD9 /* UIButton */,
+				046D19CB26E7379F00D9FD46 /* UIViewController */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -173,22 +263,20 @@
 				0494584526C6211000A81B70 /* UIButton */,
 				0407513126D8B608005A97FF /* UIImage */,
 				0407513726D8C753005A97FF /* UIImageView */,
+				0407514226DE20C4005A97FF /* UICollectionView */,
+				0407514326DE2169005A97FF /* UITableView */,
+				046D19C026E733AA00D9FD46 /* UIBarButtonItem */,
 			);
 			path = Gategroy;
 			sourceTree = "<group>";
 		};
-		041D6E6826C3694F008015B6 /* Tool */ = {
+		041D6E6826C3694F008015B6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				045F047626CA428000EAFFD9 /* Photo(相册) */,
-				045F047226CA41CD00EAFFD9 /* Audio(音效) */,
-				045F046E26CA3DCE00EAFFD9 /* Time(时间) */,
-				045F046A26CA3D5400EAFFD9 /* File(文件管理者) */,
-				044EC98426C66940006BB549 /* FLYPopupView(弹窗) */,
-				041D6E6926C3698E008015B6 /* FLYTools.h */,
-				041D6E6A26C3698E008015B6 /* FLYTools.m */,
+				046D19EB26E73ECD00D9FD46 /* UITools */,
+				046D19EA26E73ECA00D9FD46 /* FunctionTools */,
 			);
-			path = Tool;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		044EC97F26C65AF8006BB549 /* UIView */ = {
@@ -287,11 +375,228 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		046D190C26E6193800D9FD46 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				046D191D26E61D0300D9FD46 /* Model */,
+				046D191C26E61D0100D9FD46 /* View */,
+				046D191B26E61CFE00D9FD46 /* Controller */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		046D190D26E6193B00D9FD46 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				046D191A26E61CFC00D9FD46 /* Model */,
+				046D191926E61CF900D9FD46 /* View */,
+				046D191826E61CF700D9FD46 /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		046D190E26E6193E00D9FD46 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				046D191726E61CF200D9FD46 /* Model */,
+				046D191626E61CB300D9FD46 /* View */,
+				046D191526E61CB000D9FD46 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		046D190F26E6194200D9FD46 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				046D192A26E61F5600D9FD46 /* Public */,
+				046D192C26E6202800D9FD46 /* Nav&TabBar */,
+				046D190E26E6193E00D9FD46 /* Home */,
+				046D190D26E6193B00D9FD46 /* Message */,
+				046D190C26E6193800D9FD46 /* My */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		046D191026E61A2B00D9FD46 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				04803E6D26051C4F006EA35B /* Assets.xcassets */,
+				04803E6F26051C4F006EA35B /* LaunchScreen.storyboard */,
+				04803E7226051C4F006EA35B /* Info.plist */,
+				046D19B126E707A000D9FD46 /* Tabbar.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		046D191126E61A5E00D9FD46 /* Original */ = {
+			isa = PBXGroup;
+			children = (
+				04803E6126051C4A006EA35B /* AppDelegate.h */,
+				04803E6226051C4A006EA35B /* AppDelegate.m */,
+				04803E7326051C4F006EA35B /* main.m */,
+			);
+			path = Original;
+			sourceTree = "<group>";
+		};
+		046D191226E61A7B00D9FD46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		046D191326E61BEE00D9FD46 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		046D191426E61C2000D9FD46 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		046D191526E61CB000D9FD46 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046D19D526E7385F00D9FD46 /* FLYHomeViewController.h */,
+				046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		046D191626E61CB300D9FD46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		046D191726E61CF200D9FD46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046D191826E61CF700D9FD46 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046D19D826E7389000D9FD46 /* FLYMessageViewController.h */,
+				046D19D926E7389000D9FD46 /* FLYMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		046D191926E61CF900D9FD46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		046D191A26E61CFC00D9FD46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046D191B26E61CFE00D9FD46 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046D19DB26E738A100D9FD46 /* FLYMyViewController.h */,
+				046D19DC26E738A100D9FD46 /* FLYMyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		046D191C26E61D0100D9FD46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		046D191D26E61D0300D9FD46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046D192A26E61F5600D9FD46 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				04C2E85126E8A2FE003E7C0C /* Model */,
+				04C2E85026E8A2FB003E7C0C /* View */,
+				04C2E84F26E8A2F9003E7C0C /* Controller */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		046D192C26E6202800D9FD46 /* Nav&TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				046D193026E620C700D9FD46 /* FLYNavigationController.h */,
+				046D193126E620C700D9FD46 /* FLYNavigationController.m */,
+				046D192D26E620A300D9FD46 /* FLYTabBarController.h */,
+				046D192E26E620A300D9FD46 /* FLYTabBarController.m */,
+			);
+			path = "Nav&TabBar";
+			sourceTree = "<group>";
+		};
+		046D19C026E733AA00D9FD46 /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				046D19C126E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.m */,
+				046D19C226E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.h */,
+			);
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
+		046D19CB26E7379F00D9FD46 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				046D19CC26E7379F00D9FD46 /* FLYViewController.m */,
+				046D19CD26E7379F00D9FD46 /* FLYViewController.h */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		046D19EA26E73ECA00D9FD46 /* FunctionTools */ = {
+			isa = PBXGroup;
+			children = (
+				045F047626CA428000EAFFD9 /* Photo(相册) */,
+				045F047226CA41CD00EAFFD9 /* Audio(音效) */,
+				045F046E26CA3DCE00EAFFD9 /* Time(时间) */,
+				045F046A26CA3D5400EAFFD9 /* File(文件管理者) */,
+				041D6E6926C3698E008015B6 /* FLYTools.h */,
+				041D6E6A26C3698E008015B6 /* FLYTools.m */,
+				0407515626E5ADF6005A97FF /* FLYDeviceManager.h */,
+				0407515726E5ADF6005A97FF /* FLYDeviceManager.m */,
+			);
+			path = FunctionTools;
+			sourceTree = "<group>";
+		};
+		046D19EB26E73ECD00D9FD46 /* UITools */ = {
+			isa = PBXGroup;
+			children = (
+				044EC98426C66940006BB549 /* FLYPopupView(弹窗) */,
+			);
+			path = UITools;
+			sourceTree = "<group>";
+		};
 		04803E5526051C4A006EA35B = {
 			isa = PBXGroup;
 			children = (
 				04803E6026051C4A006EA35B /* FLYKit */,
 				04803E5F26051C4A006EA35B /* Products */,
+				3FEF64E107CBE7A17ACFA484 /* Pods */,
+				8D3F8BC3ABE723CA528E364C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -306,21 +611,17 @@
 		04803E6026051C4A006EA35B /* FLYKit */ = {
 			isa = PBXGroup;
 			children = (
-				04803E6126051C4A006EA35B /* AppDelegate.h */,
-				04803E6226051C4A006EA35B /* AppDelegate.m */,
-				04803E6426051C4B006EA35B /* SceneDelegate.h */,
-				04803E6526051C4B006EA35B /* SceneDelegate.m */,
-				041D6E6826C3694F008015B6 /* Tool */,
+				046D190F26E6194200D9FD46 /* Main */,
+				046D191326E61BEE00D9FD46 /* NetWork */,
 				041D6E6626C3681A008015B6 /* Class */,
 				041D6E6726C3683E008015B6 /* Gategroy */,
-				04803E6726051C4B006EA35B /* ViewController.h */,
-				04803E6826051C4B006EA35B /* ViewController.m */,
+				041D6E6826C3694F008015B6 /* Tools */,
+				046D191426E61C2000D9FD46 /* 3rd */,
 				044EC98826C66D5D006BB549 /* Constant */,
-				04803E6A26051C4B006EA35B /* Main.storyboard */,
-				04803E6D26051C4F006EA35B /* Assets.xcassets */,
-				04803E6F26051C4F006EA35B /* LaunchScreen.storyboard */,
-				04803E7226051C4F006EA35B /* Info.plist */,
-				04803E7326051C4F006EA35B /* main.m */,
+				046D191026E61A2B00D9FD46 /* Resource */,
+				046D191126E61A5E00D9FD46 /* Original */,
+				046D191226E61A7B00D9FD46 /* Frameworks */,
+				0407514A26DE3431005A97FF /* Other */,
 			);
 			path = FLYKit;
 			sourceTree = "<group>";
@@ -345,6 +646,50 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		04C2E84F26E8A2F9003E7C0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				046D19D226E7382600D9FD46 /* FLYBaseViewController.h */,
+				046D19D326E7382600D9FD46 /* FLYBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04C2E85026E8A2FB003E7C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0407514C26DE3476005A97FF /* FLYExceptionView.h */,
+				0407514B26DE3476005A97FF /* FLYExceptionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04C2E85126E8A2FE003E7C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */,
+				04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FEF64E107CBE7A17ACFA484 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4E828D598E39EC551AD67AE /* Pods-FLYKit.debug.xcconfig */,
+				E2D3712E6CCF21F7E410653D /* Pods-FLYKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D3F8BC3ABE723CA528E364C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				452E49C9F5336ED66B640F99 /* Pods_FLYKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,9 +697,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04803E7726051C4F006EA35B /* Build configuration list for PBXNativeTarget "FLYKit" */;
 			buildPhases = (
+				5272F3B2EBE2900A68E18DF6 /* [CP] Check Pods Manifest.lock */,
 				04803E5A26051C4A006EA35B /* Sources */,
 				04803E5B26051C4A006EA35B /* Frameworks */,
 				04803E5C26051C4A006EA35B /* Resources */,
+				94334D8181CA86372110278E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,6 +718,7 @@
 		04803E5626051C4A006EA35B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FLY;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					04803E5D26051C4A006EA35B = {
@@ -403,56 +751,103 @@
 			files = (
 				04803E7126051C4F006EA35B /* LaunchScreen.storyboard in Resources */,
 				04803E6E26051C4F006EA35B /* Assets.xcassets in Resources */,
-				04803E6C26051C4B006EA35B /* Main.storyboard in Resources */,
+				046D19B226E707A100D9FD46 /* Tabbar.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5272F3B2EBE2900A68E18DF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLYKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94334D8181CA86372110278E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FLYKit/Pods-FLYKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FLYKit/Pods-FLYKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FLYKit/Pods-FLYKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04803E5A26051C4A006EA35B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0407514626DE21F3005A97FF /* UICollectionView+FLYRefresh.m in Sources */,
 				045F046D26CA3D6C00EAFFD9 /* FLYFileManager.m in Sources */,
+				0407515126DF1B67005A97FF /* FLYTextView.m in Sources */,
 				041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */,
 				045F047D26CA4FB100EAFFD9 /* FLYCountdownButton.m in Sources */,
 				042A999526C64D50000B58CF /* FLYButton.m in Sources */,
 				0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */,
-				04803E6926051C4B006EA35B /* ViewController.m in Sources */,
+				0407514D26DE3476005A97FF /* FLYExceptionView.m in Sources */,
 				045F047926CA42AA00EAFFD9 /* FLYPhotoManager.m in Sources */,
 				04803E6326051C4A006EA35B /* AppDelegate.m in Sources */,
+				0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */,
 				0407514126DDD82E005A97FF /* NSString+FLYEncryption.m in Sources */,
 				044EC98726C66975006BB549 /* FLYPopupView.m in Sources */,
 				044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */,
 				0407513E26D8CC67005A97FF /* NSDate+FLYExtension.m in Sources */,
 				044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */,
+				0407515526E0A91C005A97FF /* FLYLabel.m in Sources */,
 				044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */,
+				046D193226E620C700D9FD46 /* FLYNavigationController.m in Sources */,
+				046D19C326E733AB00D9FD46 /* UIBarButtonItem+FLYExtension.m in Sources */,
 				0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */,
+				0407514926DE2200005A97FF /* UITableView+FLYRefresh.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
+				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
 				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
+				046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */,
 				0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */,
 				0407513426D8B892005A97FF /* UIImage+FLYExtension.m in Sources */,
 				044EC99026C67C45006BB549 /* UIColor+HEX.m in Sources */,
+				04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */,
+				046D19D426E7382600D9FD46 /* FLYBaseViewController.m in Sources */,
 				045F047126CA3DE400EAFFD9 /* FLYTime.m in Sources */,
-				04803E6626051C4B006EA35B /* SceneDelegate.m in Sources */,
 				045F047526CA41D800EAFFD9 /* FLYAudioTools.m in Sources */,
+				046D19DA26E7389000D9FD46 /* FLYMessageViewController.m in Sources */,
+				046D192F26E620A300D9FD46 /* FLYTabBarController.m in Sources */,
+				046D19DD26E738A100D9FD46 /* FLYMyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		04803E6A26051C4B006EA35B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04803E6B26051C4B006EA35B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04803E6F26051C4F006EA35B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -578,13 +973,14 @@
 		};
 		04803E7826051C4F006EA35B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E828D598E39EC551AD67AE /* Pods-FLYKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2638M5H9L6;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
-				INFOPLIST_FILE = FLYKit/Info.plist;
+				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -592,19 +988,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fly.FLYKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04803E7926051C4F006EA35B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2D3712E6CCF21F7E410653D /* Pods-FLYKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2638M5H9L6;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
-				INFOPLIST_FILE = FLYKit/Info.plist;
+				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -612,7 +1009,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fly.FLYKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

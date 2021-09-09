@@ -19,8 +19,8 @@
 #define FLYLog(...)
 #endif
 
-#define kWeakSelf __weak typeof(self) weakSelf = self;
-#define kStrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define StrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
 
 #define RGB(r,g,b,a) [UIColor colorWithRed:((r)/255.0) green:((g)/255.0) blue:((b)/255.0) alpha:a]
 
@@ -37,6 +37,7 @@
 #define TABBER_HEIGHT self.tabBarController.tabBar.frame.size.height
 
 
+#define IMAGENAME(name) [UIImage imageNamed:name]
 #define COLORHEX(hex) [UIColor colorWithHexString:hex]
 
 #define FONT_R(font) [UIFont fontWithName:PFSCR size:font]

@@ -24,6 +24,9 @@ typedef NS_ENUM(NSInteger, FLYImagePosition) {
 /** 设置不同状态的边框颜色 */
 - (void)setBorderColor:(UIColor *)color forState:(UIControlState)state;
 
+/** 设置不同状态的字体 */
+- (void)setTitleFont:(UIFont *)font forState:(UIControlState)state;
+
 
 /** 设置图片的位置和与文字的间距 */
 - (void)setImagePosition:(FLYImagePosition)postion spacing:(CGFloat)spacing;

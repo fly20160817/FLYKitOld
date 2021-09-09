@@ -11,13 +11,18 @@
 
 @property (nonatomic, strong) UIColor * backgroundColor_normal;
 @property (nonatomic, strong) UIColor * backgroundColor_highlighted;
-@property (nonatomic, strong) UIColor * backgroundColor_disabled ;
+@property (nonatomic, strong) UIColor * backgroundColor_disabled;
 @property (nonatomic, strong) UIColor * backgroundColor_selected;
 
 @property (nonatomic, strong) UIColor * borderColor_normal;
 @property (nonatomic, strong) UIColor * borderColor_highlighted;
-@property (nonatomic, strong) UIColor * borderColor_disabled ;
+@property (nonatomic, strong) UIColor * borderColor_disabled;
 @property (nonatomic, strong) UIColor * borderColor_selected;
+
+@property (nonatomic, strong) UIFont * titleFont_normal;
+@property (nonatomic, strong) UIFont * titleFont_highlighted;
+@property (nonatomic, strong) UIFont * titleFont_disabled;
+@property (nonatomic, strong) UIFont * titleFont_selected;
 
 
 @property (nonatomic, assign) FLYImagePosition postion;
@@ -56,6 +61,11 @@
     {
         self.layer.borderColor = selected ? self.borderColor_selected.CGColor : self.borderColor_normal.CGColor;
     }
+    
+    if ( self.titleFont_selected )
+    {
+        self.titleLabel.font = selected ? self.titleFont_selected : self.titleFont_normal;
+    }
 }
 
 //当按钮高亮的时候，这个方法会被一直调用。
@@ -74,6 +84,11 @@
     {
         self.layer.borderColor = highlighted ? self.borderColor_highlighted.CGColor : (self.selected ? self.borderColor_selected.CGColor : self.borderColor_normal.CGColor);
     }
+    
+    if ( self.titleFont_highlighted )
+    {
+        self.titleLabel.font = highlighted ? self.titleFont_highlighted : (self.selected ? self.titleFont_selected : self.titleFont_normal);
+    }
 }
 
 -(void)setEnabled:(BOOL)enabled
@@ -89,6 +104,11 @@
     if ( self.borderColor_disabled )
     {
         self.layer.borderColor = enabled == NO ? self.borderColor_disabled.CGColor : (self.selected ? self.borderColor_selected.CGColor : self.borderColor_normal.CGColor);
+    }
+    
+    if ( self.titleFont_disabled )
+    {
+        self.titleLabel.font = enabled == NO ? self.titleFont_disabled : (self.selected ? self.titleFont_selected : self.titleFont_normal);
     }
 }
 
@@ -159,6 +179,41 @@
         case UIControlStateSelected:
         {
             self.borderColor_selected = color;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+/** 设置不同状态的字体 */
+- (void)setTitleFont:(UIFont *)font forState:(UIControlState)state
+{
+    switch (state)
+    {
+        case UIControlStateNormal:
+        {
+            self.titleFont_normal = font;
+            self.titleLabel.font = self.titleFont_normal;
+        }
+            break;
+            
+        case UIControlStateHighlighted:
+        {
+            self.titleFont_highlighted = font;
+        }
+            break;
+            
+        case UIControlStateDisabled:
+        {
+            self.titleFont_disabled = font;
+        }
+            break;
+            
+        case UIControlStateSelected:
+        {
+            self.titleFont_selected = font;
         }
             break;
             
