@@ -48,6 +48,8 @@
 		0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */; };
 		04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */; };
 		04C2E86A26E9CDB9003E7C0C /* UIView+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E86926E9CDB9003E7C0C /* UIView+FLYExtension.m */; };
+		04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C80D3726F24C1E00FD1F62 /* FLYUser.m */; };
+		04C80D3C26F24C1E00FD1F62 /* FLYUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C80D3A26F24C1E00FD1F62 /* FLYUserAction.m */; };
 		04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDB5C1264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m */; };
 		5B7D65D46AD254B7CE6E58ED /* Pods_FLYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452E49C9F5336ED66B640F99 /* Pods_FLYKit.framework */; };
 /* End PBXBuildFile section */
@@ -135,6 +137,10 @@
 		04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYKeyValueModel.m; sourceTree = "<group>"; };
 		04C2E86826E9CDB9003E7C0C /* UIView+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYExtension.h"; sourceTree = "<group>"; };
 		04C2E86926E9CDB9003E7C0C /* UIView+FLYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYExtension.m"; sourceTree = "<group>"; };
+		04C80D3726F24C1E00FD1F62 /* FLYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYUser.m; sourceTree = "<group>"; };
+		04C80D3826F24C1E00FD1F62 /* FLYUserAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYUserAction.h; sourceTree = "<group>"; };
+		04C80D3926F24C1E00FD1F62 /* FLYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYUser.h; sourceTree = "<group>"; };
+		04C80D3A26F24C1E00FD1F62 /* FLYUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYUserAction.m; sourceTree = "<group>"; };
 		04FDB5C0264B7A26006B3B11 /* UIView+FLYLayoutConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYLayoutConstraint.h"; sourceTree = "<group>"; };
 		04FDB5C1264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYLayoutConstraint.m"; sourceTree = "<group>"; };
 		452E49C9F5336ED66B640F99 /* Pods_FLYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -579,6 +585,7 @@
 				045F047226CA41CD00EAFFD9 /* Audio(音效) */,
 				045F046E26CA3DCE00EAFFD9 /* Time(时间) */,
 				045F046A26CA3D5400EAFFD9 /* File(文件管理者) */,
+				04C80D3626F24BF900FD1F62 /* FLYUser */,
 				041D6E6926C3698E008015B6 /* FLYTools.h */,
 				041D6E6A26C3698E008015B6 /* FLYTools.m */,
 				0407515626E5ADF6005A97FF /* FLYDeviceManager.h */,
@@ -676,6 +683,17 @@
 				04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04C80D3626F24BF900FD1F62 /* FLYUser */ = {
+			isa = PBXGroup;
+			children = (
+				04C80D3926F24C1E00FD1F62 /* FLYUser.h */,
+				04C80D3726F24C1E00FD1F62 /* FLYUser.m */,
+				04C80D3826F24C1E00FD1F62 /* FLYUserAction.h */,
+				04C80D3A26F24C1E00FD1F62 /* FLYUserAction.m */,
+			);
+			path = FLYUser;
 			sourceTree = "<group>";
 		};
 		3FEF64E107CBE7A17ACFA484 /* Pods */ = {
@@ -831,7 +849,9 @@
 				046D193226E620C700D9FD46 /* FLYNavigationController.m in Sources */,
 				046D19C326E733AB00D9FD46 /* UIBarButtonItem+FLYExtension.m in Sources */,
 				0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */,
+				04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */,
 				0407514926DE2200005A97FF /* UITableView+FLYRefresh.m in Sources */,
+				04C80D3C26F24C1E00FD1F62 /* FLYUserAction.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
 				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
