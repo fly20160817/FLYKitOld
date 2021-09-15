@@ -36,12 +36,15 @@
 {
     [super layoutSubviews];
     
-    [self.placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.equalTo(self).with.offset(0);
-        make.width.mas_equalTo(self.width);
+    
+    [self.placeholderLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).with.offset(self.textContainerInset.top);
+        make.left.equalTo(self).with.offset(self.textContainerInset.left + self.textContainer.lineFragmentPadding);
+        make.bottom.equalTo(self).with.offset(-self.textContainerInset.bottom);
+        make.right.equalTo(self).with.offset(-(self.textContainerInset.right + self.textContainer.lineFragmentPadding));
     }];
     
-    
+        
     if( self.height != 0 && _originalHeight == 0 )
     {
         _originalHeight = self.height;
@@ -66,6 +69,17 @@
     [super setAttributedText:attributedText];
     
     [self textDidChangeNotification];
+}
+
+-(void)setFont:(UIFont *)font
+{
+    [super setFont:font];
+    
+    //提示文字的font默认和内容的一样
+    if ( self.placeholderFont == nil )
+    {
+        self.placeholderFont = font;
+    }
 }
 
 

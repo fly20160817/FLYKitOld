@@ -6,7 +6,6 @@
 //
 
 #import "UICollectionView+FLYRefresh.h"
-#import "MJRefresh.h"
 #import "FLYExceptionView.h"
 
 @interface FLYExceptionView ()

@@ -6,7 +6,6 @@
 //
 
 #import "UITableView+FLYRefresh.h"
-#import "MJRefresh.h"
 #import "FLYExceptionView.h"
 
 @interface UITableView ()
