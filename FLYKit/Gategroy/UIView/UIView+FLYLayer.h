@@ -11,6 +11,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (FLYLayer)
 
+/*
+ 指定圆角 + 阴影
+ 指定圆角 + 阴影 + 边框
+ 
+ 这两种做不了，直接问美工要切图吧。
+ 注：可以自己先实现 指定圆角 或者 指定圆角+边框，然后让美工只切阴影，写个imageView把阴影显示出来。
+ */
+ 
+
 
 /// 设置圆角
 /// @param cornerRadius 圆角大小

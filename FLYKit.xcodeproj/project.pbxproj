@@ -46,6 +46,7 @@
 		04803E7426051C4F006EA35B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E7326051C4F006EA35B /* main.m */; };
 		0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */; };
 		0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */; };
+		049BA00026FC1F1300AB7F7C /* FLYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */; };
 		04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */; };
 		04C2E86A26E9CDB9003E7C0C /* UIView+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E86926E9CDB9003E7C0C /* UIView+FLYExtension.m */; };
 		04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C80D3726F24C1E00FD1F62 /* FLYUser.m */; };
@@ -133,6 +134,8 @@
 		0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYVerification.m"; sourceTree = "<group>"; };
 		0494584626C63E3D00A81B70 /* UIButton+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+FLYExtension.h"; sourceTree = "<group>"; };
 		0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FLYExtension.m"; sourceTree = "<group>"; };
+		049B9FFE26FC1F1300AB7F7C /* FLYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTextField.h; sourceTree = "<group>"; };
+		049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTextField.m; sourceTree = "<group>"; };
 		04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYKeyValueModel.h; sourceTree = "<group>"; };
 		04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYKeyValueModel.m; sourceTree = "<group>"; };
 		04C2E86826E9CDB9003E7C0C /* UIView+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYExtension.h"; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0407515226E0A8FF005A97FF /* UILabel */,
+				049B9FFD26FC1EEC00AB7F7C /* UITextField */,
 				0407514E26DF1B3F005A97FF /* UITextView */,
 				045F047A26CA4E0600EAFFD9 /* UIButton */,
 				046D19CB26E7379F00D9FD46 /* UIViewController */,
@@ -658,6 +662,15 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
+		049B9FFD26FC1EEC00AB7F7C /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				049B9FFE26FC1F1300AB7F7C /* FLYTextField.h */,
+				049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		04C2E84F26E8A2F9003E7C0C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +847,7 @@
 				045F047D26CA4FB100EAFFD9 /* FLYCountdownButton.m in Sources */,
 				042A999526C64D50000B58CF /* FLYButton.m in Sources */,
 				0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */,
+				049BA00026FC1F1300AB7F7C /* FLYTextField.m in Sources */,
 				0407514D26DE3476005A97FF /* FLYExceptionView.m in Sources */,
 				045F047926CA42AA00EAFFD9 /* FLYPhotoManager.m in Sources */,
 				04803E6326051C4A006EA35B /* AppDelegate.m in Sources */,
@@ -1004,7 +1018,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2638M5H9L6;
+				DEVELOPMENT_TEAM = KN8JCXK32F;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1025,7 +1039,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2638M5H9L6;
+				DEVELOPMENT_TEAM = KN8JCXK32F;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

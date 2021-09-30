@@ -282,7 +282,8 @@
     NSMutableString *strM = [NSMutableString string];
     
     for (int i = 0; i < length; i++) {
-        [strM appendFormat:@"%02x", bytes[i]];
+        //这里小写x，转出来就是小写的；还成大写X,转出来就是大写的。
+        [strM appendFormat:@"%02X", bytes[i]];
     }
     
     return [strM copy];

@@ -61,17 +61,26 @@
 /// @param borderColor 边框颜色
 -(void)roundCorner:(CGFloat)cornerRadius rectCorners:(UIRectCorner)rectCorner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
 {
-    [self roundCorner:cornerRadius rectCorners:rectCorner];
+    UIBezierPath * bezierPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
 
-    
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-    
-    CAShapeLayer * borderLayer = [CAShapeLayer layer];
+    //圆角Layer
+    CAShapeLayer *cornerLayer = [[CAShapeLayer alloc] init];
+    cornerLayer.frame = self.bounds;
+    cornerLayer.path = bezierPath.CGPath;
+ 
+    //边框Layer
+    CAShapeLayer *borderLayer = [[CAShapeLayer alloc] init];
     borderLayer.frame = self.bounds;
-    borderLayer.path = maskPath.CGPath;
+    borderLayer.path = bezierPath.CGPath;
     borderLayer.lineWidth = borderWidth;
     borderLayer.fillColor = [UIColor clearColor].CGColor;
     borderLayer.strokeColor = borderColor.CGColor;
+    
+    
+    //设置圆角 (在mask上扣出圆角)
+    self.layer.mask = cornerLayer;
+        
+    //添加边框
     [self.layer addSublayer:borderLayer];
 }
 
