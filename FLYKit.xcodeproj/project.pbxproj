@@ -24,7 +24,7 @@
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
 		044EC98726C66975006BB549 /* FLYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98526C66975006BB549 /* FLYPopupView.m */; };
 		044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98C26C678E9006BB549 /* UIView+FLYFrame.m */; };
-		044EC99026C67C45006BB549 /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98F26C67C45006BB549 /* UIColor+HEX.m */; };
+		044EC99026C67C45006BB549 /* UIColor+FLYHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */; };
 		044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC99326C67E47006BB549 /* UIView+FLYLayer.m */; };
 		045F046D26CA3D6C00EAFFD9 /* FLYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F046C26CA3D6C00EAFFD9 /* FLYFileManager.m */; };
 		045F047126CA3DE400EAFFD9 /* FLYTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047026CA3DE400EAFFD9 /* FLYTime.m */; };
@@ -92,8 +92,8 @@
 		044EC98A26C67416006BB549 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		044EC98B26C678E9006BB549 /* UIView+FLYFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYFrame.h"; sourceTree = "<group>"; };
 		044EC98C26C678E9006BB549 /* UIView+FLYFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYFrame.m"; sourceTree = "<group>"; };
-		044EC98E26C67C45006BB549 /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
-		044EC98F26C67C45006BB549 /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		044EC98E26C67C45006BB549 /* UIColor+FLYHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FLYHex.h"; sourceTree = "<group>"; };
+		044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FLYHex.m"; sourceTree = "<group>"; };
 		044EC99226C67E47006BB549 /* UIView+FLYLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYLayer.h"; sourceTree = "<group>"; };
 		044EC99326C67E47006BB549 /* UIView+FLYLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYLayer.m"; sourceTree = "<group>"; };
 		045F046B26CA3D6C00EAFFD9 /* FLYFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYFileManager.h; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		041D6E6726C3683E008015B6 /* Gategroy */ = {
+		041D6E6726C3683E008015B6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				0407513026D8B4FB005A97FF /* NSDictionary */,
@@ -280,7 +280,7 @@
 				0407514326DE2169005A97FF /* UITableView */,
 				046D19C026E733AA00D9FD46 /* UIBarButtonItem */,
 			);
-			path = Gategroy;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		041D6E6826C3694F008015B6 /* Tools */ = {
@@ -337,8 +337,8 @@
 		044EC99126C67E21006BB549 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				044EC98E26C67C45006BB549 /* UIColor+HEX.h */,
-				044EC98F26C67C45006BB549 /* UIColor+HEX.m */,
+				044EC98E26C67C45006BB549 /* UIColor+FLYHex.h */,
+				044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -576,8 +576,8 @@
 		046D19CB26E7379F00D9FD46 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				046D19CC26E7379F00D9FD46 /* FLYViewController.m */,
 				046D19CD26E7379F00D9FD46 /* FLYViewController.h */,
+				046D19CC26E7379F00D9FD46 /* FLYViewController.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -630,7 +630,7 @@
 				046D190F26E6194200D9FD46 /* Main */,
 				046D191326E61BEE00D9FD46 /* NetWork */,
 				041D6E6626C3681A008015B6 /* Class */,
-				041D6E6726C3683E008015B6 /* Gategroy */,
+				041D6E6726C3683E008015B6 /* Category */,
 				041D6E6826C3694F008015B6 /* Tools */,
 				046D191426E61C2000D9FD46 /* 3rd */,
 				044EC98826C66D5D006BB549 /* Constant */,
@@ -874,7 +874,7 @@
 				046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */,
 				0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */,
 				0407513426D8B892005A97FF /* UIImage+FLYExtension.m in Sources */,
-				044EC99026C67C45006BB549 /* UIColor+HEX.m in Sources */,
+				044EC99026C67C45006BB549 /* UIColor+FLYHex.m in Sources */,
 				04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */,
 				046D19D426E7382600D9FD46 /* FLYBaseViewController.m in Sources */,
 				045F047126CA3DE400EAFFD9 /* FLYTime.m in Sources */,

@@ -87,19 +87,7 @@
 //    }
 //    
 //    FLYUser * user = [FLYUser sharedUser];
-//    user.uid = userModel.uid;
-//    user.userName = userModel.userName;
-//    user.nickName = userModel.nickName;
-//    user.attention = userModel.attention;
-//    user.attentionCount = userModel.attentionCount;
-//    user.collectCount = userModel.collectCount;
-//    user.commentCount = userModel.commentCount;
-//    user.headPortrait = userModel.headPortrait;
-//    user.isPerfect = userModel.isPerfect;
-//    user.userType = userModel.userType;
 //    user.token = userModel.token;
-//    user.reviewStatus = userModel.reviewStatus;
-//    user.status = userModel.status;
 //    [FLYUser saveUser];
 //}
 
