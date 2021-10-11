@@ -40,6 +40,8 @@
 		046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */; };
 		046D19DA26E7389000D9FD46 /* FLYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D926E7389000D9FD46 /* FLYMessageViewController.m */; };
 		046D19DD26E738A100D9FD46 /* FLYMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19DC26E738A100D9FD46 /* FLYMyViewController.m */; };
+		047DC46827116F1E0012152A /* FLYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DC46727116F1E0012152A /* FLYNetwork.m */; };
+		047DC47227119B340012152A /* FLYNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DC47127119B340012152A /* FLYNetworkTool.m */; };
 		04803E6326051C4A006EA35B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04803E6226051C4A006EA35B /* AppDelegate.m */; };
 		04803E6E26051C4F006EA35B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04803E6D26051C4F006EA35B /* Assets.xcassets */; };
 		04803E7126051C4F006EA35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04803E6F26051C4F006EA35B /* LaunchScreen.storyboard */; };
@@ -123,6 +125,11 @@
 		046D19D926E7389000D9FD46 /* FLYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYMessageViewController.m; sourceTree = "<group>"; };
 		046D19DB26E738A100D9FD46 /* FLYMyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYMyViewController.h; sourceTree = "<group>"; };
 		046D19DC26E738A100D9FD46 /* FLYMyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYMyViewController.m; sourceTree = "<group>"; };
+		047DC46627116F1E0012152A /* FLYNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYNetwork.h; sourceTree = "<group>"; };
+		047DC46727116F1E0012152A /* FLYNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYNetwork.m; sourceTree = "<group>"; };
+		047DC469271181610012152A /* APIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
+		047DC47027119B340012152A /* FLYNetworkTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYNetworkTool.h; sourceTree = "<group>"; };
+		047DC47127119B340012152A /* FLYNetworkTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYNetworkTool.m; sourceTree = "<group>"; };
 		04803E5E26051C4A006EA35B /* FLYKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLYKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04803E6126051C4A006EA35B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04803E6226051C4A006EA35B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -330,6 +337,7 @@
 			children = (
 				044EC98A26C67416006BB549 /* PrefixHeader.pch */,
 				044EC98926C66DBC006BB549 /* FLYMacros.h */,
+				047DC469271181610012152A /* APIConfig.h */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -463,6 +471,10 @@
 		046D191326E61BEE00D9FD46 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				047DC47027119B340012152A /* FLYNetworkTool.h */,
+				047DC47127119B340012152A /* FLYNetworkTool.m */,
+				047DC46627116F1E0012152A /* FLYNetwork.h */,
+				047DC46727116F1E0012152A /* FLYNetwork.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -854,6 +866,7 @@
 				0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */,
 				0407514126DDD82E005A97FF /* NSString+FLYEncryption.m in Sources */,
 				044EC98726C66975006BB549 /* FLYPopupView.m in Sources */,
+				047DC47227119B340012152A /* FLYNetworkTool.m in Sources */,
 				044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */,
 				0407513E26D8CC67005A97FF /* NSDate+FLYExtension.m in Sources */,
 				044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */,
@@ -868,6 +881,7 @@
 				04C80D3C26F24C1E00FD1F62 /* FLYUserAction.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
 				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
+				047DC46827116F1E0012152A /* FLYNetwork.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
 				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
