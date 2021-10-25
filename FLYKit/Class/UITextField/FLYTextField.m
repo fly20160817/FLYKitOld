@@ -60,6 +60,12 @@
 
 - (void)initUI
 {
+    //关闭首字母大写
+    self.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    //关闭自动纠错
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    
     self.leftViewMode = UITextFieldViewModeAlways;
     self.rightViewMode = UITextFieldViewModeAlways;
     

@@ -36,6 +36,43 @@ static NSString * kBaseUrl = BASE_API;
         //设置超时时间
         //sessionManager.requestSerializer.timeoutInterval = 15;
         
+        
+        
+        
+        /***** 使用 SSL Pinning 防抓包(必须是https，http设置会崩溃) *****
+         
+         1.执行命令生成.cer证书，然后把这个证书拖到项目里。
+         2.设置AFNetworking的AFSSLPinningMode类型为AFSSLPinningModePublicKey
+         
+         ********************/
+        
+        
+        //第一步
+        /**
+         cd到一个文件夹，然后执行下面的命令，生成.cer证书，然后把这个证书拖到项目里。
+         参数：www.jianhua-art.com:443 是域名和端口，jianhua-art.com.cer是证书的名字。
+         
+         openssl s_client -connect www.jianhua-art.com:443 </dev/null | openssl x509 -outform DER -out jianhua-art.com.cer
+         */
+        
+        
+        //第二步
+        /**
+         AFSSLPinningModeNone
+         完全信任服务器证书；
+         
+         AFSSLPinningModePublicKey
+         只比对服务器证书和本地证书的Public Key是否一致，如果一致则信任服务器证书；
+         只要Public Key没有改变，证书的其他变动都不会影响使用。
+         
+         AFSSLPinningModeCertificate
+         比对服务器证书和本地证书的所有内容，完全一致则信任服务器证书；
+         最安全的比对模式。但是也比较麻烦，因为证书是打包在APP中，如果服务器证书改变或者到期，旧版本无法使用了，我们就需要用户更新APP来使用最新的证书。
+         */
+        //policyWithPinningMode:Pinning类型 withPinnedCertificates:.cer证书文件的位置
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey withPinnedCertificates:[AFSecurityPolicy certificatesInBundle:[NSBundle mainBundle]]];
+        sessionManager.securityPolicy = securityPolicy;
+ 
     });
     
     return sessionManager;

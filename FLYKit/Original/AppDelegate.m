@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "FLYTabBarController.h"
+#import "FLYConfigureSDK.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 //程序启动第一个执行的方法
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //初始化第三方的SDK
+    [FLYConfigureSDK configureSDK:launchOptions];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

@@ -11,5 +11,6 @@ pod 'MJRefresh', '~> 3.7.2'
 pod 'Masonry', '~> 1.1.0'
 pod 'AFNetworking', '~> 4.0.1'
 pod 'SVProgressHUD', '~> 2.2.5'
+pod 'IQKeyboardManager', '~> 6.5.6'
 
 end

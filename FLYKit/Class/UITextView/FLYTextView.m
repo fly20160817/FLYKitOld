@@ -88,6 +88,12 @@
 
 - (void)initUI
 {
+    //关闭首字母大写
+    self.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    //关闭自动纠错
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
+    
+    
     [self addSubview:self.placeholderLabel];
     
     //使用通知而不是代理，因为代理是一对一，如果外界重新绑定了代理，这里面的就会失效。

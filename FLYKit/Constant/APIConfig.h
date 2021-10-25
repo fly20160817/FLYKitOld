@@ -8,6 +8,6 @@
 #ifndef APIConfig_h
 #define APIConfig_h
 
-#define BASE_API @"http://47.99.130.104:2000"
+#define BASE_API @"https://www.jianhua-art.com"
 
 #endif /* APIConfig_h */
