@@ -12,7 +12,7 @@
 /** 快速创建(文字) */
 + (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font;
 {
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton * button = [self buttonWithType:UIButtonTypeCustom];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:titleColor forState:UIControlStateNormal];
     button.titleLabel.font = font;
@@ -22,7 +22,7 @@
 /** 快速创建(文字 + 图片) */
 + (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor image:(UIImage *)image font:(UIFont *)font
 {
-    UIButton * button = [UIButton buttonWithTitle:title titleColor:titleColor font:font];
+    UIButton * button = [self buttonWithTitle:title titleColor:titleColor font:font];
     [button setImage:image forState:UIControlStateNormal];
     return button;
 }

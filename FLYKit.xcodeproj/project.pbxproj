@@ -640,11 +640,11 @@
 				045F046E26CA3DCE00EAFFD9 /* Time(时间) */,
 				045F046A26CA3D5400EAFFD9 /* File(文件管理者) */,
 				04C80D3626F24BF900FD1F62 /* FLYUser */,
+				04673E11271EB31F002A7B7B /* Encryption(加密解密) */,
 				041D6E6926C3698E008015B6 /* FLYTools.h */,
 				041D6E6A26C3698E008015B6 /* FLYTools.m */,
 				0407515626E5ADF6005A97FF /* FLYDeviceManager.h */,
 				0407515726E5ADF6005A97FF /* FLYDeviceManager.m */,
-				04673E11271EB31F002A7B7B /* Encryption(加密解密) */,
 			);
 			path = FunctionTools;
 			sourceTree = "<group>";

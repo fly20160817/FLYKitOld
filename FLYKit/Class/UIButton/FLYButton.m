@@ -239,7 +239,6 @@
     self.spacing = spacing;
     
     
-    
     //文字和图片一人挪一半
     CGFloat spacing_half = spacing / 2.0;
     
@@ -256,6 +255,16 @@
     CGFloat labelOffsetX = (imageView_W + titleLabel_W / 2) - (imageView_W + titleLabel_W) / 2;
     //label中心移动的y距离
     CGFloat labelOffsetY = titleLabel_H / 2 + spacing / 2;
+    
+    
+    //如果是上图下字，或着上字下图，titleLabel直接和button一样宽，x直接写0，x不需要设置EdgeInsets了
+    if( postion == FLYImagePositionTop || postion == FLYImagePositionBottom )
+    {
+        labelOffsetX = 0;
+        self.titleLabel.x = 0;
+        self.titleLabel.width = self.width;
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    }
     
     
     switch (postion)
