@@ -38,6 +38,18 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIEdgeInsets)safeAreaInsets;
 
 
+/**
+ * 比较版本号
+ *
+ * @param v1 当前版本号
+ * @param v2 appStore版本号
+ *
+ * @return 如果版本号相等，返回 0,
+ *         如果第一个版本号低于第二个，返回 -1，否则返回 1.
+ */
++ (NSInteger)compareVersionWithCurrentVersion:(NSString *)v1 appStoreVersion:(NSString *)v2;
+
+
 
 @end
 

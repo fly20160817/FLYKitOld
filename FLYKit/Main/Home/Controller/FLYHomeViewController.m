@@ -11,9 +11,7 @@
 #import "FLYRSA.h"
 #import "FLYAES.h"
 
-#import "FLYButton.h"
-#import "UIButton+FLYExtension.h"
-
+#import "FLYKeychain.h"
 
 @interface FLYHomeViewController ()
 
@@ -33,15 +31,17 @@
 
 - (void)testAtion
 {
-    FLYButton * button = [FLYButton buttonWithTitle:@"我的按钮" titleColor:[UIColor whiteColor] image:[UIImage imageNamed:@"Home.ico_on"] font:FONT_S(14)];
-    button.backgroundColor = [UIColor orangeColor];
-    button.frame = CGRectMake(100, 100, 60, 50);
+    //手机名字  iPhone 12
+    NSLog(@"手机名字: %@", UIDevice.currentDevice.name);
     
-    [button setImagePosition:(FLYImagePositionBottom) spacing:5];
+    //系统版本  14.5
+    NSLog(@"系统版本: %@", UIDevice.currentDevice.systemVersion);
     
-    [self.view addSubview:button];
     
+    //095ABE87-73E3-4A7E-9D81-75DDAAC0EA98
+    NSLog(@"IDFV = %@", [FLYKeychain getIDFVInKeychain]);
 }
+
 
 
 

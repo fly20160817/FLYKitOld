@@ -101,4 +101,60 @@
     return safeAreaInsets;
 }
 
+
+/**
+ * 比较版本号
+ *
+ * @param v1 当前版本号
+ * @param v2 appStore版本号
+ *
+ * @return 如果版本号相等，返回 0,
+ *         如果第一个版本号低于第二个，返回 -1，否则返回 1.
+ */
++ (NSInteger)compareVersionWithCurrentVersion:(NSString *)v1 appStoreVersion:(NSString *)v2
+{
+    assert(v1);
+    assert(v2);
+    
+    const char *p_v1 = [v1 UTF8String];
+    const char *p_v2 = [v2 UTF8String];
+    
+    while (*p_v1 && *p_v2) {
+        char buf_v1[32] = {0};
+        char buf_v2[32] = {0};
+        
+        char *i_v1 = strchr(p_v1, '.');
+        char *i_v2 = strchr(p_v2, '.');
+        
+        if (!i_v1 || !i_v2) break;
+        
+        if (i_v1 != p_v1) {
+            strncpy(buf_v1, p_v1, i_v1 - p_v1);
+            p_v1 = i_v1;
+        }
+        else
+            p_v1++;
+        
+        if (i_v2 != p_v2) {
+            strncpy(buf_v2, p_v2, i_v2 - p_v2);
+            p_v2 = i_v2;
+        }
+        else
+            p_v2++;
+        
+        
+        
+        int order = atoi(buf_v1) - atoi(buf_v2);
+        if (order != 0)
+            return order < 0 ? -1 : 1;
+    }
+    
+    double res = atof(p_v1) - atof(p_v2);
+    
+    if (res < 0) return -1;
+    if (res > 0) return 1;
+    return 0;
+}
+
+
 @end

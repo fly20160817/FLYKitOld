@@ -56,6 +56,7 @@
 		0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494583F26C4C10900A81B70 /* NSString+FLYVerification.m */; };
 		0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */; };
 		049BA00026FC1F1300AB7F7C /* FLYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */; };
+		04A0DF1C272FBC2E002C593A /* FLYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A0DF1B272FBC2E002C593A /* FLYKeychain.m */; };
 		04C2E85726E8A84B003E7C0C /* FLYKeyValueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */; };
 		04C2E86A26E9CDB9003E7C0C /* UIView+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E86926E9CDB9003E7C0C /* UIView+FLYExtension.m */; };
 		04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C80D3726F24C1E00FD1F62 /* FLYUser.m */; };
@@ -163,6 +164,8 @@
 		0494584726C63E3D00A81B70 /* UIButton+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FLYExtension.m"; sourceTree = "<group>"; };
 		049B9FFE26FC1F1300AB7F7C /* FLYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTextField.h; sourceTree = "<group>"; };
 		049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTextField.m; sourceTree = "<group>"; };
+		04A0DF1A272FBC2E002C593A /* FLYKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYKeychain.h; sourceTree = "<group>"; };
+		04A0DF1B272FBC2E002C593A /* FLYKeychain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYKeychain.m; sourceTree = "<group>"; };
 		04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYKeyValueModel.h; sourceTree = "<group>"; };
 		04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYKeyValueModel.m; sourceTree = "<group>"; };
 		04C2E86826E9CDB9003E7C0C /* UIView+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYExtension.h"; sourceTree = "<group>"; };
@@ -641,6 +644,7 @@
 				045F046A26CA3D5400EAFFD9 /* File(文件管理者) */,
 				04C80D3626F24BF900FD1F62 /* FLYUser */,
 				04673E11271EB31F002A7B7B /* Encryption(加密解密) */,
+				04A0DF1D272FBC32002C593A /* Keychain(钥匙串) */,
 				041D6E6926C3698E008015B6 /* FLYTools.h */,
 				041D6E6A26C3698E008015B6 /* FLYTools.m */,
 				0407515626E5ADF6005A97FF /* FLYDeviceManager.h */,
@@ -722,6 +726,15 @@
 				049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		04A0DF1D272FBC32002C593A /* Keychain(钥匙串) */ = {
+			isa = PBXGroup;
+			children = (
+				04A0DF1A272FBC2E002C593A /* FLYKeychain.h */,
+				04A0DF1B272FBC2E002C593A /* FLYKeychain.m */,
+			);
+			path = "Keychain(钥匙串)";
 			sourceTree = "<group>";
 		};
 		04C2E84F26E8A2F9003E7C0C /* Controller */ = {
@@ -929,6 +942,7 @@
 				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
 				047DC46827116F1E0012152A /* FLYNetwork.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
+				04A0DF1C272FBC2E002C593A /* FLYKeychain.m in Sources */,
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
 				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
 				046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */,

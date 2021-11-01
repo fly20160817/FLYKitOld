@@ -43,6 +43,20 @@
 #define IMAGENAME(name) [UIImage imageNamed:name]
 #define COLORHEX(hex) [UIColor colorWithHexString:hex]
 
+
+//获取APP名称
+#define APP_NAME ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"])
+
+//获取Bundle Identifier
+#define APP_BUNDLEIDENTIFIER ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"])
+
+//项目版本号
+#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+//项目的build版本号
+#define APP_BUILD ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"])
+
+
 #define FONT_R(font) [UIFont fontWithName:PFSCR size:font]
 #define FONT_M(font) [UIFont fontWithName:PFSCM size:font]
 #define FONT_S(font) [UIFont fontWithName:PFSCS size:font]
