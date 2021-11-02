@@ -40,6 +40,9 @@
     
     //095ABE87-73E3-4A7E-9D81-75DDAAC0EA98
     NSLog(@"IDFV = %@", [FLYKeychain getIDFVInKeychain]);
+    
+    
+    self.navigationItem.title = @"主粉";
 }
 
 

@@ -110,7 +110,7 @@ static FLYUser * _sharedUser;
 //判断是否自动登录
 + (BOOL)isAutoLogin
 {
-    if ( [self sharedUser].token.length == 0 )
+    if ( [FLYUser sharedUser].token.length == 0 )
     {
         return NO;
     }

@@ -16,19 +16,21 @@
 
 @implementation FLYNavigationController
 
-+ (void)load
-{
-    /*
-     appearance: 获取整个应用程序下所有东西
-     appearanceWhenContainedIn: 获取哪个类下的东西
-     */
-    UINavigationBar * bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
-    
-    //设置导航条标题的字体
-    NSDictionary * dict = @{ NSFontAttributeName : FONT_M(16), NSForegroundColorAttributeName : COLORHEX(@"#333333") };
-    //文字内容是通过navigationItem.title设置的,而富文本属性是通过navigationBar的 titleTextAttributes属性设置。
-    bar.titleTextAttributes = dict;
-}
+ 
+//+ (void)load
+//{
+//    /*
+//     appearance: 获取整个应用程序下所有东西
+//     appearanceWhenContainedIn: 获取哪个类下的东西
+//     */
+//    UINavigationBar * bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
+//
+//    //设置导航条标题的字体
+//    NSDictionary * dict = @{ NSFontAttributeName : FONT_M(16), NSForegroundColorAttributeName : [UIColor redColor]/*COLORHEX(@"#333333")*/ };
+//    //文字内容是通过navigationItem.title设置的,而富文本属性是通过navigationBar的 titleTextAttributes属性设置。
+//    bar.titleTextAttributes = dict;
+//}
+//
 
 
 - (void)viewDidLoad {
@@ -42,11 +44,36 @@
     //设置导航栏不透明，内容就会自动从导航栏下面开始
     self.navigationBar.translucent = NO;
     
-    //bar的背景颜色
-    self.navigationBar.barTintColor = COLORHEX(@"#FFFFFF");
+    
+    
+    if (@available(iOS 15.0, *))
+    {
+        UINavigationBarAppearance * barAppearance = [[UINavigationBarAppearance alloc] init];
+        //bar的背景颜色
+        barAppearance.backgroundColor = [UIColor whiteColor];
         
-    //底下线的颜色
-    self.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(SCREEN_WIDTH, 1)];
+        //底下线的颜色
+        barAppearance.shadowColor = [UIColor clearColor];
+        
+        //设置导航条标题的字体、颜色
+        NSDictionary * dic = @{ NSFontAttributeName : FONT_M(16), NSForegroundColorAttributeName : COLORHEX(@"#333333") };
+        barAppearance.titleTextAttributes = dic;
+        
+        self.navigationBar.scrollEdgeAppearance = barAppearance;
+        self.navigationBar.standardAppearance = barAppearance;
+    }
+    else
+    {
+        //bar的背景颜色
+        self.navigationBar.barTintColor = COLORHEX(@"#FFFFFF");
+            
+        //底下线的颜色
+        self.navigationBar.shadowImage = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(SCREEN_WIDTH, 1)];
+        
+        //设置导航条标题的字体、颜色
+        NSDictionary * dic = @{ NSFontAttributeName : FONT_M(16), NSForegroundColorAttributeName : COLORHEX(@"#333333") };
+        self.navigationBar.titleTextAttributes = dic;
+    }
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -97,7 +124,16 @@
 {
     _isLine = isLine;
     
-    self.navigationBar.shadowImage = [UIImage imageWithColor: isLine ? COLORHEX(@"#EAEAEA") : [UIColor clearColor] size:CGSizeMake(SCREEN_WIDTH, 1)];
+   
+    if (@available(iOS 15.0, *))
+    {
+        self.navigationBar.scrollEdgeAppearance.shadowColor = isLine ? COLORHEX(@"#EAEAEA") : [UIColor clearColor];
+        self.navigationBar.standardAppearance.shadowColor = isLine ? COLORHEX(@"#EAEAEA") : [UIColor clearColor];
+    }
+    else
+    {
+        self.navigationBar.shadowImage = [UIImage imageWithColor: isLine ? COLORHEX(@"#EAEAEA") : [UIColor clearColor] size:CGSizeMake(SCREEN_WIDTH, 1)];
+    }
 }
 
 

@@ -46,11 +46,33 @@
 
 - (void)initUI
 {
+    self.tabBar.translucent = NO;
+    
+    if (@available(iOS 15.0, *))
+    {
+        UITabBarAppearance * barAppearance = [[UITabBarAppearance alloc] init];
+        //bar的背景颜色
+        barAppearance.backgroundColor = [UIColor whiteColor];
+        //底下线的颜色
+        barAppearance.shadowColor = [UIColor colorWithHexString:@"#ECECEC"];
+        self.tabBar.scrollEdgeAppearance = barAppearance;
+        self.tabBar.standardAppearance = barAppearance;
+    }
+    else
+    {
+        //bar的背景颜色
+        self.tabBar.barTintColor = [UIColor whiteColor];
+            
+        //底下线的颜色
+        self.tabBar.shadowImage = [UIImage imageWithColor:[UIColor colorWithHexString:@"#ECECEC"] size:CGSizeMake(SCREEN_WIDTH, 1)];
+    }
+    
+    
+    
     //加载控制器
     [self configViewControllers];
-    
-    
 
+    
     /**
      这行代码解决iOS13之后版本的一些问题：
      1.设置未选中状态的文字颜色不生效的
