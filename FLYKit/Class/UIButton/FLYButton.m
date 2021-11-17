@@ -119,12 +119,17 @@
 /** 设置不同状态的背景颜色 */
 - (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state
 {
+    if ( self.state == state )
+    {
+        self.backgroundColor = color;
+    }
+    
+    
     switch (state)
     {
         case UIControlStateNormal:
         {
             self.backgroundColor_normal = color;
-            self.backgroundColor = self.backgroundColor_normal;
         }
             break;
             
@@ -155,12 +160,17 @@
 /** 设置不同状态的边框颜色 */
 - (void)setBorderColor:(UIColor *)color forState:(UIControlState)state
 {
+    if ( self.state == state )
+    {
+        self.layer.borderColor = color.CGColor;
+    }
+    
+    
     switch (state)
     {
         case UIControlStateNormal:
         {
             self.borderColor_normal = color;
-            self.layer.borderColor = self.borderColor_normal.CGColor;
         }
             break;
             
@@ -190,12 +200,17 @@
 /** 设置不同状态的字体 */
 - (void)setTitleFont:(UIFont *)font forState:(UIControlState)state
 {
+    if ( self.state == state )
+    {
+        self.titleLabel.font = font;
+    }
+    
+    
     switch (state)
     {
         case UIControlStateNormal:
         {
             self.titleFont_normal = font;
-            self.titleLabel.font = self.titleFont_normal;
         }
             break;
             

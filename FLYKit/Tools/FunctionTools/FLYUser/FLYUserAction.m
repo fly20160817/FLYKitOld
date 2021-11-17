@@ -10,6 +10,7 @@
 //#import "FLYTabBarViewController.h"
 //#import "FLYLoginViewController.h"
 //#import "JPUSHService.h"
+//#import "FLYNetwork.h"
 
 @implementation FLYUserAction
 
@@ -18,7 +19,10 @@
 //    //保存用户信息
 //    [self saveUserInfo:info];
 //    
-//    
+//    //设置token
+//    [FLYNetwork setTokenHTTPHeaders:[FLYUser sharedUser].token];
+//
+//
 //    //设置别名
 //    NSString * alias = [NSString stringWithFormat:@"%@", [FLYUser sharedUser].uid];
 //    [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {

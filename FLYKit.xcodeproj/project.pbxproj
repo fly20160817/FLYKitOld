@@ -43,6 +43,7 @@
 		046D19DA26E7389000D9FD46 /* FLYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19D926E7389000D9FD46 /* FLYMessageViewController.m */; };
 		046D19DD26E738A100D9FD46 /* FLYMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D19DC26E738A100D9FD46 /* FLYMyViewController.m */; };
 		046D8DA0271FE606004F8F72 /* FLYRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D8D9F271FE606004F8F72 /* FLYRSA.m */; };
+		04729B5D2744A0D5007D0F48 /* FLYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729B5C2744A0D5007D0F48 /* FLYModel.m */; };
 		047B5B7E271E6CE600523014 /* jianhua-art.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 047B5B7D271E6CE600523014 /* jianhua-art.com.cer */; };
 		047D611927195CC900EEE13F /* NSString+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D611827195CC900EEE13F /* NSString+FLYExtension.m */; };
 		047DC46827116F1E0012152A /* FLYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DC46727116F1E0012152A /* FLYNetwork.m */; };
@@ -139,6 +140,8 @@
 		046D19DC26E738A100D9FD46 /* FLYMyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYMyViewController.m; sourceTree = "<group>"; };
 		046D8D9E271FE606004F8F72 /* FLYRSA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYRSA.h; sourceTree = "<group>"; };
 		046D8D9F271FE606004F8F72 /* FLYRSA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYRSA.m; sourceTree = "<group>"; };
+		04729B5B2744A0D5007D0F48 /* FLYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYModel.h; sourceTree = "<group>"; };
+		04729B5C2744A0D5007D0F48 /* FLYModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYModel.m; sourceTree = "<group>"; };
 		047B5B7D271E6CE600523014 /* jianhua-art.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jianhua-art.com.cer"; sourceTree = "<group>"; };
 		047D611727195CC900EEE13F /* NSString+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLYExtension.h"; sourceTree = "<group>"; };
 		047D611827195CC900EEE13F /* NSString+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYExtension.m"; sourceTree = "<group>"; };
@@ -760,6 +763,8 @@
 			children = (
 				04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */,
 				04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */,
+				04729B5B2744A0D5007D0F48 /* FLYModel.h */,
+				04729B5C2744A0D5007D0F48 /* FLYModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -916,6 +921,7 @@
 				042A999526C64D50000B58CF /* FLYButton.m in Sources */,
 				0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */,
 				04660CAB27264EEE00492326 /* FLYAES.m in Sources */,
+				04729B5D2744A0D5007D0F48 /* FLYModel.m in Sources */,
 				04660CB12726798400492326 /* FLYBase64.m in Sources */,
 				049BA00026FC1F1300AB7F7C /* FLYTextField.m in Sources */,
 				047DC475271550A00012152A /* FLYConfigureSDK.m in Sources */,
@@ -1094,7 +1100,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN8JCXK32F;
+				DEVELOPMENT_TEAM = TMRPM2D98W;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1115,7 +1121,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KN8JCXK32F;
+				DEVELOPMENT_TEAM = TMRPM2D98W;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
 				INFOPLIST_FILE = FLYKit/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

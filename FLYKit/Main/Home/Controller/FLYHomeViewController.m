@@ -13,6 +13,9 @@
 
 #import "FLYKeychain.h"
 
+#import "FLYButton.h"
+#import "UIButton+FLYExtension.h"
+
 @interface FLYHomeViewController ()
 
 @end
@@ -42,7 +45,37 @@
     NSLog(@"IDFV = %@", [FLYKeychain getIDFVInKeychain]);
     
     
-    self.navigationItem.title = @"主粉";
+    
+    
+
+    FLYButton * button = [FLYButton buttonWithImage:IMAGENAME(@"icon_return") title:@"我的按钮" titleColor:[UIColor blackColor]  font:FONT_M(15)];
+    button.backgroundColor = [UIColor cyanColor];
+    //[button setImagePosition:(FLYImagePositionRight) spacing:10];
+    [self.view addSubview:button];
+    
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).with.offset(150);
+        make.centerX.equalTo(self.view);
+        //make.width.mas_equalTo(50);
+    }];
+    
+   
+    if (  button.state == UIControlStateNormal )
+    {
+        NSLog(@"Normal");
+    }
+    else if (  button.state == UIControlStateHighlighted )
+    {
+        NSLog(@"Highlighted");
+    }
+    else if (  button.state == UIControlStateDisabled )
+    {
+        NSLog(@"Disabled");
+    }
+    else if (  button.state == UIControlStateSelected )
+    {
+        NSLog(@"Selected");
+    }
 }
 
 

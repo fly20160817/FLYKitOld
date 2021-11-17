@@ -14,8 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 /** 快速创建(文字) */
 + (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font;
 
-/** 快速创建(文字 + 图片) */
-+ (instancetype)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor image:(UIImage *)image font:(UIFont *)font;
+/** 快速创建(图片) */
++ (instancetype)buttonWithImage:(UIImage *)image;
+
+/** 快速创建(图片 + 文字) */
++ (instancetype)buttonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font;
 
 @end
 

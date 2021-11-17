@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
+  - MJExtension (3.3.0)
   - MJRefresh (3.7.2)
   - SVProgressHUD (2.2.5)
 
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0.1)
   - IQKeyboardManager (~> 6.5.6)
   - Masonry (~> 1.1.0)
+  - MJExtension (~> 3.3.0)
   - MJRefresh (~> 3.7.2)
   - SVProgressHUD (~> 2.2.5)
 
@@ -31,6 +33,7 @@ SPEC REPOS:
     - AFNetworking
     - IQKeyboardManager
     - Masonry
+    - MJExtension
     - MJRefresh
     - SVProgressHUD
 
@@ -38,9 +41,10 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 023286a26d8a2571fd35666f686b897bb7b932e8
+PODFILE CHECKSUM: 202e40b9f413da362ba9eaac74be5fd5438cfbfd
 
 COCOAPODS: 1.9.0

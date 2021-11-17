@@ -12,5 +12,6 @@ pod 'Masonry', '~> 1.1.0'
 pod 'AFNetworking', '~> 4.0.1'
 pod 'SVProgressHUD', '~> 2.2.5'
 pod 'IQKeyboardManager', '~> 6.5.6'
+pod 'MJExtension', '~> 3.3.0'
 
 end

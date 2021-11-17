@@ -124,7 +124,7 @@
 + (void)getWithPath:(NSString *)path
             params:(NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
@@ -154,7 +154,7 @@
 + (void)postWithPath:(NSString *)path
             params:(NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
@@ -184,7 +184,7 @@
 + (void)getRawWithPath:(NSString *)path
             params:(id)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+          loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
@@ -214,7 +214,7 @@
 + (void)postRawWithPath:(NSString *)path
             params:(id)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
@@ -247,7 +247,7 @@
 + (void)headWithPath:(NSString *)path
              params:(NSDictionary *)params
              loadingType:(FLYNetworkLoadingType)loadingType
-             loadingTitle:(NSString *)loadingTitle
+             loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
              success:(SuccessBlock)success
              failure:(FailureBlock)failure;
@@ -283,7 +283,7 @@
 + (void)deleteWithPath:(NSString *)path
               params:(NSDictionary *)params
               loadingType:(FLYNetworkLoadingType)loadingType
-              loadingTitle:(NSString *)loadingTitle
+              loadingTitle:(nullable NSString *)loadingTitle
               isHandle:(BOOL)isHandle
               success:(SuccessBlock)success
               failure:(FailureBlock)failure
@@ -314,7 +314,7 @@
  */
 + (void)downloadWithPath:(NSString *)path
              loadingType:(FLYNetworkLoadingType)loadingType
-             loadingTitle:(NSString *)loadingTitle
+             loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
              success:(SuccessBlock)success
              failure:(FailureBlock)failure
@@ -362,7 +362,7 @@
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      loadingType:(FLYNetworkLoadingType)loadingType
-                     loadingTitle:(NSString *)loadingTitle
+                     loadingTitle:(nullable NSString *)loadingTitle
                      isHandle:(BOOL)isHandle
                      success:(SuccessBlock)success
                      failure:(FailureBlock)failure
@@ -424,7 +424,7 @@
                      thumbName:(NSString *)videokey
                      videos:(NSArray *)videos
                      loadingType:(FLYNetworkLoadingType)loadingType
-                     loadingTitle:(NSString *)loadingTitle
+                     loadingTitle:(nullable NSString *)loadingTitle
                      isHandle:(BOOL)isHandle
                      success:(SuccessBlock)success
                      failure:(FailureBlock)failure
@@ -476,7 +476,7 @@
 /// @param title 文字
 /// @param showProgress 是否显示进度 (上传和下载传YES)
 + (void)setupLoadingType:(FLYNetworkLoadingType)type
-                   title:(NSString *)title showProgress:(BOOL)showProgress
+                   title:(nullable NSString *)title showProgress:(BOOL)showProgress
 {
     if ( type != FLYNetworkLoadingTypeNone )
     {
@@ -543,7 +543,7 @@
 /// @param title loading文字
 /// @param progress 进度
 /// @param progressBlock 进度回调
-+ (void)progressHandle:(BOOL)isHandle loadingType:(FLYNetworkLoadingType)type loadingTitle:(NSString *)title progress:(double)progress progressBlock:(ProgressBlock)progressBlock
++ (void)progressHandle:(BOOL)isHandle loadingType:(FLYNetworkLoadingType)type loadingTitle:(nullable NSString *)title progress:(double)progress progressBlock:(ProgressBlock)progressBlock
 {
     if( type != FLYNetworkLoadingTypeNone )
     {

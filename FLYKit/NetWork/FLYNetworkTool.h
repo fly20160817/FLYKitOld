@@ -117,7 +117,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)getWithPath:(NSString *)path
             params:(NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
@@ -134,7 +134,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)postWithPath:(NSString *)path
             params:(NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)getRawWithPath:(NSString *)path
             params:(id)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)postRawWithPath:(NSString *)path
             params:(id)params
             loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(NSString *)loadingTitle
+            loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
@@ -188,7 +188,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)headWithPath:(NSString *)path
              params:(NSDictionary *)params
              loadingType:(FLYNetworkLoadingType)loadingType
-             loadingTitle:(NSString *)loadingTitle
+             loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
              success:(SuccessBlock)success
              failure:(FailureBlock)failure;
@@ -207,7 +207,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 + (void)deleteWithPath:(NSString *)path
               params:(NSDictionary *)params
               loadingType:(FLYNetworkLoadingType)loadingType
-              loadingTitle:(NSString *)loadingTitle
+              loadingTitle:(nullable NSString *)loadingTitle
               isHandle:(BOOL)isHandle
               success:(SuccessBlock)success
               failure:(FailureBlock)failure;
@@ -226,7 +226,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  */
 + (void)downloadWithPath:(NSString *)path
              loadingType:(FLYNetworkLoadingType)loadingType
-             loadingTitle:(NSString *)loadingTitle
+             loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
              success:(SuccessBlock)success
              failure:(FailureBlock)failure
@@ -252,7 +252,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      loadingType:(FLYNetworkLoadingType)loadingType
-                     loadingTitle:(NSString *)loadingTitle
+                     loadingTitle:(nullable NSString *)loadingTitle
                      isHandle:(BOOL)isHandle
                      success:(SuccessBlock)success
                      failure:(FailureBlock)failure
@@ -278,7 +278,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
                      thumbName:(NSString *)videokey
                      videos:(NSArray *)videos
                      loadingType:(FLYNetworkLoadingType)loadingType
-                     loadingTitle:(NSString *)loadingTitle
+                     loadingTitle:(nullable NSString *)loadingTitle
                      isHandle:(BOOL)isHandle
                      success:(SuccessBlock)success
                      failure:(FailureBlock)failure

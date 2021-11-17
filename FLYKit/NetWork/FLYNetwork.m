@@ -7,6 +7,7 @@
 
 #import "FLYNetwork.h"
 #import "AFNetworking.h"
+#import "FLYUser.h"
 
 static NSString * kBaseUrl = BASE_API;
 
@@ -28,7 +29,10 @@ static NSString * kBaseUrl = BASE_API;
         //配置超时时长 (默认60s)
         config.timeoutIntervalForRequest = 15;
         //请求头 (设置要token时，注意设置时的字段名，和接口定义的名字是否一样)
-        //config.HTTPAdditionalHeaders = @{ @"token" : @"abc" };
+        if ( [FLYUser sharedUser].token )
+        {
+            config.HTTPAdditionalHeaders = @{ @"token" : [FLYUser sharedUser].token };
+        }
         
         sessionManager = [[FLYHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:config];
         //接收参数类型
@@ -69,9 +73,12 @@ static NSString * kBaseUrl = BASE_API;
          比对服务器证书和本地证书的所有内容，完全一致则信任服务器证书；
          最安全的比对模式。但是也比较麻烦，因为证书是打包在APP中，如果服务器证书改变或者到期，旧版本无法使用了，我们就需要用户更新APP来使用最新的证书。
          */
-        //policyWithPinningMode:Pinning类型 withPinnedCertificates:.cer证书文件的位置
-        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey withPinnedCertificates:[AFSecurityPolicy certificatesInBundle:[NSBundle mainBundle]]];
-        sessionManager.securityPolicy = securityPolicy;
+        if ( [kBaseUrl containsString:@"https"] )
+        {
+            //policyWithPinningMode:Pinning类型 withPinnedCertificates:.cer证书文件的位置
+            AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey withPinnedCertificates:[AFSecurityPolicy certificatesInBundle:[NSBundle mainBundle]]];
+            sessionManager.securityPolicy = securityPolicy;
+        }
  
     });
     
