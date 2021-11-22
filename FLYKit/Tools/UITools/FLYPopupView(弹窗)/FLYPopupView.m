@@ -156,7 +156,7 @@
 //判断是否正在显示
 - (BOOL)isShowing
 {
-    for (UIView * view in self.window.subviews)
+    for (UIView * view in self.flyWindow.rootViewController.view.subviews)
     {
         if ( [view isKindOfClass:[self class]] )
         {
