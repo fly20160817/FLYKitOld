@@ -60,12 +60,32 @@
 {
     //转换坐标
     CGPoint tempPoint = [self convertPoint:point fromView:self];
+    
     //判断点击的点不在自己的区域
     if (CGRectContainsPoint(self.bounds, tempPoint) == NO)
     {
-        //hitTest:方法会调用两次，所以dissmiss也调用两次，导致dissmiss动画失效。不过没影响，点击导航栏的时候就是让它秒消失，不是回到上一页后，它还没消失完。
-        [self dissmiss];
+        
+        //是否消失
+        BOOL isDissmiss = YES;
+        
+        //判断是否在不想dissmiss的数组里
+        for ( UIView * view in self.noDissmissViews )
+        {
+            CGPoint temp1Point = [self convertPoint:point toView:view];
+            if (CGRectContainsPoint(view.bounds, temp1Point) == YES)
+            {
+                isDissmiss = NO;
+                break;
+            }
+        }
+        
+        if ( isDissmiss == YES )
+        {
+            //hitTest:方法会调用两次，所以dissmiss也调用两次，导致dissmiss动画失效。不过没影响，点击导航栏的时候就是让它秒消失，不是回到上一页后，它还没消失完。
+            [self dissmiss];
+        }
     }
+    
     
     return [super hitTest:point withEvent:event];
 }

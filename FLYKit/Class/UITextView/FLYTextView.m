@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UILabel * placeholderLabel;
 
 //自动换行高度更新时的block
-@property (nonatomic, assign) void(^heightChangeBlock)(CGFloat newHeight);
+@property (nonatomic, copy) void(^heightChangeBlock)(CGFloat newHeight);
 
 @end
 

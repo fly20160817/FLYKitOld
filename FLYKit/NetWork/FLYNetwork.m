@@ -35,6 +35,13 @@ static NSString * kBaseUrl = BASE_API;
         }
         
         sessionManager = [[FLYHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:config];
+        
+        //加这两句，raw就不用单独处理？
+        //设置请求体数据为json类型
+        //sessionManager.requestSerializer  = [AFJSONRequestSerializer serializer];
+        //设置响应体数据为json类型
+        //sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        
         //接收参数类型
         sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", @"text/json", @"text/javascript",@"text/plain",@"image/gif",nil];
         //设置超时时间

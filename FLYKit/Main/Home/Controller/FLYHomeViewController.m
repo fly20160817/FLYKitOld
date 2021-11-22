@@ -44,9 +44,9 @@
     //095ABE87-73E3-4A7E-9D81-75DDAAC0EA98
     NSLog(@"IDFV = %@", [FLYKeychain getIDFVInKeychain]);
     
+    NSLog(@"bottom =%f", [FLYTools safeAreaInsets].bottom);
     
-    
-    
+    NSLog(@"bottom2 =%f", SAFE_BOTTOM);
 
     FLYButton * button = [FLYButton buttonWithImage:IMAGENAME(@"icon_return") title:@"我的按钮" titleColor:[UIColor blackColor]  font:FONT_M(15)];
     button.backgroundColor = [UIColor cyanColor];

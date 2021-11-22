@@ -39,6 +39,9 @@
 //tabber高度
 #define TABBER_HEIGHT self.tabBarController.tabBar.frame.size.height
 
+//安全距离底部的高度
+#define SAFE_BOTTOM [FLYTools safeAreaInsets].bottom
+
 
 #define IMAGENAME(name) [UIImage imageNamed:name]
 #define COLORHEX(hex) [UIColor colorWithHexString:hex]

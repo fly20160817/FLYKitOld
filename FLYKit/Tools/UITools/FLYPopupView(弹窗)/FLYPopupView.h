@@ -64,6 +64,9 @@ typedef NS_ENUM(NSUInteger, FLYPopupMaskType) {
 /** dissmissBlock */
 @property (nonatomic, copy) void(^dissmissBlock)(void);
 
+/** PopupView不是全屏时，点击非PopupView部分，会自动dissmiss。如果不想点击其他地方dissmiss，可以把那个view传进来 */
+@property (nonatomic, strong) NSArray * noDissmissViews;
+
 
 + (instancetype)popupView;
 
