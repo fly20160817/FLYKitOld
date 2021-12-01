@@ -34,48 +34,12 @@
 
 - (void)testAtion
 {
-    //手机名字  iPhone 12
-    NSLog(@"手机名字: %@", UIDevice.currentDevice.name);
-    
+    //用户自定义的手机名字  FLY_iPhone8
+    NSLog(@"用户自定义的手机名字: %@", DEVICE_NAME);
+        
     //系统版本  14.5
-    NSLog(@"系统版本: %@", UIDevice.currentDevice.systemVersion);
+    NSLog(@"系统版本: %@", DEVICE_VERSION);
     
-    
-    //095ABE87-73E3-4A7E-9D81-75DDAAC0EA98
-    NSLog(@"IDFV = %@", [FLYKeychain getIDFVInKeychain]);
-    
-    NSLog(@"bottom =%f", [FLYTools safeAreaInsets].bottom);
-    
-    NSLog(@"bottom2 =%f", SAFE_BOTTOM);
-
-    FLYButton * button = [FLYButton buttonWithImage:IMAGENAME(@"icon_return") title:@"我的按钮" titleColor:[UIColor blackColor]  font:FONT_M(15)];
-    button.backgroundColor = [UIColor cyanColor];
-    //[button setImagePosition:(FLYImagePositionRight) spacing:10];
-    [self.view addSubview:button];
-    
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).with.offset(150);
-        make.centerX.equalTo(self.view);
-        //make.width.mas_equalTo(50);
-    }];
-    
-   
-    if (  button.state == UIControlStateNormal )
-    {
-        NSLog(@"Normal");
-    }
-    else if (  button.state == UIControlStateHighlighted )
-    {
-        NSLog(@"Highlighted");
-    }
-    else if (  button.state == UIControlStateDisabled )
-    {
-        NSLog(@"Disabled");
-    }
-    else if (  button.state == UIControlStateSelected )
-    {
-        NSLog(@"Selected");
-    }
 }
 
 

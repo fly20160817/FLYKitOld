@@ -19,6 +19,7 @@
 		0407515526E0A91C005A97FF /* FLYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515426E0A91B005A97FF /* FLYLabel.m */; };
 		0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515726E5ADF6005A97FF /* FLYDeviceManager.m */; };
 		041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D6E6A26C3698E008015B6 /* FLYTools.m */; };
+		0424B1012757588900681A3B /* FLYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1002757588900681A3B /* FLYBaseTableViewController.m */; };
 		042A999526C64D50000B58CF /* FLYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A999326C64D50000B58CF /* FLYButton.m */; };
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
 		044EC98726C66975006BB549 /* FLYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98526C66975006BB549 /* FLYPopupView.m */; };
@@ -91,6 +92,8 @@
 		0407515726E5ADF6005A97FF /* FLYDeviceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYDeviceManager.m; sourceTree = "<group>"; };
 		041D6E6926C3698E008015B6 /* FLYTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTools.h; sourceTree = "<group>"; };
 		041D6E6A26C3698E008015B6 /* FLYTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTools.m; sourceTree = "<group>"; };
+		0424B0FF2757588900681A3B /* FLYBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYBaseTableViewController.h; sourceTree = "<group>"; };
+		0424B1002757588900681A3B /* FLYBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYBaseTableViewController.m; sourceTree = "<group>"; };
 		042A999326C64D50000B58CF /* FLYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYButton.m; sourceTree = "<group>"; };
 		042A999426C64D50000B58CF /* FLYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYButton.h; sourceTree = "<group>"; };
 		044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+FLYExtension.m"; sourceTree = "<group>"; };
@@ -745,6 +748,8 @@
 			children = (
 				046D19D226E7382600D9FD46 /* FLYBaseViewController.h */,
 				046D19D326E7382600D9FD46 /* FLYBaseViewController.m */,
+				0424B0FF2757588900681A3B /* FLYBaseTableViewController.h */,
+				0424B1002757588900681A3B /* FLYBaseTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -940,6 +945,7 @@
 				044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */,
 				046D193226E620C700D9FD46 /* FLYNavigationController.m in Sources */,
 				046D19C326E733AB00D9FD46 /* UIBarButtonItem+FLYExtension.m in Sources */,
+				0424B1012757588900681A3B /* FLYBaseTableViewController.m in Sources */,
 				0494584026C4C10900A81B70 /* NSString+FLYVerification.m in Sources */,
 				04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */,
 				0407514926DE2200005A97FF /* UITableView+FLYRefresh.m in Sources */,

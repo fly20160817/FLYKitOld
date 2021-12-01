@@ -18,6 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString * cellReuseIdentifier;
 
 /**
+ headerView重用标识符
+ */
+@property (nonatomic, strong, readonly) NSString * headerViewReuseIdentifier;
+
+/**
+ footerView重用标识符
+ */
+@property (nonatomic, strong, readonly) NSString * footerViewReuseIdentifier;
+
+/**
  存放数据的数组
  */
 @property (nonatomic, strong) NSMutableArray * dataList;

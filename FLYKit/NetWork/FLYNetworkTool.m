@@ -133,11 +133,11 @@
     
     [FLYNetwork getWithPath:path params:params success:^(id  _Nonnull json) {
         
-        [self successHandle:isHandle json:json success:success failure:failure];
+        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -163,11 +163,11 @@
         
     [FLYNetwork postWithPath:path params:params success:^(id  _Nonnull json) {
         
-        [self successHandle:isHandle json:json success:success failure:failure];
+        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -193,11 +193,11 @@
     
     [FLYNetwork getRawWithPath:path params:params success:^(id  _Nonnull json) {
         
-        [self successHandle:isHandle json:json success:success failure:failure];
+        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -223,11 +223,11 @@
     
     [FLYNetwork postRawWithPath:path params:params success:^(id  _Nonnull json) {
         
-        [self successHandle:isHandle json:json success:success failure:failure];
+        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -264,7 +264,7 @@
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -292,11 +292,11 @@
     
     [FLYNetwork deleteWithPath:path params:params success:^(id  _Nonnull json) {
         
-        [self successHandle:isHandle json:json success:success failure:failure];
+        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     }];
 }
@@ -332,7 +332,7 @@
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     } progress:^(double p) {
         
@@ -396,7 +396,7 @@
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     } progress:^(double p) {
         
@@ -458,7 +458,7 @@
         
     } failure:^(NSError * _Nonnull error) {
         
-        [self failureHandle:isHandle error:error failure:failure];
+        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
         
     } progress:^(double p) {
         
@@ -502,10 +502,13 @@
 /// @param json 返回的数据
 /// @param success 成功回调
 /// @param failure 失败回调
-+ (void)successHandle:(BOOL)isHandle json:(id)json success:(SuccessBlock)success failure:(FailureBlock)failure
++ (void)successHandle:(BOOL)isHandle loadingType:(FLYNetworkLoadingType)loadingType json:(id)json success:(SuccessBlock)success failure:(FailureBlock)failure
 {
-    [SVProgressHUD dismiss];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    if ( loadingType != FLYNetworkLoadingTypeNone )
+    {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    }
     
     if ( [json[@"code"] integerValue] != 200 && isHandle )
     {
@@ -523,8 +526,14 @@
 /// @param isHandle 返回结果是否需要内部处理
 /// @param error 错误
 /// @param failure 失败回调
-+ (void)failureHandle:(BOOL)isHandle error:(NSError *)error failure:(FailureBlock)failure
++ (void)failureHandle:(BOOL)isHandle loadingType:(FLYNetworkLoadingType)loadingType error:(NSError *)error failure:(FailureBlock)failure
 {
+    if ( loadingType != FLYNetworkLoadingTypeNone )
+    {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    }
+    
     if( isHandle )
     {
         [FLYNetwork getNetType:^(BOOL network) {

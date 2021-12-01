@@ -60,6 +60,13 @@
 #define APP_BUILD ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"])
 
 
+//获取设备名字 （用户自定义的名字）
+#define DEVICE_NAME UIDevice.currentDevice.name
+
+//获取设备的系统版本
+#define DEVICE_VERSION UIDevice.currentDevice.systemVersion
+
+
 #define FONT_R(font) [UIFont fontWithName:PFSCR size:font]
 #define FONT_M(font) [UIFont fontWithName:PFSCM size:font]
 #define FONT_S(font) [UIFont fontWithName:PFSCS size:font]
