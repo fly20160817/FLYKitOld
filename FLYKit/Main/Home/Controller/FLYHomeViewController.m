@@ -8,13 +8,7 @@
 #import "FLYHomeViewController.h"
 #import "FLYNavigationController.h"
 
-#import "FLYRSA.h"
-#import "FLYAES.h"
-
-#import "FLYKeychain.h"
-
-#import "FLYButton.h"
-#import "UIButton+FLYExtension.h"
+#import "FLYSegmentBar.h"
 
 @interface FLYHomeViewController ()
 
@@ -34,12 +28,24 @@
 
 - (void)testAtion
 {
-    //用户自定义的手机名字  FLY_iPhone8
-    NSLog(@"用户自定义的手机名字: %@", DEVICE_NAME);
-        
-    //系统版本  14.5
-    NSLog(@"系统版本: %@", DEVICE_VERSION);
+    FLYSegmentBar * segmentBar = [[FLYSegmentBar alloc] initWithFrame:CGRectMake(50, 100, SCREEN_WIDTH - 100, 40) titleNames:@[@"豆芽", @"青椒", @"回锅肉", @"南京", @"好吃的"]];
+   
+    segmentBar.splitEqually = YES;
     
+    
+    FLYSegmentBarConfig * config = [FLYSegmentBarConfig defaultConfig];
+    config.itemSpaceWidth = 20;
+    config.segmentBarBackColor = [UIColor yellowColor];
+    config.indicatorHeight = 5;
+    config.indicatorCornerRadius = 2.5;
+    
+    config.leftMargin = 10;
+    config.rightMargin = 10;
+    config.hiddenIndicator = YES;
+    
+    segmentBar.config = config;
+    
+    [self.view addSubview:segmentBar];
 }
 
 

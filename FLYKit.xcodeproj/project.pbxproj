@@ -20,6 +20,8 @@
 		0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407515726E5ADF6005A97FF /* FLYDeviceManager.m */; };
 		041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D6E6A26C3698E008015B6 /* FLYTools.m */; };
 		0424B1012757588900681A3B /* FLYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1002757588900681A3B /* FLYBaseTableViewController.m */; };
+		0424B1072758983A00681A3B /* FLYSegmentBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1052758983A00681A3B /* FLYSegmentBarConfig.m */; };
+		0424B1082758983A00681A3B /* FLYSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1062758983A00681A3B /* FLYSegmentBar.m */; };
 		042A999526C64D50000B58CF /* FLYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A999326C64D50000B58CF /* FLYButton.m */; };
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
 		044EC98726C66975006BB549 /* FLYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98526C66975006BB549 /* FLYPopupView.m */; };
@@ -94,6 +96,10 @@
 		041D6E6A26C3698E008015B6 /* FLYTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTools.m; sourceTree = "<group>"; };
 		0424B0FF2757588900681A3B /* FLYBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYBaseTableViewController.h; sourceTree = "<group>"; };
 		0424B1002757588900681A3B /* FLYBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYBaseTableViewController.m; sourceTree = "<group>"; };
+		0424B1032758983A00681A3B /* FLYSegmentBarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYSegmentBarConfig.h; sourceTree = "<group>"; };
+		0424B1042758983A00681A3B /* FLYSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYSegmentBar.h; sourceTree = "<group>"; };
+		0424B1052758983A00681A3B /* FLYSegmentBarConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYSegmentBarConfig.m; sourceTree = "<group>"; };
+		0424B1062758983A00681A3B /* FLYSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYSegmentBar.m; sourceTree = "<group>"; };
 		042A999326C64D50000B58CF /* FLYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYButton.m; sourceTree = "<group>"; };
 		042A999426C64D50000B58CF /* FLYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYButton.h; sourceTree = "<group>"; };
 		044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+FLYExtension.m"; sourceTree = "<group>"; };
@@ -326,6 +332,17 @@
 				046D19EA26E73ECA00D9FD46 /* FunctionTools */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		0424B1022758979800681A3B /* FLYSegmentBar */ = {
+			isa = PBXGroup;
+			children = (
+				0424B1042758983A00681A3B /* FLYSegmentBar.h */,
+				0424B1062758983A00681A3B /* FLYSegmentBar.m */,
+				0424B1032758983A00681A3B /* FLYSegmentBarConfig.h */,
+				0424B1052758983A00681A3B /* FLYSegmentBarConfig.m */,
+			);
+			path = FLYSegmentBar;
 			sourceTree = "<group>";
 		};
 		044EC97F26C65AF8006BB549 /* UIView */ = {
@@ -663,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				044EC98426C66940006BB549 /* FLYPopupView(弹窗) */,
+				0424B1022758979800681A3B /* FLYSegmentBar */,
 			);
 			path = UITools;
 			sourceTree = "<group>";
@@ -958,6 +976,8 @@
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
 				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
 				046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */,
+				0424B1082758983A00681A3B /* FLYSegmentBar.m in Sources */,
+				0424B1072758983A00681A3B /* FLYSegmentBarConfig.m in Sources */,
 				0407513A26D8C98C005A97FF /* UIImageView+FLYExtension.m in Sources */,
 				0407513426D8B892005A97FF /* UIImage+FLYExtension.m in Sources */,
 				04660CAE27265D3400492326 /* FLYHash.m in Sources */,
