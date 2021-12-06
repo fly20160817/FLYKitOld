@@ -138,7 +138,6 @@
     
     self.lastItem.selected = NO;
     button.selected = YES;
-    self.lastItem = button;
     
     [self buttonMoveToMiddle:button];
     [self indicatorMoveToMiddle:button];
@@ -149,6 +148,8 @@
         [self.delegate segmentBar:self didSelectIndex:button.tag fromIndex:self.lastItem.tag];
     }
     
+    
+    self.lastItem = button;
     
     [self setNeedsLayout];
     [self layoutIfNeeded];

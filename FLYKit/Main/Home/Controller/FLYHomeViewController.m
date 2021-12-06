@@ -9,8 +9,18 @@
 #import "FLYNavigationController.h"
 
 #import "FLYSegmentBar.h"
+#import "FLYPageScrollView.h"
 
-@interface FLYHomeViewController ()
+#import "FLYOneViewController.h"
+#import "FLYTwoViewController.h"
+#import "FLYThreeViewController.h"
+#import "FLYFourViewController.h"
+#import "FLYFiveViewController.h"
+
+@interface FLYHomeViewController () < FLYSegmentBarDelegate, FLYPageScrollViewDelegate >
+
+@property (nonatomic, strong) FLYSegmentBar * segmentBar;
+@property (nonatomic, strong) FLYPageScrollView * pageScrollView;
 
 @end
 
@@ -29,8 +39,10 @@
 - (void)testAtion
 {
     FLYSegmentBar * segmentBar = [[FLYSegmentBar alloc] initWithFrame:CGRectMake(50, 100, SCREEN_WIDTH - 100, 40) titleNames:@[@"豆芽", @"青椒", @"回锅肉", @"南京", @"好吃的"]];
-   
+    self.segmentBar = segmentBar;
+    segmentBar.delegate = self;
     segmentBar.splitEqually = YES;
+    
     
     
     FLYSegmentBarConfig * config = [FLYSegmentBarConfig defaultConfig];
@@ -41,14 +53,51 @@
     
     config.leftMargin = 10;
     config.rightMargin = 10;
-    config.hiddenIndicator = YES;
+    config.hiddenIndicator = NO;
     
     segmentBar.config = config;
     
     [self.view addSubview:segmentBar];
+    
+    
+    FLYOneViewController * vc1 = [[FLYOneViewController alloc] init];
+    FLYTwoViewController * vc2 = [[FLYTwoViewController alloc] init];
+    FLYThreeViewController * vc3 = [[FLYThreeViewController alloc] init];
+    FLYFourViewController * vc4 = [[FLYFourViewController alloc] init];
+    FLYFiveViewController * vc5 = [[FLYFiveViewController alloc] init];
+    NSArray * array = @[vc1, vc2, vc3, vc4, vc5];
+    
+    
+    FLYPageScrollView * pageScrollView = [FLYPageScrollView pageScrollViewWithFrame:CGRectMake(0, CGRectGetMaxY(segmentBar.frame), SCREEN_WIDTH, 300) parentVC:self childVCs:array];
+    self.pageScrollView = pageScrollView;
+    
+    pageScrollView.delegate = self;
+   
+    [self.view addSubview:pageScrollView];
+
 }
 
 
+
+#pragma mark - FLYSegmentBarDelegate
+
+-(void)segmentBar:(FLYSegmentBar *)segmentBar didSelectIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
+{
+    NSLog(@"segmentBar: %ld -> %ld",(long)fromIndex, (long)toIndex);
+    
+    [self.pageScrollView selectIndex:toIndex animated:YES];
+}
+
+
+
+#pragma mark - FLYPageScrollViewDelegate
+
+- (void)pageScrollView:(FLYPageScrollView *)pageScrollView originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex
+{
+    NSLog(@"pagScrollView: %ld -> %ld",(long)originalIndex, (long)targetIndex);
+    
+    self.segmentBar.selectIndex = targetIndex;
+}
 
 
 /*
