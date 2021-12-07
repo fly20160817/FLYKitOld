@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol FLYPageScrollViewDelegate <NSObject>
 
 /**
- *  联动 FLYSegmentBar 的 segmentBar:didSelectIndex:fromIndex: 方法使用
+ *   代理方法, 告诉外界, 内部滚动翻了页 (如果使用FLYSegmentBar，则在这个代理里调用segmentBar.selectIndex = targetIndex;)
  *
  *  @param pageScrollView      pageScrollView
  *  @param originalIndex       原始视图所在下标

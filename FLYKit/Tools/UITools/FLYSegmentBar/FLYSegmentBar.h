@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol FLYSegmentBarDelegate <NSObject>
 
 /**
- 代理方法, 告诉外界, 内部的点击数据
+ 代理方法, 告诉外界, 内部的点击数据 (如果使用FLYPageScrollView，则在这个代理里调用FLYPageScrollView的selectIndex:animated:方法)
 
  @param segmentBar segmentBar
  @param toIndex    选中的索引(从0开始)

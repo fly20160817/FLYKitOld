@@ -47,6 +47,21 @@
 {
     [super layoutSubviews];
     
+    if (self.itemBtns.count == 0)
+    {
+        return;
+    }
+    
+    
+    //默认选中 （只执行一次。如果外界给selectIndex赋了值，这里选中的就是外界设置的；如果外界没赋值，选中的就是第0个）
+    static BOOL isFrist = NO;
+    if ( isFrist == NO )
+    {
+        isFrist = YES;
+        [self titleClick:self.itemBtns[self.selectIndex]];
+    }
+    
+    
     CGFloat totalBtnWidth = 0;
     totalBtnWidth += self.config.leftMargin;
     
@@ -79,16 +94,6 @@
     
     
     
-    if (self.itemBtns.count == 0)
-    {
-        return;
-    }
-    
-    //默认选中第一个
-    if (self.lastItem == nil)
-    {
-        self.selectIndex = 0;
-    }
     UIButton * button = self.itemBtns[self.selectIndex];
     self.indicatorView.width = self.config.indicatorWidth == FLYSegmentBarIndicatorAutomaticWidth ? button.width : self.config.indicatorWidth;
     self.indicatorView.centerX = button.centerX;
@@ -112,11 +117,12 @@
 
 - (void)titleClick:(UIButton *)button
 {
+    if ( [self.delegate respondsToSelector:@selector(segmentBar:didSelectIndex:fromIndex:)] )
+    {
+        [self.delegate segmentBar:self didSelectIndex:button.tag fromIndex:self.lastItem.tag];
+    }
+        
     self.selectIndex = button.tag;
-    
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 
@@ -138,21 +144,19 @@
     
     self.lastItem.selected = NO;
     button.selected = YES;
+    self.lastItem = button;
     
     [self buttonMoveToMiddle:button];
     [self indicatorMoveToMiddle:button];
     
     
-    if ( [self.delegate respondsToSelector:@selector(segmentBar:didSelectIndex:fromIndex:)] )
+    //可能按钮点击状态下的字体很大，导致显示不全，所以要重新计算大小
+    //self.window如果有值，说明view已经展示在页面上了，所以执行下面的刷新布局；如果window没值，说明view还没展示出来，后面系统自会调用刷新布局，不用我们自己去调了。
+    if ( self.window )
     {
-        [self.delegate segmentBar:self didSelectIndex:button.tag fromIndex:self.lastItem.tag];
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
     }
-    
-    
-    self.lastItem = button;
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 //让点击的按钮保持在中间的位置
@@ -210,18 +214,7 @@
         [self.contentView addSubview:titleBtn];
         [self.itemBtns addObject:titleBtn];
     }
-    
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-}
 
--(void)setSplitEqually:(BOOL)splitEqually
-{
-    _splitEqually = splitEqually;
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 -(void)setConfig:(FLYSegmentBarConfig *)config
@@ -240,9 +233,6 @@
         [button setTitleFont:config.itemNormalFont forState:UIControlStateNormal];
         [button setTitleFont:config.itemSelectFont forState:UIControlStateSelected];
     }
-    
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
 }
 
 - (FLYSegmentBarConfig *)config

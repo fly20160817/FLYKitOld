@@ -48,11 +48,6 @@
 		046D8DA0271FE606004F8F72 /* FLYRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 046D8D9F271FE606004F8F72 /* FLYRSA.m */; };
 		04729B5D2744A0D5007D0F48 /* FLYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04729B5C2744A0D5007D0F48 /* FLYModel.m */; };
 		04778875275DA53300F284F6 /* FLYPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04778874275DA53300F284F6 /* FLYPageScrollView.m */; };
-		04778878275DE32E00F284F6 /* FLYOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04778877275DE32E00F284F6 /* FLYOneViewController.m */; };
-		0477887B275DE34100F284F6 /* FLYTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477887A275DE34100F284F6 /* FLYTwoViewController.m */; };
-		0477887E275DE35200F284F6 /* FLYThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477887D275DE35200F284F6 /* FLYThreeViewController.m */; };
-		04778881275DE37400F284F6 /* FLYFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04778880275DE37400F284F6 /* FLYFourViewController.m */; };
-		04778884275DE37F00F284F6 /* FLYFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04778883275DE37F00F284F6 /* FLYFiveViewController.m */; };
 		047B5B7E271E6CE600523014 /* jianhua-art.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = 047B5B7D271E6CE600523014 /* jianhua-art.com.cer */; };
 		047D611927195CC900EEE13F /* NSString+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D611827195CC900EEE13F /* NSString+FLYExtension.m */; };
 		047DC46827116F1E0012152A /* FLYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DC46727116F1E0012152A /* FLYNetwork.m */; };
@@ -157,18 +152,8 @@
 		046D8D9F271FE606004F8F72 /* FLYRSA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYRSA.m; sourceTree = "<group>"; };
 		04729B5B2744A0D5007D0F48 /* FLYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYModel.h; sourceTree = "<group>"; };
 		04729B5C2744A0D5007D0F48 /* FLYModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYModel.m; sourceTree = "<group>"; };
-		04778873275DA53300F284F6 /* c d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "c d.h"; sourceTree = "<group>"; };
+		04778873275DA53300F284F6 /* FLYPageScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYPageScrollView.h; sourceTree = "<group>"; };
 		04778874275DA53300F284F6 /* FLYPageScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYPageScrollView.m; sourceTree = "<group>"; };
-		04778876275DE32E00F284F6 /* FLYOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYOneViewController.h; sourceTree = "<group>"; };
-		04778877275DE32E00F284F6 /* FLYOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYOneViewController.m; sourceTree = "<group>"; };
-		04778879275DE34100F284F6 /* FLYTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYTwoViewController.h; sourceTree = "<group>"; };
-		0477887A275DE34100F284F6 /* FLYTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTwoViewController.m; sourceTree = "<group>"; };
-		0477887C275DE35200F284F6 /* FLYThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYThreeViewController.h; sourceTree = "<group>"; };
-		0477887D275DE35200F284F6 /* FLYThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYThreeViewController.m; sourceTree = "<group>"; };
-		0477887F275DE37400F284F6 /* FLYFourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYFourViewController.h; sourceTree = "<group>"; };
-		04778880275DE37400F284F6 /* FLYFourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYFourViewController.m; sourceTree = "<group>"; };
-		04778882275DE37F00F284F6 /* FLYFiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYFiveViewController.h; sourceTree = "<group>"; };
-		04778883275DE37F00F284F6 /* FLYFiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYFiveViewController.m; sourceTree = "<group>"; };
 		047B5B7D271E6CE600523014 /* jianhua-art.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jianhua-art.com.cer"; sourceTree = "<group>"; };
 		047D611727195CC900EEE13F /* NSString+FLYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLYExtension.h"; sourceTree = "<group>"; };
 		047D611827195CC900EEE13F /* NSString+FLYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLYExtension.m"; sourceTree = "<group>"; };
@@ -359,7 +344,7 @@
 				0424B1062758983A00681A3B /* FLYSegmentBar.m */,
 				0424B1032758983A00681A3B /* FLYSegmentBarConfig.h */,
 				0424B1052758983A00681A3B /* FLYSegmentBarConfig.m */,
-				04778873275DA53300F284F6 /* c d.h */,
+				04778873275DA53300F284F6 /* FLYPageScrollView.h */,
 				04778874275DA53300F284F6 /* FLYPageScrollView.m */,
 			);
 			path = FLYSegmentBar;
@@ -575,16 +560,6 @@
 			children = (
 				046D19D526E7385F00D9FD46 /* FLYHomeViewController.h */,
 				046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */,
-				04778876275DE32E00F284F6 /* FLYOneViewController.h */,
-				04778877275DE32E00F284F6 /* FLYOneViewController.m */,
-				04778879275DE34100F284F6 /* FLYTwoViewController.h */,
-				0477887A275DE34100F284F6 /* FLYTwoViewController.m */,
-				0477887C275DE35200F284F6 /* FLYThreeViewController.h */,
-				0477887D275DE35200F284F6 /* FLYThreeViewController.m */,
-				0477887F275DE37400F284F6 /* FLYFourViewController.h */,
-				04778880275DE37400F284F6 /* FLYFourViewController.m */,
-				04778882275DE37F00F284F6 /* FLYFiveViewController.h */,
-				04778883275DE37F00F284F6 /* FLYFiveViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -969,13 +944,11 @@
 				045F046D26CA3D6C00EAFFD9 /* FLYFileManager.m in Sources */,
 				0407515126DF1B67005A97FF /* FLYTextView.m in Sources */,
 				041D6E6B26C3698E008015B6 /* FLYTools.m in Sources */,
-				04778881275DE37400F284F6 /* FLYFourViewController.m in Sources */,
 				046D8DA0271FE606004F8F72 /* FLYRSA.m in Sources */,
 				045F047D26CA4FB100EAFFD9 /* FLYCountdownButton.m in Sources */,
 				042A999526C64D50000B58CF /* FLYButton.m in Sources */,
 				0407512E26D8AFAD005A97FF /* NSDictionary+FLYUnicode.m in Sources */,
 				04660CAB27264EEE00492326 /* FLYAES.m in Sources */,
-				04778878275DE32E00F284F6 /* FLYOneViewController.m in Sources */,
 				04729B5D2744A0D5007D0F48 /* FLYModel.m in Sources */,
 				04660CB12726798400492326 /* FLYBase64.m in Sources */,
 				049BA00026FC1F1300AB7F7C /* FLYTextField.m in Sources */,
@@ -1001,15 +974,12 @@
 				04C80D3B26F24C1E00FD1F62 /* FLYUser.m in Sources */,
 				0407514926DE2200005A97FF /* UITableView+FLYRefresh.m in Sources */,
 				04C80D3C26F24C1E00FD1F62 /* FLYUserAction.m in Sources */,
-				0477887B275DE34100F284F6 /* FLYTwoViewController.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
 				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
-				0477887E275DE35200F284F6 /* FLYThreeViewController.m in Sources */,
 				047DC46827116F1E0012152A /* FLYNetwork.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,
 				04A0DF1C272FBC2E002C593A /* FLYKeychain.m in Sources */,
 				0494584826C63E3D00A81B70 /* UIButton+FLYExtension.m in Sources */,
-				04778884275DE37F00F284F6 /* FLYFiveViewController.m in Sources */,
 				0407512B26D896D5005A97FF /* NSArray+FLYUnicode.m in Sources */,
 				046D19D726E7385F00D9FD46 /* FLYHomeViewController.m in Sources */,
 				0424B1082758983A00681A3B /* FLYSegmentBar.m in Sources */,

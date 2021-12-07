@@ -99,7 +99,6 @@
     [super layoutSubviews];
     
     self.scrollView.frame = self.bounds;
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.width * self.childViewControllers.count, 0);
 }
 
 
@@ -117,13 +116,15 @@
 - (void)initUI
 {
     [self addSubview:self.scrollView];
+    
+    self.scrollView.contentSize = CGSizeMake(self.width * self.childViewControllers.count, 0);
 }
 
 
 
 #pragma mark - UIScrollViewDelegate
 
-//已经结束减速
+//已经结束减速 (手动滚动时调用)
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat offsetX = scrollView.contentOffset.x;
@@ -140,8 +141,6 @@
     {
         //触发上个子控制器的 viewWillDisappear 方法
         [self.lastChildVC beginAppearanceTransition:NO animated:NO];
-        //触发上个子控制器的 viewDidDisappear 方法
-        [self.lastChildVC endAppearanceTransition];
     }
     
     UIViewController * childVC = self.childViewControllers[index];
@@ -159,6 +158,13 @@
         
         childVC.view.frame = CGRectMake(offsetX, 0, self.width, self.height);
         [self.scrollView addSubview:childVC.view];
+    }
+    
+    //如果上一个子控制器存在
+    if ( self.lastChildVC != nil )
+    {
+        //触发上个子控制器的 viewDidDisappear 方法
+        [self.lastChildVC endAppearanceTransition];
     }
     
     //触发子控制器的 viewDidAppear 方法
@@ -182,31 +188,73 @@
     self.lastChildVCIndex = index;
 }
 
-//滚动动画结束调用 (只能通过setContentOffset:animated:这个api才能出发，animated还必须为YES)
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-    [self scrollViewDidEndDecelerating:scrollView];
-}
-
 
 
 #pragma mark - public methods
 
 - (void)selectIndex:(NSInteger)index animated:(BOOL)animated
 {
-    if( index >= self.childViewControllers.count )
+    if( index < 0 || index >= self.childViewControllers.count )
     {
-        NSLog(@"下标越界，超出子控制器的数量");
+        NSLog(@"下标错误，index = %ld", (long)index);
         return;
     }
     
-    [self.scrollView setContentOffset:CGPointMake(self.scrollView.width * index, 0) animated:animated];
     
-    //如果不带动画，需要手动触发
-    if( animated == NO )
+    
+    //如果即将出现的子控制器 就是 上个控制器
+    if( index == self.lastChildVCIndex )
     {
-        [self scrollViewDidEndDecelerating:self.scrollView];
+        return;
     }
+
+    CGFloat offsetX = index * self.width;
+    
+    //如果上一个子控制器存在
+    if ( self.lastChildVC != nil )
+    {
+        //触发上个子控制器的 viewWillDisappear 方法
+        [self.lastChildVC beginAppearanceTransition:NO animated:NO];
+    }
+    
+    UIViewController * childVC = self.childViewControllers[index];
+    
+    //触发子控制器的 viewWillAppear 方法
+    [childVC beginAppearanceTransition:YES animated:NO];
+    
+    //是否添加过这个控制器
+    BOOL isFirstAdd = [self.parentViewController.childViewControllers containsObject:childVC] == YES ? NO : YES;
+    
+    //如果没添加过这个子控制器
+    if ( isFirstAdd )
+    {
+        [self.parentViewController addChildViewController:childVC];
+        
+        childVC.view.frame = CGRectMake(offsetX, 0, self.width, self.height);
+        [self.scrollView addSubview:childVC.view];        
+    }
+    
+    //如果上一个子控制器存在
+    if ( self.lastChildVC != nil )
+    {
+        //触发上个子控制器的 viewDidDisappear 方法
+        [self.lastChildVC endAppearanceTransition];
+    }
+    
+    //触发子控制器的 viewDidAppear 方法
+    [childVC endAppearanceTransition];
+    
+    if( isFirstAdd )
+    {
+        //告诉子控制器，已经移动到父控制器 （子控制器内部可以在didMoveToParentViewController:这个方法里添加代码，别忘记调用super）
+        [childVC didMoveToParentViewController:self.parentViewController];
+    }
+    
+    
+    [self.scrollView setContentOffset:CGPointMake(offsetX, 0) animated:animated];
+    
+    self.lastChildVC = childVC;
+    self.lastChildVCIndex = index;
 }
 
 
