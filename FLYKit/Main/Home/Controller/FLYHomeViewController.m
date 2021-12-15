@@ -8,15 +8,8 @@
 #import "FLYHomeViewController.h"
 #import "FLYNavigationController.h"
 
-#import "FLYRSA.h"
-#import "FLYAES.h"
+@interface FLYHomeViewController () 
 
-#import "FLYKeychain.h"
-
-#import "FLYButton.h"
-#import "UIButton+FLYExtension.h"
-
-@interface FLYHomeViewController ()
 
 @end
 
@@ -34,12 +27,7 @@
 
 - (void)testAtion
 {
-    //用户自定义的手机名字  FLY_iPhone8
-    NSLog(@"用户自定义的手机名字: %@", DEVICE_NAME);
-        
-    //系统版本  14.5
-    NSLog(@"系统版本: %@", DEVICE_VERSION);
-    
+
 }
 
 
