@@ -24,7 +24,11 @@
 - (void)addRefreshingTarget:(id)target action:(SEL)action
 {
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:action];
-    self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:action];
+    
+    MJRefreshAutoNormalFooter * footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:action];
+    //去掉“已经全部加载完毕“文字
+    [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
+    self.mj_footer = footer;
     self.mj_footer.hidden = YES;
     
     //下拉刷新时，把页码设置为1

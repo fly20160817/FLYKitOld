@@ -7,6 +7,7 @@
 
 #import "FLYHomeViewController.h"
 #import "FLYNavigationController.h"
+#import "AFNetworking.h"
 
 @interface FLYHomeViewController () 
 
@@ -27,7 +28,16 @@
 
 - (void)testAtion
 {
-
+    NSString * path = @"https://www.jianhua-art.com/api/mobile/index/indexUrl";
+    [[AFHTTPSessionManager manager] GET:path parameters:@{} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"responseObject = %@", responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"error = %@", error);
+        
+    }];
 }
 
 

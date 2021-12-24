@@ -7,9 +7,9 @@
 
 #import "FLYBaseTableViewController.h"
 
-#define k_CellReuseIdentifier @"FLYBaseCellReuseIdentifier"
-#define k_HeaderViewReuseIdentifier @"FLYBaseHeaderViewReuseIdentifier"
-#define k_FooterViewReuseIdentifier @"FLYBaseFooterViewReuseIdentifier"
+#define k_CellReuseIdentifier @"FLYBaseTableViewCellReuseIdentifier"
+#define k_HeaderViewReuseIdentifier @"FLYBaseTableViewHeaderViewReuseIdentifier"
+#define k_FooterViewReuseIdentifier @"FLYBaseTableViewFooterViewReuseIdentifier"
 
 @interface FLYBaseTableViewController ()
 
