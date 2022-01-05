@@ -261,6 +261,11 @@
 
 #pragma mark - setters and getters
 
+-(NSInteger)currentSelectIndex
+{
+    return self.lastChildVCIndex;
+}
+
 -(void)setScrollEnabled:(BOOL)scrollEnabled
 {
     _scrollEnabled = scrollEnabled;

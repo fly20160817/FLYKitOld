@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<FLYPageScrollViewDelegate> delegate;
 /// 是否支持手动滚动 (默认YES；设为 NO 时，内部不能翻页，代理也不会执行，只能通过外部调用selectIndex:animated:来控制)
 @property (nonatomic, assign) BOOL scrollEnabled;
+/// 当前选中的索引
+@property (nonatomic, readonly) NSInteger currentSelectIndex;
 
 /**
  *  对象方法创建

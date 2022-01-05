@@ -18,7 +18,7 @@
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)getWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
 {
@@ -36,7 +36,7 @@
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)postWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
 {
@@ -45,42 +45,6 @@
     BOOL isHandle = YES;
     
     [self postWithPath:path params:params loadingType:loadingType loadingTitle:loadingTitle isHandle:isHandle success:success failure:failure];
-}
-
-
-/// get网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)getRawWithPath:(NSString *)path
-            params:(id)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure
-{
-    FLYNetworkLoadingType loadingType = FLYNetworkLoadingTypeInteraction;
-    NSString * loadingTitle = @"请稍后";
-    BOOL isHandle = YES;
-    
-    [self getRawWithPath:path params:params loadingType:loadingType loadingTitle:loadingTitle isHandle:isHandle success:success failure:failure];
-}
-
-
-/// post网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)postRawWithPath:(NSString *)path
-            params:(id)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure
-{
-    FLYNetworkLoadingType loadingType = FLYNetworkLoadingTypeInteraction;
-    NSString * loadingTitle = @"请稍后";
-    BOOL isHandle = YES;
-    
-    [self postRawWithPath:path params:params loadingType:loadingType loadingTitle:loadingTitle isHandle:isHandle success:success failure:failure];
 }
 
 
@@ -96,7 +60,7 @@
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      success:(SuccessBlock)success
@@ -123,7 +87,7 @@
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)getWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
             loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
@@ -153,7 +117,7 @@
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)postWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
             loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
@@ -163,66 +127,6 @@
     [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
         
     [FLYNetwork postWithPath:path params:params success:^(id  _Nonnull json) {
-        
-        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
-        
-    } failure:^(NSError * _Nonnull error) {
-        
-        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
-        
-    }];
-}
-
-
-/// get网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param loadingType loading类型
-/// @param loadingTitle loading文字
-/// @param isHandle 返回结果是否需要内部处理
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)getRawWithPath:(NSString *)path
-            params:(id)params
-            loadingType:(FLYNetworkLoadingType)loadingType
-          loadingTitle:(nullable NSString *)loadingTitle
-            isHandle:(BOOL)isHandle
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure
-{
-    [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
-    
-    [FLYNetwork getRawWithPath:path params:params success:^(id  _Nonnull json) {
-        
-        [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
-        
-    } failure:^(NSError * _Nonnull error) {
-        
-        [self failureHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType error:error failure:failure];
-        
-    }];
-}
-
-
-/// post网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param loadingType loading类型
-/// @param loadingTitle loading文字
-/// @param isHandle 返回结果是否需要内部处理
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)postRawWithPath:(NSString *)path
-            params:(id)params
-            loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(nullable NSString *)loadingTitle
-            isHandle:(BOOL)isHandle
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure
-{
-    [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
-    
-    [FLYNetwork postRawWithPath:path params:params success:^(id  _Nonnull json) {
         
         [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
         
@@ -246,7 +150,7 @@
  *  @param failure 请求失败  返回NSError
  */
 + (void)headWithPath:(NSString *)path
-             params:(NSDictionary *)params
+             params:(nullable NSDictionary *)params
              loadingType:(FLYNetworkLoadingType)loadingType
              loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
@@ -282,7 +186,7 @@
  *  @param failure 请求失败
  */
 + (void)deleteWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
               loadingType:(FLYNetworkLoadingType)loadingType
               loadingTitle:(nullable NSString *)loadingTitle
               isHandle:(BOOL)isHandle
@@ -359,7 +263,7 @@
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      loadingType:(FLYNetworkLoadingType)loadingType
@@ -421,7 +325,7 @@
  *  @param progress 上传进度
  */
 + (void)uploadVideoWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)videokey
                      videos:(NSArray *)videos
                      loadingType:(FLYNetworkLoadingType)loadingType

@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)getWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
 
@@ -56,29 +56,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)postWithPath:(NSString *)path
-            params:(NSDictionary *)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure;
-
-
-/// get网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)getRawWithPath:(NSString *)path
-            params:(id)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure;
-
-
-/// post网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)postRawWithPath:(NSString *)path
-            params:(id)params
+            params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
 
@@ -95,7 +73,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      success:(SuccessBlock)success
@@ -115,7 +93,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)getWithPath:(NSString *)path
-            params:(NSDictionary *)params
+            params:(nullable NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
             loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
@@ -132,41 +110,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
 /// @param success 请求成功回调
 /// @param failure 请求失败回调
 + (void)postWithPath:(NSString *)path
-            params:(NSDictionary *)params
-            loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(nullable NSString *)loadingTitle
-            isHandle:(BOOL)isHandle
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure;
-
-
-/// get网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param loadingType loading类型
-/// @param loadingTitle loading文字
-/// @param isHandle 返回结果是否需要内部处理
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)getRawWithPath:(NSString *)path
-            params:(id)params
-            loadingType:(FLYNetworkLoadingType)loadingType
-            loadingTitle:(nullable NSString *)loadingTitle
-            isHandle:(BOOL)isHandle
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure;
-
-
-/// post网络请求（raw格式）
-/// @param path url地址
-/// @param params 参数
-/// @param loadingType loading类型
-/// @param loadingTitle loading文字
-/// @param isHandle 返回结果是否需要内部处理
-/// @param success 请求成功回调
-/// @param failure 请求失败回调
-+ (void)postRawWithPath:(NSString *)path
-            params:(id)params
+            params:(nullable NSDictionary *)params
             loadingType:(FLYNetworkLoadingType)loadingType
             loadingTitle:(nullable NSString *)loadingTitle
             isHandle:(BOOL)isHandle
@@ -186,7 +130,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  *  @param failure 请求失败
  */
 + (void)headWithPath:(NSString *)path
-             params:(NSDictionary *)params
+             params:(nullable NSDictionary *)params
              loadingType:(FLYNetworkLoadingType)loadingType
              loadingTitle:(nullable NSString *)loadingTitle
              isHandle:(BOOL)isHandle
@@ -205,7 +149,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  *  @param failure 请求失败
  */
 + (void)deleteWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
               loadingType:(FLYNetworkLoadingType)loadingType
               loadingTitle:(nullable NSString *)loadingTitle
               isHandle:(BOOL)isHandle
@@ -248,7 +192,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)imagekey
                      images:(NSArray *)images
                      loadingType:(FLYNetworkLoadingType)loadingType
@@ -274,7 +218,7 @@ typedef NS_ENUM(NSInteger, FLYNetworkLoadingType) {
  *  @param progress 上传进度
  */
 + (void)uploadVideoWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                      thumbName:(NSString *)videokey
                      videos:(NSArray *)videos
                      loadingType:(FLYNetworkLoadingType)loadingType

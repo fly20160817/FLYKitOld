@@ -25,7 +25,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param failure 请求失败 返回NSError
  */
 + (void)getWithPath:(NSString *)path
-             params:(NSDictionary *)params
+             params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure;
 
@@ -39,35 +39,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param failure 请求失败 返回NSError
  */
 + (void)postWithPath:(NSString *)path
-              params:(NSDictionary *)params
-             success:(SuccessBlock)success
-             failure:(FailureBlock)failure;
-
-
-/**
- *  get网络请求（raw格式）
- *
- *  @param path    url地址
- *  @param params  参数  NSDictionary类型
- *  @param success 请求成功 返回NSDictionary或NSArray
- *  @param failure 请求失败 返回NSError
- */
-+ (void)getRawWithPath:(NSString *)path
-             params:(id)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure;
-
-
-/**
- *  post网络请求（raw格式）
- *
- *  @param path    url地址
- *  @param params  参数  NSDictionary类型
- *  @param success 请求成功 返回NSDictionary或NSArray
- *  @param failure 请求失败 返回NSError
- */
-+ (void)postRawWithPath:(NSString *)path
-              params:(id)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure;
 
@@ -81,7 +53,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param failure 请求失败  返回NSError
  */
 + (void)headWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure;
 
@@ -95,7 +67,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param failure 请求失败  返回NSError
  */
 + (void)deleteWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure;
 
@@ -126,7 +98,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                   thumbName:(NSString *)imagekey
                  images:(NSArray *)images
                     success:(SuccessBlock)success
@@ -146,7 +118,7 @@ typedef void(^ProgressBlock)(double progress);
  *  @param progress 上传进度
  */
 + (void)uploadVideoWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                   thumbName:(NSString *)videokey
                  videos:(NSArray *)videos
                     success:(SuccessBlock)success

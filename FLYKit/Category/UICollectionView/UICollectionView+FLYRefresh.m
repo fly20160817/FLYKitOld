@@ -173,6 +173,42 @@
     return cellReuseIdentifier;
 }
 
+-(void)setHeaderViewReuseIdentifier:(NSString * _Nonnull)headerViewReuseIdentifier
+{
+    objc_setAssociatedObject(self, "headerViewReuseIdentifier", headerViewReuseIdentifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(NSString *)headerViewReuseIdentifier
+{
+    NSString * headerViewReuseIdentifier= objc_getAssociatedObject(self, "headerViewReuseIdentifier");
+    
+    if ( headerViewReuseIdentifier == nil )
+    {
+        self.headerViewReuseIdentifier = @"headerViewReuseIdentifier";
+        headerViewReuseIdentifier = objc_getAssociatedObject(self, "headerViewReuseIdentifier");
+    }
+    
+    return headerViewReuseIdentifier;
+}
+
+-(void)setFooterViewReuseIdentifier:(NSString * _Nonnull)footerViewReuseIdentifier
+{
+    objc_setAssociatedObject(self, "footerViewReuseIdentifier", footerViewReuseIdentifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(NSString *)footerViewReuseIdentifier
+{
+    NSString * footerViewReuseIdentifier= objc_getAssociatedObject(self, "footerViewReuseIdentifier");
+    
+    if ( footerViewReuseIdentifier == nil )
+    {
+        self.footerViewReuseIdentifier = @"footerViewReuseIdentifier";
+        footerViewReuseIdentifier = objc_getAssociatedObject(self, "footerViewReuseIdentifier");
+    }
+    
+    return footerViewReuseIdentifier;
+}
+
 -(void)setDataList:(NSMutableArray *)dataList
 {
     objc_setAssociatedObject(self, "dataList", dataList, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

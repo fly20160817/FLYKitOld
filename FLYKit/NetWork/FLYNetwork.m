@@ -36,17 +36,29 @@ static NSString * kBaseUrl = BASE_API;
         
         sessionManager = [[FLYHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:config];
         
-        //加这两句，raw就不用单独处理？
+        
+        //加这两句，适配raw类型的请求
         //设置请求体数据为json类型
-        //sessionManager.requestSerializer  = [AFJSONRequestSerializer serializer];
+        sessionManager.requestSerializer  = [AFJSONRequestSerializer serializer];
         //设置响应体数据为json类型
-        //sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        
         
         //接收参数类型
         sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", @"text/json", @"text/javascript",@"text/plain",@"image/gif",nil];
         //设置超时时间
         //sessionManager.requestSerializer.timeoutInterval = 15;
         
+        
+        
+        /** 设置无条件的信任服务器上的证书 */
+        //除了设置下面的配置，还需要在info.plist文件里设置App Transport Security Settings 为YES。
+        AFSecurityPolicy * policy = [AFSecurityPolicy defaultPolicy];
+        //客户端是否信任非法证书
+        policy.allowInvalidCertificates = YES;
+        //是否在证书域字段中验证域名
+        policy.validatesDomainName = NO;
+        sessionManager.securityPolicy = policy;
         
         
         
@@ -105,7 +117,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param failure 请求失败 返回NSError
  */
 + (void)getWithPath:(NSString *)path
-             params:(NSDictionary *)params
+             params:(nullable NSDictionary *)params
             success:(SuccessBlock)success
             failure:(FailureBlock)failure
 {
@@ -129,7 +141,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param failure 请求失败 返回NSError
  */
 + (void)postWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure
 {
@@ -145,96 +157,6 @@ static NSString * kBaseUrl = BASE_API;
 }
 
 /**
- *  get网络请求（raw格式）
- *
- *  @param path    url地址
- *  @param params  url参数  NSDictionary类型
- *  @param success 请求成功 返回NSDictionary或NSArray
- *  @param failure 请求失败 返回NSError
- */
-+ (void)getRawWithPath:(NSString *)path
-             params:(id)params
-            success:(SuccessBlock)success
-            failure:(FailureBlock)failure
-{
-    //转换成NSData对象
-    NSData *data = [NSData data];
-    if ( [params isKindOfClass:[NSDictionary class]] )
-    {
-        data = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
-    }
-    else if ( [params isKindOfClass:[NSString class]] )
-    {
-        data = [params dataUsingEncoding:NSUTF8StringEncoding];
-    }
-    
-    NSString * URLString = [[NSURL URLWithString:path relativeToURL:[FLYHTTPSessionManager sharedManager].baseURL] absoluteString];
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:URLString parameters:nil error:nil];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    // 设置body
-    request.HTTPBody = data;
-    
-    [[[FLYHTTPSessionManager sharedManager] dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        if (!error) {
-            
-            success(responseObject);
-            
-        } else {
-            
-            failure(error);
-            
-        }
-    }] resume];
-    
-}
-
-/**
- *  post网络请求（raw格式）
- *
- *  @param path    url地址
- *  @param params  url参数  NSDictionary类型
- *  @param success 请求成功 返回NSDictionary或NSArray
- *  @param failure 请求失败 返回NSError
- */
-+ (void)postRawWithPath:(NSString *)path
-              params:(id)params
-             success:(SuccessBlock)success
-             failure:(FailureBlock)failure
-{
-    //转换成NSData对象
-    NSData *data = [NSData data];
-    if ( [params isKindOfClass:[NSDictionary class]] )
-    {
-        data = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:nil];
-    }
-    else if ( [params isKindOfClass:[NSString class]] )
-    {
-        data = [params dataUsingEncoding:NSUTF8StringEncoding];
-    }
-    
-    NSString * URLString = [[NSURL URLWithString:path relativeToURL:[FLYHTTPSessionManager sharedManager].baseURL] absoluteString];
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:URLString parameters:nil error:nil];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    // 设置body
-    request.HTTPBody = data;
-    
-    [[[FLYHTTPSessionManager sharedManager] dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-        if (!error) {
-            
-            success(responseObject);
-            
-        } else {
-            
-            failure(error);
-            
-        }
-    }] resume];
-    
-}
-
-/**
  *  head网络请求
  *
  *  @param path    url地址
@@ -243,7 +165,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param failure 请求失败  返回NSError
  */
 + (void)headWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure
 {
@@ -267,7 +189,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param failure 请求失败  返回NSError
  */
 + (void)deleteWithPath:(NSString *)path
-              params:(NSDictionary *)params
+              params:(nullable NSDictionary *)params
              success:(SuccessBlock)success
              failure:(FailureBlock)failure
 {
@@ -341,7 +263,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param progress 上传进度
  */
 + (void)uploadImageWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                   thumbName:(NSString *)imagekey
                  images:(NSArray *)images
                     success:(SuccessBlock)success
@@ -390,7 +312,7 @@ static NSString * kBaseUrl = BASE_API;
  *  @param progress 上传进度
  */
 + (void)uploadVideoWithPath:(NSString *)path
-                     params:(NSDictionary *)params
+                     params:(nullable NSDictionary *)params
                   thumbName:(NSString *)videokey
                  videos:(NSArray *)videos
                     success:(SuccessBlock)success

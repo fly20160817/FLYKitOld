@@ -74,7 +74,6 @@
         self.mj_footer.hidden = self.dataList.count == 0 ? YES : NO;
         
         
-        
         /********* 异常页面处理 *********/
         //显示空白页
         if ( self.dataList.count == 0 )
