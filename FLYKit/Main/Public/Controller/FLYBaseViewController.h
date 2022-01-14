@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FLYBaseViewController : FLYViewController
 
+@property (nonatomic, assign) BOOL showLine;
+
 @end
 
 NS_ASSUME_NONNULL_END

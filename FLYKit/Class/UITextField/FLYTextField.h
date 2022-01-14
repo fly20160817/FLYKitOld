@@ -14,17 +14,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - leftView & rightView
 
-/// 左边的图片
+/**
+ leftView 和 rightView 的快捷image赋值，内部会自动创建imageView。
+ 正常情况下需要外界传进来view的，比如 textField.leftView = customView;
+ */
+/// 左边的图片 (设置leftImage后，还需要设置leftViewRect)
 @property (nonatomic, strong) UIImage * leftImage;
 
-/// 左边图片的frame
-@property (nonatomic) CGRect leftImagFrame;
+/// 右边的图片 (设置rightImage后，还需要设置rightViewRect)
+@property (nonatomic, strong) UIImage * rightImage;
 
-/// 光标距离左边的宽度 (默认0，设置左边图片后必须设置这个属性，不然光标会被图片挡住)
-@property (nonatomic, assign) CGFloat leftWidth;
 
-/// 右侧不能输入的宽度 (默认0，如果往TextField上添加东西，比如发送验证码的按钮，如果输入的太多，就会被按钮挡住，设置了这个属性就不会被挡住了)
-@property (nonatomic, assign) CGFloat rightWidth;
+/// leftView的frame
+@property (nonatomic) CGRect leftViewRect;
+
+/// rightView的frame  (注意rightViewRect.x 指的是rightView右侧到TextField右边的距离)
+@property (nonatomic) CGRect rightViewRect;
+
+
+/// text距离左边的边距
+@property (nonatomic, assign) CGFloat textLeftMargin;
+
+/// text距离右边的边距
+@property (nonatomic, assign) CGFloat textRightMargin;
 
 
 

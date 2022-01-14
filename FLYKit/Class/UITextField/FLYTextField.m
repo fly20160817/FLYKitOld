@@ -9,12 +9,6 @@
 
 @interface FLYTextField ()
 
-@property (nonatomic, strong) UIView * leftBaseView;
-@property (nonatomic, strong) UIView * rightBaseView;
-
-@property (nonatomic, strong) UIImageView * leftImageView;
-
-
 @property (nonatomic, strong) UIView * lineView;
 
 @end
@@ -33,22 +27,35 @@
 
 -(CGRect)leftViewRectForBounds:(CGRect)bounds
 {
-    bounds.size.width = self.leftWidth;
-    
-    return bounds;
+    return self.leftViewRect;
 }
 
 -(CGRect)rightViewRectForBounds:(CGRect)bounds
 {
-    bounds.size.width = self.rightWidth;
+    CGFloat x = bounds.size.width - self.rightViewRect.size.width - self.rightViewRect.origin.x;
     
-    return bounds;
+    CGRect rect = CGRectMake(x, self.rightViewRect.origin.y, self.rightViewRect.size.width, self.rightViewRect.size.height);
+        
+    return rect;
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    CGRect rect = CGRectMake(self.textLeftMargin, 0, bounds.size.width - self.textLeftMargin - self.textRightMargin, bounds.size.height);
+    
+    return rect;
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    CGRect rect = CGRectMake(self.textLeftMargin, 0, bounds.size.width - self.textLeftMargin - self.textRightMargin, bounds.size.height);
+    
+    return rect;
 }
 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
     
     CGFloat height = self.lineHeight > 0 ? self.lineHeight : 1;
     self.lineView.frame = CGRectMake(self.lineLeftMargin, self.height - height, self.width - self.lineLeftMargin - self.lineRightMargin, height);    
@@ -69,11 +76,7 @@
     self.leftViewMode = UITextFieldViewModeAlways;
     self.rightViewMode = UITextFieldViewModeAlways;
     
-    self.leftView = self.leftBaseView;
-    self.rightView = self.rightBaseView;
-    
-    [self.leftBaseView addSubview:self.leftImageView];
-    
+
     [self addSubview:self.lineView];
 }
 
@@ -81,18 +84,22 @@
 
 #pragma mark - setters
 
--(void)setLeftImagFrame:(CGRect)leftImagFrame
-{
-    _leftImagFrame = leftImagFrame;
-    
-    self.leftImageView.frame = leftImagFrame;
-}
-
 -(void)setLeftImage:(UIImage *)leftImage
 {
     _leftImage = leftImage;
     
-    self.leftImageView.image = leftImage;
+    UIImageView * leftImageView = [[UIImageView alloc] initWithImage:leftImage];
+    leftImageView.backgroundColor = [UIColor redColor];
+    self.leftView = leftImageView;
+}
+
+-(void)setRightImage:(UIImage *)rightImage
+{
+    _rightImage = rightImage;
+    
+    UIImageView * rightImageView = [[UIImageView alloc] initWithImage:rightImage];
+    rightImageView.backgroundColor = [UIColor orangeColor];
+    self.rightView = rightImageView;
 }
 
 -(void)setShowLine:(BOOL)showLine
@@ -133,33 +140,6 @@
 
 
 #pragma mark - getters
-
--(UIView *)leftBaseView
-{
-    if ( _leftBaseView == nil )
-    {
-        _leftBaseView = [[UIView alloc] init];
-    }
-    return _leftBaseView;
-}
-
-- (UIImageView *)leftImageView
-{
-    if ( _leftImageView == nil )
-    {
-        _leftImageView = [[UIImageView alloc] init];
-    }
-    return _leftImageView;
-}
-
--(UIView *)rightBaseView
-{
-    if ( _rightBaseView == nil )
-    {
-        _rightBaseView = [[UIView alloc] init];
-    }
-    return _rightBaseView;
-}
 
 -(UIView *)lineView
 {

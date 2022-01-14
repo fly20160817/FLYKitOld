@@ -7,7 +7,7 @@
 
 #import "FLYHomeViewController.h"
 #import "FLYNavigationController.h"
-#import "AFNetworking.h"
+#import "FLYTextField.h"
 
 @interface FLYHomeViewController () 
 
@@ -28,16 +28,18 @@
 
 - (void)testAtion
 {
-    NSString * path = @"https://www.jianhua-art.com/api/mobile/index/indexUrl";
-    [[AFHTTPSessionManager manager] GET:path parameters:@{} headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSLog(@"responseObject = %@", responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        NSLog(@"error = %@", error);
-        
-    }];
+    FLYTextField * tf = [[FLYTextField alloc] initWithFrame:CGRectMake(80, 100, SCREEN_WIDTH - 160, 35)];
+    tf.leftImage = IMAGENAME(@"Home.ico");
+    tf.leftViewRect = CGRectMake(10, 5, 20, 20);
+    tf.textLeftMargin = 35;
+    
+    //tf.rightImage = IMAGENAME(@"Home.ico");
+    tf.rightViewRect = CGRectMake(10, 5, 20, 20);
+    tf.textRightMargin = 35;
+    
+    tf.backgroundColor = [UIColor cyanColor];
+    
+    [self.view addSubview:tf];
 }
 
 
