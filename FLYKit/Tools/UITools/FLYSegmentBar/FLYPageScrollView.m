@@ -99,6 +99,7 @@
     [super layoutSubviews];
     
     self.scrollView.frame = self.bounds;
+    self.scrollView.contentSize = CGSizeMake(self.width * self.childViewControllers.count, 0);
 }
 
 
@@ -116,8 +117,6 @@
 - (void)initUI
 {
     [self addSubview:self.scrollView];
-    
-    self.scrollView.contentSize = CGSizeMake(self.width * self.childViewControllers.count, 0);
 }
 
 
