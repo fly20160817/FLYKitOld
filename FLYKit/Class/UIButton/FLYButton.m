@@ -1,6 +1,6 @@
 //
 //  FLYButton.m
-//  axz
+//  FLYKit
 //
 //  Created by fly on 2021/3/19.
 //
@@ -258,20 +258,18 @@
     CGFloat spacing_half = spacing / 2.0;
     
     CGFloat imageView_W = self.imageView.frame.size.width;
-    CGFloat imageView_H = self.imageView.frame.size.height;
     CGFloat titleLabel_W = self.titleLabel.frame.size.width;
-    CGFloat titleLabel_H = self.titleLabel.frame.size.height;
 
-    //image中心移动的x距离
-    CGFloat imageOffsetX = (imageView_W + titleLabel_W) / 2 - imageView_W / 2;
-    //image中心移动的y距离
-    CGFloat imageOffsetY = imageView_H / 2 + spacing / 2;
-    //label中心移动的x距离
-    CGFloat labelOffsetX = (imageView_W + titleLabel_W / 2) - (imageView_W + titleLabel_W) / 2;
-    //label中心移动的y距离
-    CGFloat labelOffsetY = titleLabel_H / 2 + spacing / 2;
+    //image的X轴移动的距离
+    CGFloat imageOffsetX = [self getImageOffsetX];
+    //image的Y轴移动的距离
+    CGFloat imageOffsetY = [self getImageOffsetY];
+    //label的X轴移动的距离
+    CGFloat labelOffsetX = [self getLabelOffsetX];
+    //label的Y轴移动的距离
+    CGFloat labelOffsetY = [self getLabelOffsetY];
     
-    
+
     //如果是上图下字，或着上字下图，titleLabel直接和button一样宽，x直接写0，x不需要设置EdgeInsets了
     if( postion == FLYImagePositionTop || postion == FLYImagePositionBottom )
     {
@@ -315,6 +313,58 @@
         default:
             break;
     }
+}
+
+
+
+#pragma mark - private methods
+
+- (CGFloat)getImageOffsetX
+{
+    //image x轴的原始位置
+    CGFloat imageOriginalX = (self.width - (self.imageView.width + self.titleLabel.width)) / 2.0;
+    //image x轴的目标位置
+    CGFloat imageTargetX = (self.width - self.imageView.width) / 2.0;
+    //image x轴 从原始位置 到 目标位置 需要移动的距离
+    CGFloat imageOffsetX = imageTargetX - imageOriginalX;
+    
+    return imageOffsetX;
+}
+
+- (CGFloat)getImageOffsetY
+{
+    //image y轴的原始位置
+    CGFloat imageOriginalY = (self.height - self.imageView.height) / 2.0;
+    //image y轴的目标位置
+    CGFloat imageTargetY = (self.height -(self.imageView.height + self.spacing + self.titleLabel.height)) / 2.0;
+    //image y轴 从原始位置 到 目标位置 需要移动的距离
+    CGFloat imageOffsetY = imageOriginalY - imageTargetY;
+    
+    return imageOffsetY;
+}
+
+- (CGFloat)getLabelOffsetX
+{
+    //label x轴的原始位置 (imageView的x + imageView的width = label的x)
+    CGFloat labelOriginalX = (self.width - (self.imageView.width + self.titleLabel.width)) / 2.0 + self.imageView.width;
+    //label x轴的目标位置
+    CGFloat labelTargetX = (self.width - self.titleLabel.width) / 2.0;
+    //label x轴 从原始位置 到 目标位置 需要移动的距离
+    CGFloat labelOffsetX = labelOriginalX - labelTargetX;
+    
+    return labelOffsetX;
+}
+
+- (CGFloat)getLabelOffsetY
+{
+    //label y轴的原始位置
+    CGFloat labelOriginalY = (self.height - self.titleLabel.height) / 2.0;
+    //label y轴的目标位置
+    CGFloat labelTargetY = (self.height -(self.imageView.height + self.spacing + self.titleLabel.height)) / 2.0;
+    //label y轴 从原始位置 到 目标位置 需要移动的距离
+    CGFloat labelOffsetY = labelOriginalY - labelTargetY;
+    
+    return labelOffsetY;
 }
 
 
