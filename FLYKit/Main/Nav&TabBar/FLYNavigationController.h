@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FLYNavigationController : UINavigationController
 
-@property (nonatomic, assign) id<FLYNavigationControllerDelegate> fly_delegate;
+@property (nonatomic, weak) id<FLYNavigationControllerDelegate> fly_delegate;
 
 /// 是否显示导航栏下面的线（默认NO）
 @property (nonatomic, assign) BOOL isLine;

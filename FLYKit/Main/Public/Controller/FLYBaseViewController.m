@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.showLine = YES;
+    self.showNavLine = YES;
     
     self.view.backgroundColor = COLORHEX(@"#FAFBFC");
 }
@@ -27,7 +27,7 @@
 {
     [super viewWillAppear:animated];
     
-    ((FLYNavigationController *)(self.navigationController)).isLine = self.showLine;
+    ((FLYNavigationController *)(self.navigationController)).isLine = self.showNavLine;
 }
 
 @end

@@ -39,8 +39,12 @@
 {
     [super layoutSubviews];
     
-    //防止设置的时候，没有赋值图片和文字，或者中间修改了图片和文字，所以在这里在在调用一下。
-    [self setImagePosition:self.postion spacing:self.spacing];
+    if ( self.postion != 0 )
+    {
+        //防止设置的时候，没有赋值图片和文字，或者中间修改了图片和文字，所以在这里在在调用一下。
+        [self setImagePosition:self.postion spacing:self.spacing];
+    }
+    
 }
 
 

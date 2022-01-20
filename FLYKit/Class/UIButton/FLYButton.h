@@ -10,10 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, FLYImagePosition) {
-    FLYImagePositionLeft = 0,              //图片在左，文字在右，默认
-    FLYImagePositionRight = 1,             //图片在右，文字在左
-    FLYImagePositionTop = 2,               //图片在上，文字在下
-    FLYImagePositionBottom = 3,            //图片在下，文字在上
+    FLYImagePositionLeft = 1,              //图片在左，文字在右，默认
+    FLYImagePositionRight = 2,             //图片在右，文字在左
+    FLYImagePositionTop = 3,               //图片在上，文字在下
+    FLYImagePositionBottom = 4,            //图片在下，文字在上
 };
 
 @interface FLYButton : UIButton

@@ -6,8 +6,6 @@
 //
 
 #import "FLYHomeViewController.h"
-#import "FLYNavigationController.h"
-#import "FLYTextField.h"
 
 @interface FLYHomeViewController () 
 
@@ -20,26 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    ((FLYNavigationController*)(self.navigationController)).isLine = YES;
-    
+    self.showNavLine = YES;
     
     [self testAtion];
 }
 
 - (void)testAtion
 {
-    FLYTextField * tf = [[FLYTextField alloc] initWithFrame:CGRectMake(80, 100, SCREEN_WIDTH - 160, 35)];
-    tf.leftImage = IMAGENAME(@"Home.ico");
-    tf.leftViewRect = CGRectMake(10, 5, 20, 20);
-    tf.textLeftMargin = 35;
-    
-    //tf.rightImage = IMAGENAME(@"Home.ico");
-    tf.rightViewRect = CGRectMake(10, 5, 20, 20);
-    tf.textRightMargin = 35;
-    
-    tf.backgroundColor = [UIColor cyanColor];
-    
-    [self.view addSubview:tf];
+  
 }
 
 

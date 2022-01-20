@@ -91,11 +91,11 @@
 }
 
 - (void)backAction
-{
+{    
     if ( [self.fly_delegate respondsToSelector:@selector(didClickBackAtNavController:)])
     {
         [self.fly_delegate didClickBackAtNavController:self];
-        
+
         //执行完代理就解除，不然外界在代理方法里执行了返回，控制器被释放，导致fly_delegate指向野指针，导致闪退
         self.fly_delegate = nil;
     }
