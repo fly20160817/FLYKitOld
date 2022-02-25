@@ -521,7 +521,7 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		046D191126E61A5E00D9FD46 /* Original */ = {
+		046D191126E61A5E00D9FD46 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				04803E6126051C4A006EA35B /* AppDelegate.h */,
@@ -530,7 +530,7 @@
 				047DC474271550A00012152A /* FLYConfigureSDK.m */,
 				04803E7326051C4F006EA35B /* main.m */,
 			);
-			path = Original;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		046D191226E61A7B00D9FD46 /* Frameworks */ = {
@@ -719,10 +719,10 @@
 				041D6E6626C3681A008015B6 /* Class */,
 				041D6E6726C3683E008015B6 /* Category */,
 				041D6E6826C3694F008015B6 /* Tools */,
-				046D191426E61C2000D9FD46 /* 3rd */,
 				044EC98826C66D5D006BB549 /* Constant */,
 				046D191026E61A2B00D9FD46 /* Resource */,
-				046D191126E61A5E00D9FD46 /* Original */,
+				046D191126E61A5E00D9FD46 /* AppDelegate */,
+				046D191426E61C2000D9FD46 /* 3rd */,
 				046D191226E61A7B00D9FD46 /* Frameworks */,
 				0407514A26DE3431005A97FF /* Other */,
 			);
