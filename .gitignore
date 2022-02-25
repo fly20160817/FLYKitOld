@@ -95,7 +95,7 @@ playground.xcworkspace
 
 
 
-## Swift Package Manager
+## Swift Package Manager (它是一个和cocopods类似的第三方库管理工具)
 
 ## 如果希望避免签入来自Swift Package Manager依赖项的源代码，请添加此行。
 # Packages/
