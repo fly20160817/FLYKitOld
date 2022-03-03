@@ -29,6 +29,9 @@
 		044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98C26C678E9006BB549 /* UIView+FLYFrame.m */; };
 		044EC99026C67C45006BB549 /* UIColor+FLYHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */; };
 		044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC99326C67E47006BB549 /* UIView+FLYLayer.m */; };
+		04584EC527D0CA6C00381E4B /* FLYPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04584EBF27D0CA6B00381E4B /* FLYPresentationController.m */; };
+		04584EC627D0CA6C00381E4B /* FLYAnimated.m in Sources */ = {isa = PBXBuildFile; fileRef = 04584EC027D0CA6B00381E4B /* FLYAnimated.m */; };
+		04584EC727D0CA6C00381E4B /* FLYPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 04584EC327D0CA6B00381E4B /* FLYPopup.m */; };
 		045F046D26CA3D6C00EAFFD9 /* FLYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F046C26CA3D6C00EAFFD9 /* FLYFileManager.m */; };
 		045F047126CA3DE400EAFFD9 /* FLYTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047026CA3DE400EAFFD9 /* FLYTime.m */; };
 		045F047526CA41D800EAFFD9 /* FLYAudioTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F047426CA41D800EAFFD9 /* FLYAudioTools.m */; };
@@ -118,6 +121,12 @@
 		044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FLYHex.m"; sourceTree = "<group>"; };
 		044EC99226C67E47006BB549 /* UIView+FLYLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYLayer.h"; sourceTree = "<group>"; };
 		044EC99326C67E47006BB549 /* UIView+FLYLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYLayer.m"; sourceTree = "<group>"; };
+		04584EBF27D0CA6B00381E4B /* FLYPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYPresentationController.m; sourceTree = "<group>"; };
+		04584EC027D0CA6B00381E4B /* FLYAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYAnimated.m; sourceTree = "<group>"; };
+		04584EC127D0CA6B00381E4B /* FLYAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYAnimated.h; sourceTree = "<group>"; };
+		04584EC227D0CA6B00381E4B /* FLYPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYPresentationController.h; sourceTree = "<group>"; };
+		04584EC327D0CA6B00381E4B /* FLYPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYPopup.m; sourceTree = "<group>"; };
+		04584EC427D0CA6C00381E4B /* FLYPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYPopup.h; sourceTree = "<group>"; };
 		045F046B26CA3D6C00EAFFD9 /* FLYFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYFileManager.h; sourceTree = "<group>"; };
 		045F046C26CA3D6C00EAFFD9 /* FLYFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYFileManager.m; sourceTree = "<group>"; };
 		045F046F26CA3DE400EAFFD9 /* FLYTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYTime.h; sourceTree = "<group>"; };
@@ -405,6 +414,19 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		04584EBE27D0CA2C00381E4B /* FLYPopup */ = {
+			isa = PBXGroup;
+			children = (
+				04584EC427D0CA6C00381E4B /* FLYPopup.h */,
+				04584EC327D0CA6B00381E4B /* FLYPopup.m */,
+				04584EC227D0CA6B00381E4B /* FLYPresentationController.h */,
+				04584EBF27D0CA6B00381E4B /* FLYPresentationController.m */,
+				04584EC127D0CA6B00381E4B /* FLYAnimated.h */,
+				04584EC027D0CA6B00381E4B /* FLYAnimated.m */,
+			);
+			path = FLYPopup;
+			sourceTree = "<group>";
+		};
 		045F046A26CA3D5400EAFFD9 /* File(文件管理者) */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,8 +673,8 @@
 		046D19C026E733AA00D9FD46 /* UIBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				046D19C126E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.m */,
 				046D19C226E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.h */,
+				046D19C126E733AA00D9FD46 /* UIBarButtonItem+FLYExtension.m */,
 			);
 			path = UIBarButtonItem;
 			sourceTree = "<group>";
@@ -687,6 +709,7 @@
 		046D19EB26E73ECD00D9FD46 /* UITools */ = {
 			isa = PBXGroup;
 			children = (
+				04584EBE27D0CA2C00381E4B /* FLYPopup */,
 				044EC98426C66940006BB549 /* FLYPopupView(弹窗) */,
 				0424B1022758979800681A3B /* FLYSegmentBar */,
 			);
@@ -961,6 +984,7 @@
 				0407514D26DE3476005A97FF /* FLYExceptionView.m in Sources */,
 				045F047926CA42AA00EAFFD9 /* FLYPhotoManager.m in Sources */,
 				04803E6326051C4A006EA35B /* AppDelegate.m in Sources */,
+				04584EC727D0CA6C00381E4B /* FLYPopup.m in Sources */,
 				0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */,
 				044EC98726C66975006BB549 /* FLYPopupView.m in Sources */,
 				047DC47227119B340012152A /* FLYNetworkTool.m in Sources */,
@@ -970,6 +994,7 @@
 				044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */,
 				04C2E86A26E9CDB9003E7C0C /* UIView+FLYExtension.m in Sources */,
 				04778875275DA53300F284F6 /* FLYPageScrollView.m in Sources */,
+				04584EC527D0CA6C00381E4B /* FLYPresentationController.m in Sources */,
 				0407515526E0A91C005A97FF /* FLYLabel.m in Sources */,
 				044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */,
 				046D193226E620C700D9FD46 /* FLYNavigationController.m in Sources */,
@@ -981,6 +1006,7 @@
 				04C80D3C26F24C1E00FD1F62 /* FLYUserAction.m in Sources */,
 				041508A227756AE200D58078 /* FLYBaseCollectionViewController.m in Sources */,
 				04803E7426051C4F006EA35B /* main.m in Sources */,
+				04584EC627D0CA6C00381E4B /* FLYAnimated.m in Sources */,
 				046D19CE26E7379F00D9FD46 /* FLYViewController.m in Sources */,
 				047DC46827116F1E0012152A /* FLYNetwork.m in Sources */,
 				04FDB5C2264B7A26006B3B11 /* UIView+FLYLayoutConstraint.m in Sources */,

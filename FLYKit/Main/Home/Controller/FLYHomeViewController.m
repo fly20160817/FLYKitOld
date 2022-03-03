@@ -7,8 +7,7 @@
 
 #import "FLYHomeViewController.h"
 
-@interface FLYHomeViewController () 
-
+@interface FLYHomeViewController ()
 
 @end
 
@@ -25,10 +24,8 @@
 
 - (void)testAtion
 {
-  
+
 }
-
-
 
 
 /*
