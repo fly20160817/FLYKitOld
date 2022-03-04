@@ -12,6 +12,8 @@
 @interface FLYSegmentBar ()
 {
     FLYSegmentBarConfig * _config;
+    
+    BOOL _isFrist;
 }
 @property (nonatomic, strong) UIScrollView * contentView;
 @property (nonatomic, strong) UIView * indicatorView;//指示器（线）
@@ -37,7 +39,6 @@
     self = [super initWithFrame:frame];
     if (self) {
      
-        //不写在自定义方法里是为了实现两个初始化方法都可以执行
         [self initUI];
     }
     return self;
@@ -53,11 +54,12 @@
     }
     
     
-    //默认选中 （只执行一次。如果外界给selectIndex赋了值，这里选中的就是外界设置的；如果外界没赋值，选中的就是第0个）
-    static BOOL isFrist = NO;
-    if ( isFrist == NO )
+    //默认选中 (默认选中只执行一次)
+    //(创建的时候没有设置默认选中，因为那时候外界可能还没设置代理，所以在这里设置)
+    //（如果外界给selectIndex赋了值，这里选中的就是外界设置的；如果外界没赋值，选中的就是第0个）
+    if ( _isFrist == NO )
     {
-        isFrist = YES;
+        _isFrist = YES;
         [self titleClick:self.itemBtns[self.selectIndex]];
     }
     
@@ -275,3 +277,4 @@
 }
 
 @end
+
