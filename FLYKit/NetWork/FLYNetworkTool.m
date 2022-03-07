@@ -6,6 +6,9 @@
 //
 
 #import "FLYNetworkTool.h"
+#import "FLYAES.h"
+#import "FLYRSA.h"
+#import "NSString+FLYExtension.h"
 
 @implementation FLYNetworkTool
 
@@ -96,6 +99,12 @@
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
     
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
+    
     [FLYNetwork getWithPath:path params:params success:^(id  _Nonnull json) {
         
         [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
@@ -125,7 +134,13 @@
             failure:(FailureBlock)failure
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
-        
+    
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
+    
     [FLYNetwork postWithPath:path params:params success:^(id  _Nonnull json) {
         
         [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
@@ -158,6 +173,12 @@
              failure:(FailureBlock)failure;
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
+    
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
     
     [FLYNetwork headWithPath:path params:params success:^(id  _Nonnull json) {
         
@@ -195,6 +216,12 @@
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:NO];
     
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
+    
     [FLYNetwork deleteWithPath:path params:params success:^(id  _Nonnull json) {
         
         [self successHandle:isHandle loadingType:(FLYNetworkLoadingType)loadingType json:json success:success failure:failure];
@@ -226,7 +253,13 @@
              progress:(ProgressBlock)progress
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:YES];
-        
+    
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
+    
     [FLYNetwork downloadWithPath:path success:^(id  _Nonnull json) {
         
         [SVProgressHUD dismiss];
@@ -274,6 +307,12 @@
                      progress:(ProgressBlock)progress
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:YES];
+    
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
     
     [FLYNetwork uploadImageWithPath:path params:params thumbName:imagekey images:images success:^(id  _Nonnull json) {
         
@@ -336,6 +375,12 @@
                      progress:(ProgressBlock)progress
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:YES];
+    
+    //加密
+    if ( [self isEncryption] )
+    {
+        params = [self encryption:params];
+    }
     
     [FLYNetwork uploadVideoWithPath:path params:params thumbName:videokey videos:videos success:^(id  _Nonnull json) {
         
@@ -415,6 +460,14 @@
         [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
     }
     
+    
+    //解密
+    if ( [self isEncryption] )
+    {
+        json = [self decrypt:json];
+    }
+    
+    
     if ( [json[@"code"] integerValue] != 200 && isHandle )
     {
         [SVProgressHUD showErrorWithStatus:json[@"message"]];
@@ -466,5 +519,46 @@
     
     progressBlock(progress);
 }
+
+
+
+#pragma mark - 加密解密
+
+/// 加密
++ (id)encryption:(id)params
+{
+    //AES加密参数
+    NSString * dataEncryption = [FLYAES aes128EncryptionWithDic:params key:@"AES的KEY"];
+    //RSA加密AES的key
+    NSString * keyEncryption = [FLYRSA encryptString:@"AES的KEY" publicKey:@"RSA公钥"];
+    
+    //后台需要的字段
+    NSDictionary * newParams = @{ @"requestData" : dataEncryption, @"encrypted" : keyEncryption };
+    
+    return newParams;
+}
+
+
+/// 解密
++ (NSDictionary *)decrypt:(NSDictionary *)params
+{
+    //RSA解密AES的key
+    NSString * aesKey = [FLYRSA decryptString:params[@"encrypted"] privateKey:@"RSA私钥"];
+    //AES解密数据
+    NSString * dataString = [FLYAES aes128DecryptionReturnString:params[@"requestData"] key:aesKey];
+    
+    //字符串转数组
+    NSDictionary * json = [NSString jsonToObject:dataString];
+    
+    return json;
+}
+
+
+/// 是否需要加密解密
++ (BOOL)isEncryption
+{
+    return NO;
+}
+
 
 @end
