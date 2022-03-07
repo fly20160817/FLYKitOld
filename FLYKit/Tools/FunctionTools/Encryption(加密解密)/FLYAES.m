@@ -7,6 +7,7 @@
 
 #import "FLYAES.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "NSString+FLYExtension.h"
 
 @implementation FLYAES
 
@@ -109,13 +110,28 @@
 }
 
 /// AES 加密字典
-/// @param dic 需要加密的字符串
+/// @param dic 需要加密的字典
 /// @param key 密钥
 + (NSString *)aes128EncryptionWithDic:(NSDictionary *)dic key:(NSString *)key
 {
     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
     
     return [self aes128EncryptionWithData:data key:key];
+}
+
+/// AES 加密数组
+/// @param array 需要加密的数组
+/// @param key 密钥
++ (NSString *)aes128EncryptionWithArray:(NSArray *)array key:(NSString *)key
+{
+    
+    //NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
+    //NSData *data = [NSKeyedArchiver archivedDataWithRootObject:array]; 
+    //return [self aes128EncryptionWithData:data key:key];
+    
+    //用上面两种方法将array转date，不确定后台是否能解析，所以还是把array转成字符串，然后在进行加密。
+    NSString * string = [NSString objectToJson:array];
+    return [self aes128EncryptionWithString:string key:key];
 }
 
 /// AES解密

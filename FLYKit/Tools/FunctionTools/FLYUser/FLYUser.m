@@ -10,7 +10,7 @@
 
 @implementation FLYUser
 
-#pragma mark - 单利 （保证无论通过怎样的方式创建出来，都只有一个实例）
+#pragma mark - 单利 
 
 static FLYUser * _sharedUser;
 

@@ -47,7 +47,7 @@
 
 
 /// base64编码 （传入data）
-/// @param data 需要编码的字符串
+/// @param data 需要编码的data
 + (NSString *)base64EncodeWithData:(NSData *)data
 {
     //进行base64加密,得到加密后的字符串

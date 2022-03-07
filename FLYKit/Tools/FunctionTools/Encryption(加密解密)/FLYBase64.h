@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// base64编码 （传入data）
-/// @param data 需要编码的字符串
+/// @param data 需要编码的data
 + (NSString *)base64EncodeWithData:(NSData *)data;
 
 /// base64解码 (返回data)

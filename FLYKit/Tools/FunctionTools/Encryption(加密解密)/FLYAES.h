@@ -44,9 +44,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)aes128EncryptionWithString:(NSString *)content key:(NSString *)key;
 
 /// AES 加密字典
-/// @param dic 需要加密的字符串
+/// @param dic 需要加密的字典
 /// @param key 密钥
 + (NSString *)aes128EncryptionWithDic:(NSDictionary *)dic key:(NSString *)key;
+
+/// AES 加密数组
+/// @param array 需要加密的数组
+/// @param key 密钥
++ (NSString *)aes128EncryptionWithArray:(NSArray *)array key:(NSString *)key;
 
 
 /// AES解密 （返回字符串）
