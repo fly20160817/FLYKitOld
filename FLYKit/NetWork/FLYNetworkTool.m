@@ -254,12 +254,6 @@
 {
     [self setupLoadingType:loadingType title:loadingTitle showProgress:YES];
     
-    //加密
-    if ( [self isEncryption] )
-    {
-        params = [self encryption:params];
-    }
-    
     [FLYNetwork downloadWithPath:path success:^(id  _Nonnull json) {
         
         [SVProgressHUD dismiss];

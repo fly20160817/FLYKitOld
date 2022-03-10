@@ -6,6 +6,7 @@
 //
 
 #import "FLYHomeViewController.h"
+#import "FLYKit-Swift.h"
 
 @interface FLYHomeViewController ()
 
@@ -24,7 +25,13 @@
 
 - (void)testAtion
 {
+    
+}
 
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    FLYScanCodeViewController * vc = [[FLYScanCodeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

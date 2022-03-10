@@ -24,6 +24,7 @@
 		0424B1072758983A00681A3B /* FLYSegmentBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1052758983A00681A3B /* FLYSegmentBarConfig.m */; };
 		0424B1082758983A00681A3B /* FLYSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424B1062758983A00681A3B /* FLYSegmentBar.m */; };
 		042A999526C64D50000B58CF /* FLYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042A999326C64D50000B58CF /* FLYButton.m */; };
+		043F1FA727D9F685004F0DD9 /* FLYScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F1FA627D9F685004F0DD9 /* FLYScanCodeViewController.swift */; };
 		044EC98326C65D0D006BB549 /* UIAlertController+FLYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */; };
 		044EC98726C66975006BB549 /* FLYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98526C66975006BB549 /* FLYPopupView.m */; };
 		044EC98D26C678E9006BB549 /* UIView+FLYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 044EC98C26C678E9006BB549 /* UIView+FLYFrame.m */; };
@@ -109,6 +110,8 @@
 		0424B1062758983A00681A3B /* FLYSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYSegmentBar.m; sourceTree = "<group>"; };
 		042A999326C64D50000B58CF /* FLYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYButton.m; sourceTree = "<group>"; };
 		042A999426C64D50000B58CF /* FLYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYButton.h; sourceTree = "<group>"; };
+		043F1FA527D9F685004F0DD9 /* FLYKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FLYKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		043F1FA627D9F685004F0DD9 /* FLYScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLYScanCodeViewController.swift; sourceTree = "<group>"; };
 		044EC98126C65D0D006BB549 /* UIAlertController+FLYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+FLYExtension.m"; sourceTree = "<group>"; };
 		044EC98226C65D0D006BB549 /* UIAlertController+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+FLYExtension.h"; sourceTree = "<group>"; };
 		044EC98526C66975006BB549 /* FLYPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYPopupView.m; sourceTree = "<group>"; };
@@ -401,6 +404,7 @@
 				044EC98A26C67416006BB549 /* PrefixHeader.pch */,
 				044EC98926C66DBC006BB549 /* FLYMacros.h */,
 				047DC469271181610012152A /* APIConfig.h */,
+				043F1FA527D9F685004F0DD9 /* FLYKit-Bridging-Header.h */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -585,6 +589,7 @@
 			children = (
 				046D19D526E7385F00D9FD46 /* FLYHomeViewController.h */,
 				046D19D626E7385F00D9FD46 /* FLYHomeViewController.m */,
+				043F1FA627D9F685004F0DD9 /* FLYScanCodeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -886,6 +891,7 @@
 				TargetAttributes = {
 					04803E5D26051C4A006EA35B = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -986,6 +992,7 @@
 				04803E6326051C4A006EA35B /* AppDelegate.m in Sources */,
 				04584EC727D0CA6C00381E4B /* FLYPopup.m in Sources */,
 				0407515826E5ADF7005A97FF /* FLYDeviceManager.m in Sources */,
+				043F1FA727D9F685004F0DD9 /* FLYScanCodeViewController.swift in Sources */,
 				044EC98726C66975006BB549 /* FLYPopupView.m in Sources */,
 				047DC47227119B340012152A /* FLYNetworkTool.m in Sources */,
 				044EC99426C67E47006BB549 /* UIView+FLYLayer.m in Sources */,
@@ -1163,6 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN8JCXK32F;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
@@ -1174,6 +1182,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fly.FLYKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FLYKit/Constant/FLYKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1184,6 +1195,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN8JCXK32F;
 				GCC_PREFIX_HEADER = "${SRCROOT}/FLYKit/Constant/PrefixHeader.pch";
@@ -1195,6 +1207,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fly.FLYKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FLYKit/Constant/FLYKit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
