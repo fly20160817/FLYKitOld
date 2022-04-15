@@ -54,7 +54,11 @@
     //下拉刷新
     if ( isFirstPage )
     {
-        self.pageNum++;
+        //不分页的就不加页码了
+        if ( total > 0 )
+        {
+            self.pageNum++;
+        }
         
         /********* 赋值数据 *********/
         self.dataList = models.mutableCopy;
