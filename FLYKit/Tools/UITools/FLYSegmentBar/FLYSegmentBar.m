@@ -129,6 +129,25 @@
 
 
 
+#pragma mark - public methods
+
+/// 替换按钮文字
+/// @param title 按钮的新文字
+/// @param index 位置
+- (void)replaceTitle:(NSString *)title atIndex:(NSUInteger)index
+{
+    if ( index >= self.itemBtns.count )
+    {
+        NSLog(@"替换按钮文字时数组越界");
+        return;
+    }
+    
+    UIButton * button = self.itemBtns[index];
+    [button setTitle:title forState:UIControlStateNormal];
+}
+
+
+
 #pragma mark - private methods
 
 - (void)setSelectIndex:(NSInteger)selectIndex

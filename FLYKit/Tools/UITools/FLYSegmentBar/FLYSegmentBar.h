@@ -49,7 +49,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, weak) id<FLYSegmentBarDelegate> delegate;
 
+
 - (instancetype)initWithFrame:(CGRect)frame titleNames:(NSArray *)titleNames;
+
+
+/// 替换按钮文字
+/// @param title 按钮的新文字
+/// @param index 位置
+- (void)replaceTitle:(NSString *)title atIndex:(NSUInteger)index;
+
 
 @end
 
