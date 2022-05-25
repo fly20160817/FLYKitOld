@@ -89,7 +89,7 @@
     _leftImage = leftImage;
     
     UIImageView * leftImageView = [[UIImageView alloc] initWithImage:leftImage];
-    leftImageView.backgroundColor = [UIColor redColor];
+    //leftImageView.backgroundColor = [UIColor redColor];
     self.leftView = leftImageView;
 }
 
@@ -98,7 +98,7 @@
     _rightImage = rightImage;
     
     UIImageView * rightImageView = [[UIImageView alloc] initWithImage:rightImage];
-    rightImageView.backgroundColor = [UIColor orangeColor];
+    //rightImageView.backgroundColor = [UIColor orangeColor];
     self.rightView = rightImageView;
 }
 
