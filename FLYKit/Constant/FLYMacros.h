@@ -9,6 +9,7 @@
 #ifndef FLYMacros_h
 #define FLYMacros_h
 
+
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 
@@ -19,13 +20,15 @@
 #define FLYLog(...)
 #endif
 
+
 #define WeakSelf __weak typeof(self) weakSelf = self;
 #define StrongSelf __strong typeof(weakSelf) strongSelf = weakSelf;
 
-#define RGB(r,g,b,a) [UIColor colorWithRed:((r)/255.0) green:((g)/255.0) blue:((b)/255.0) alpha:a]
 
+#define RGB(r,g,b,a) [UIColor colorWithRed:((r)/255.0) green:((g)/255.0) blue:((b)/255.0) alpha:a]
 //随机颜色
 #define RGB_ARC4 RGB(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255), 1);
+
 
 //状态栏高度
 #define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
@@ -87,23 +90,6 @@
 #define PFSCU @"PingFangSC-Ultralight"
 //苹方-简 纤细体
 #define PFSCT @"PingFangSC-Thin"
-
-
-
-//正确返回码
-#define CODE_CORRECT @"200"
-//服务器状态码字段
-#define SERVER_STATUS @"status"
-//服务器消息字段
-#define SERVER_MSG @"msg"
-//服务器数据字段
-#define SERVER_DATA @"data"
-
-
-
-#pragma mark - 高度封装
-
-#define FLYRequestErrorHUD [HttpTool getNetType:^(BOOL network) { [SVProgressHUD showInfoWithStatus:network ? @"服务器异常，请稍后重试。" : @"您的网络好像出现了问题"];[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];}];
 
 
 #endif

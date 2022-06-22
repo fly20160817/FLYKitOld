@@ -196,6 +196,7 @@
 		049B9FFF26FC1F1300AB7F7C /* FLYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYTextField.m; sourceTree = "<group>"; };
 		04A0DF1A272FBC2E002C593A /* FLYKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYKeychain.h; sourceTree = "<group>"; };
 		04A0DF1B272FBC2E002C593A /* FLYKeychain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLYKeychain.m; sourceTree = "<group>"; };
+		04B744242862BB4700AF246A /* FLYProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYProjectMacros.h; sourceTree = "<group>"; };
 		04C2E85526E8A84B003E7C0C /* FLYKeyValueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYKeyValueModel.h; sourceTree = "<group>"; };
 		04C2E85626E8A84B003E7C0C /* FLYKeyValueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYKeyValueModel.m; sourceTree = "<group>"; };
 		04C2E86826E9CDB9003E7C0C /* UIView+FLYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYExtension.h"; sourceTree = "<group>"; };
@@ -403,6 +404,7 @@
 			children = (
 				044EC98A26C67416006BB549 /* PrefixHeader.pch */,
 				044EC98926C66DBC006BB549 /* FLYMacros.h */,
+				04B744242862BB4700AF246A /* FLYProjectMacros.h */,
 				047DC469271181610012152A /* APIConfig.h */,
 				043F1FA527D9F685004F0DD9 /* FLYKit-Bridging-Header.h */,
 			);
