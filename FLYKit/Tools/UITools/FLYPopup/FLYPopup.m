@@ -36,6 +36,7 @@ NSNotificationName const FLYPopupWillDismissNotification = @"FLYPopupWillDismiss
 {
     FLYPopup * popup = [[self alloc] init];
     popup.popupView = view;
+    popup.popupFrame = view.frame;
     popup.animationType = animationType;
     popup.maskType = maskType;
     return popup;

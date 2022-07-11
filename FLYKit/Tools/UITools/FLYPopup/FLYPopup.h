@@ -66,7 +66,7 @@ typedef NS_ENUM(NSUInteger, FLYPopupMaskType) {
 /** 通过属性传入想要显示的viewController */
 @property (nonatomic, strong) UIViewController * popupViewController;
 
-/** 弹出view的frame */
+/** 弹出view的frame (也可以不设置，在外界就给popupView设置好frame也行) */
 @property (nonatomic, assign) CGRect popupFrame;
 
 /** 是否允许点击背景后消失 (默认YES) */
