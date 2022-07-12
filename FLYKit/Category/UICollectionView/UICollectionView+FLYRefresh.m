@@ -8,7 +8,7 @@
 #import "UICollectionView+FLYRefresh.h"
 #import "FLYExceptionView.h"
 
-@interface FLYExceptionView ()
+@interface UICollectionView ()
 
 @property (nonatomic, strong) FLYExceptionView * exceptionView;
 
