@@ -28,15 +28,15 @@
 
 + (instancetype)popupView:(UIView *)view
 {
-    return [self popupView:view animationType:FLYPopupAnimationTypeNone];
+    return [self popupView:view animationType:FLYPopupViewAnimationTypeNone];
 }
 
-+ (instancetype)popupView:(UIView *)view animationType:(FLYPopupAnimationType)animationType
++ (instancetype)popupView:(UIView *)view animationType:(FLYPopupViewAnimationType)animationType
 {
-    return [self popupView:view animationType:animationType maskType:FLYPopupMaskTypeBlack];
+    return [self popupView:view animationType:animationType maskType:FLYPopupViewMaskTypeBlack];
 }
 
-+ (instancetype)popupView:(UIView *)view animationType:(FLYPopupAnimationType)animationType maskType:(FLYPopupMaskType)maskType
++ (instancetype)popupView:(UIView *)view animationType:(FLYPopupViewAnimationType)animationType maskType:(FLYPopupViewMaskType)maskType
 {
     FLYPopupView * popupView = [[FLYPopupView alloc] init];
     [popupView.contentView addSubview:view];
@@ -99,8 +99,8 @@
     self.clipsToBounds = YES;
     
     self.interactionEnabled = YES;
-    self.animationType = FLYPopupAnimationTypeNone;
-    self.maskType = FLYPopupMaskTypeBlack;
+    self.animationType = FLYPopupViewAnimationTypeNone;
+    self.maskType = FLYPopupViewMaskTypeBlack;
     
     [self addSubview:self.contentView];
 }
@@ -170,7 +170,7 @@
 //show动画
 - (void)showAnimation
 {
-    if( self.animationType == FLYPopupAnimationTypeTop )
+    if( self.animationType == FLYPopupViewAnimationTypeTop )
     {
         //初始状态
         self.backgroundColor = [UIColor clearColor];
@@ -183,7 +183,7 @@
             self.contentView.y = 0;
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeLeft )
+    else if( self.animationType == FLYPopupViewAnimationTypeLeft )
     {
         //初始状态
         self.backgroundColor = [UIColor clearColor];
@@ -196,7 +196,7 @@
             self.contentView.x = 0;
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeRight )
+    else if( self.animationType == FLYPopupViewAnimationTypeRight )
     {
         //初始状态
         self.backgroundColor = [UIColor clearColor];
@@ -209,7 +209,7 @@
             self.contentView.x = 0;
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeBottom )
+    else if( self.animationType == FLYPopupViewAnimationTypeBottom )
     {
         //初始状态
         self.backgroundColor = [UIColor clearColor];
@@ -222,7 +222,7 @@
             self.contentView.y = 0;
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeMiddle )
+    else if( self.animationType == FLYPopupViewAnimationTypeMiddle )
     {
         //初始状态
         self.backgroundColor = [UIColor clearColor];
@@ -234,7 +234,7 @@
             self.contentView.transform = CGAffineTransformIdentity;
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeCustom )
+    else if( self.animationType == FLYPopupViewAnimationTypeCustom )
     {
         !self.customShowAnimationBlock ?: self.customShowAnimationBlock(self, self.contentView);
     }
@@ -243,7 +243,7 @@
 //dissmiss动画
 - (void)dissmissAnimation
 {
-    if( self.animationType == FLYPopupAnimationTypeTop )
+    if( self.animationType == FLYPopupViewAnimationTypeTop )
     {
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -255,7 +255,7 @@
             [self removeFromSuperview];
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeLeft )
+    else if( self.animationType == FLYPopupViewAnimationTypeLeft )
     {
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -267,7 +267,7 @@
             [self removeFromSuperview];
         }];
     }
-    else if( self.animationType == FLYPopupAnimationTypeRight )
+    else if( self.animationType == FLYPopupViewAnimationTypeRight )
     {
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -279,7 +279,7 @@
             [self removeFromSuperview];
         }];
     }
-    else if ( self.animationType == FLYPopupAnimationTypeBottom )
+    else if ( self.animationType == FLYPopupViewAnimationTypeBottom )
     {
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -291,7 +291,7 @@
             [self removeFromSuperview];
         }];
     }
-    else if ( self.animationType == FLYPopupAnimationTypeMiddle )
+    else if ( self.animationType == FLYPopupViewAnimationTypeMiddle )
     {
         [UIView animateWithDuration:0.25 animations:^{
             
@@ -303,7 +303,7 @@
             [self removeFromSuperview];
         }];
     }
-    else if ( self.animationType == FLYPopupAnimationTypeCustom )
+    else if ( self.animationType == FLYPopupViewAnimationTypeCustom )
     {
         self.customDissmissAnimationBlock ? self.customDissmissAnimationBlock(self, self.contentView) : [self removeFromSuperview];
     }
@@ -318,15 +318,15 @@
 
 #pragma mark - setters and getter
 
--(void)setMaskType:(FLYPopupMaskType)maskType
+-(void)setMaskType:(FLYPopupViewMaskType)maskType
 {
     _maskType = maskType;
     
-    if ( maskType == FLYPopupMaskTypeBlack )
+    if ( maskType == FLYPopupViewMaskTypeBlack )
     {
         self.maskColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
     }
-    else if ( maskType == FLYPopupMaskTypeClear )
+    else if ( maskType == FLYPopupViewMaskTypeClear )
     {
         self.maskColor = [UIColor clearColor];
     }
@@ -368,4 +368,5 @@
 
 
 @end
+
 

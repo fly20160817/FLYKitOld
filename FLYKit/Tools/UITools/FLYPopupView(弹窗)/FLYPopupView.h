@@ -22,19 +22,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, FLYPopupAnimationType) {
-    FLYPopupAnimationTypeNone = 0,  //无动画
-    FLYPopupAnimationTypeTop,       //上部弹出
-    FLYPopupAnimationTypeLeft,      //左边弹出
-    FLYPopupAnimationTypeRight,     //右边弹出
-    FLYPopupAnimationTypeBottom,    //底部弹出
-    FLYPopupAnimationTypeMiddle,    //中间弹出
-    FLYPopupAnimationTypeCustom,    //自定义
+typedef NS_ENUM(NSInteger, FLYPopupViewAnimationType) {
+    FLYPopupViewAnimationTypeNone = 0,  //无动画
+    FLYPopupViewAnimationTypeTop,       //上部弹出
+    FLYPopupViewAnimationTypeLeft,      //左边弹出
+    FLYPopupViewAnimationTypeRight,     //右边弹出
+    FLYPopupViewAnimationTypeBottom,    //底部弹出
+    FLYPopupViewAnimationTypeMiddle,    //中间弹出
+    FLYPopupViewAnimationTypeCustom,    //自定义
 };
 
-typedef NS_ENUM(NSUInteger, FLYPopupMaskType) {
-    FLYPopupMaskTypeBlack = 0,   //黑色 (默认)
-    FLYPopupMaskTypeClear,       //透明
+typedef NS_ENUM(NSUInteger, FLYPopupViewMaskType) {
+    FLYPopupViewMaskTypeBlack = 0,   //黑色 (默认)
+    FLYPopupViewMaskTypeClear,       //透明
 };
 
 @interface FLYPopupView : UIView
@@ -50,10 +50,10 @@ typedef NS_ENUM(NSUInteger, FLYPopupMaskType) {
 @property (nonatomic, assign) BOOL interactionEnabled;
 
 /** 遮罩的类型 */
-@property (nonatomic, assign) FLYPopupMaskType maskType;
+@property (nonatomic, assign) FLYPopupViewMaskType maskType;
 
 /** 动画类型 */
-@property (nonatomic, assign) FLYPopupAnimationType animationType;
+@property (nonatomic, assign) FLYPopupViewAnimationType animationType;
 
 /** 自定义show动画block (动画类型设置为自定义时才会执行) */
 @property (nonatomic, copy) void(^customShowAnimationBlock)(FLYPopupView * popupView, UIView *contentView);
@@ -72,9 +72,9 @@ typedef NS_ENUM(NSUInteger, FLYPopupMaskType) {
 
 + (instancetype)popupView:(UIView *)view;
 
-+ (instancetype)popupView:(UIView *)view animationType:(FLYPopupAnimationType)animationType;
++ (instancetype)popupView:(UIView *)view animationType:(FLYPopupViewAnimationType)animationType;
 
-+ (instancetype)popupView:(UIView *)view animationType:(FLYPopupAnimationType)animationType maskType:(FLYPopupMaskType)maskType;
++ (instancetype)popupView:(UIView *)view animationType:(FLYPopupViewAnimationType)animationType maskType:(FLYPopupViewMaskType)maskType;
 
 
 - (void)show;
