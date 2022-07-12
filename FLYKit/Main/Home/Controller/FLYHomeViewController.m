@@ -7,6 +7,7 @@
 
 #import "FLYHomeViewController.h"
 #import "FLYKit-Swift.h"
+#import "FLYTextView.h"
 
 @interface FLYHomeViewController ()
 
@@ -25,13 +26,17 @@
 
 - (void)testAtion
 {
-
+    FLYTextView * tv = [[FLYTextView alloc] initWithFrame:CGRectMake(10, 200, 350, 150)];
+    tv.backgroundColor = [UIColor cyanColor];
+    tv.placeholder = @"访问返回89后访问返回89后访问返回89后访问返回89后访问返回89后";
+    tv.textEdgeInset = UIEdgeInsetsMake(20, 20, 20, 20);
+    [self.view addSubview:tv];
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    FLYScanCodeViewController * vc = [[FLYScanCodeViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    FLYScanCodeViewController * vc = [[FLYScanCodeViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

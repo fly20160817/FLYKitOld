@@ -36,13 +36,14 @@
 {
     [super layoutSubviews];
     
-    
-    [self.placeholderLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).with.offset(self.textContainerInset.top);
-        make.left.equalTo(self).with.offset(self.textContainerInset.left + self.textContainer.lineFragmentPadding);
-        make.bottom.equalTo(self).with.offset(-self.textContainerInset.bottom);
-        make.right.equalTo(self).with.offset(-(self.textContainerInset.right + self.textContainer.lineFragmentPadding));
-    }];
+    CGFloat y = self.textContainerInset.top;
+    CGFloat x = self.textContainerInset.left + self.textContainer.lineFragmentPadding;
+    CGFloat w = self.width - x - (self.textContainerInset.right + self.textContainer.lineFragmentPadding);
+    //给他个宽度，用sizeToFit自动更新出高度
+    self.placeholderLabel.width = w;
+    [self.placeholderLabel sizeToFit];
+    CGFloat h = self.placeholderLabel.height;
+    self.placeholderLabel.frame = CGRectMake(x, y, w, h);
     
         
     if( self.height != 0 && _originalHeight == 0 )
