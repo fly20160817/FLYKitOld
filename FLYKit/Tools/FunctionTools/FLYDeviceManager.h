@@ -31,13 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param resultBlock 发送完成的回调
 - (void)sendMessage:(NSArray *)phoneNumbers content:(NSString *)content didFinishWithResult:(nullable void(^)(MessageComposeResult result))resultBlock;
 
-
-/// 用户自定义的手机名字
-+ (NSString *)customName;
-
-/// 系统版本
-+ (NSString *)systemVersion;
-
 @end
 
 NS_ASSUME_NONNULL_END
