@@ -6,10 +6,12 @@
 //
 
 #import "FLYHomeViewController.h"
-#import "FLYKit-Swift.h"
-#import "FLYTextView.h"
+#import "UICollectionView+FLYRefresh.h"
+#import "FLYExceptionView.h"
 
-@interface FLYHomeViewController ()
+@interface FLYHomeViewController () < UICollectionViewDataSource >
+
+@property (nonatomic, strong) UICollectionView * tableView;
 
 @end
 
@@ -24,13 +26,34 @@
     [self testAtion];
 }
 
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    self.tableView.frame = self.view.bounds;
+}
+
 - (void)testAtion
 {
-    FLYTextView * tv = [[FLYTextView alloc] initWithFrame:CGRectMake(10, 200, 350, 150)];
-    tv.backgroundColor = [UIColor cyanColor];
-    tv.placeholder = @"访问返回89后访问返回89后访问返回89后访问返回89后访问返回89后";
-    tv.textEdgeInset = UIEdgeInsetsMake(20, 20, 20, 20);
-    [self.view addSubview:tv];
+    UICollectionViewLayout * layout = [[UICollectionViewLayout alloc] init];
+    self.tableView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.tableView.dataSource = self;
+    [self.tableView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:self.tableView.cellReuseIdentifier];
+    [self.view addSubview:self.tableView];
+    
+    FLYExceptionView * view = [[FLYExceptionView alloc] init];
+    view.title = @"凤凰网iu划分为iu好";
+    view.subtitle = @"fhwiufhwih";
+    view.image = [UIImage imageNamed:@"Message.ico_on"];
+    self.tableView.exceptionView = view;
+    
+    
+    
+    NSArray * array = @[@"", @"", @"", @"", @""];
+    NSArray * array2 = @[];
+    [self.tableView loadDataSuccess:array2];
+    
+    //[self.tableView loadDataFailed:nil];
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -38,6 +61,32 @@
 //    FLYScanCodeViewController * vc = [[FLYScanCodeViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return collectionView.dataList.count;
+}
+
+-(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionView.cellReuseIdentifier forIndexPath:indexPath];
+    
+//    UILabel * label = [[UILabel alloc] initWithFrame:cell.bounds];
+//    label.backgroundColor = [UIColor orangeColor];
+//    [cell.contentView addSubview:label];
+//    label.textColor = [UIColor redColor];
+//
+//    label.text = [NSString stringWithFormat:@"fly - %ld", (long)indexPath.item];
+    
+    cell.contentView.backgroundColor = [UIColor yellowColor];
+    
+    return cell;
+}
+
 
 
 /*

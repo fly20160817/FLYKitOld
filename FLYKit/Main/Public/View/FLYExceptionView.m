@@ -68,16 +68,47 @@
     
     [self addSubview:self.imageView];
     [self addSubview:self.titleLabel];
-    [self addSubview:self.subtitleLabel];
-    
+    [self addSubview:self.subtitleLabel];    
 }
 
 
 
 #pragma mark - setters and getters
 
+-(void)setImage:(UIImage *)image
+{
+    _image = image;
+    
+    if( self.status == FLYExceptionStatusNoData )
+    {
+        self.imageView.image = image;
+    }
+}
+
+-(void)setTitle:(NSString *)title
+{
+    _title = title;
+    
+    if( self.status == FLYExceptionStatusNoData )
+    {
+        self.titleLabel.text = title;
+    }
+}
+
+-(void)setSubtitle:(NSString *)subtitle
+{
+    _subtitle = subtitle;
+    
+    if( self.status == FLYExceptionStatusNoData )
+    {
+        self.subtitleLabel.text = subtitle;
+    }
+}
+
 -(void)setStatus:(FLYExceptionStatus)status
 {
+    _status = status;
+    
     switch (status)
     {
         case FLYExceptionStatusNone:
@@ -91,9 +122,9 @@
             self.hidden = NO;
             
             NSDictionary * dic = self.dataList[0];
-            self.imageView.image = [UIImage imageNamed:dic[k_ImageKey]];
-            self.titleLabel.text = dic[k_TitleKey];
-            self.subtitleLabel.text = dic[k_SubtitleKey];
+            self.imageView.image = self.image ? self.image : [UIImage imageNamed:dic[k_ImageKey]];
+            self.titleLabel.text = self.title ? self.title : dic[k_TitleKey];
+            self.subtitleLabel.text = self.subtitle ? self.subtitle : dic[k_SubtitleKey];
         }
             break;
             
@@ -163,12 +194,10 @@
     {
         _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _subtitleLabel.font = [UIFont fontWithName:PFSCR size:14];
-        _subtitleLabel.textColor = [UIColor colorWithHexString:@"#4D04A1FD"];
+        _subtitleLabel.textColor = [UIColor colorWithHexString:@"#04A1FD"];
         _subtitleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _subtitleLabel;
 }
-
-
 
 @end

@@ -7,20 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLYDataStatusProtocal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, FLYExceptionStatus)
-{
-    FLYExceptionStatusNone = 0,       //没有错误
-    FLYExceptionStatusNoData,         //无数据
-    FLYExceptionStatusServerError,    //服务器错误
-    FLYExceptionStatusNetworkError,   //网络错误
-};
+@interface FLYExceptionView : UIView < FLYDataStatusProtocal >
 
-@interface FLYExceptionView : UIView
+/* 协议里的属性，拷贝出来实现。 */
 
+
+//UITableView+FLYRefresh内部获取到数据后给status赋值，其他地方不要赋值。
 @property (nonatomic, assign) FLYExceptionStatus status;
+
+//可以不赋值，内部有默认值。但要是哪个页面无数据的时候，需要显示不一样的文字或图片，这时才赋值。
+@property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * subtitle;
+
 
 @end
 

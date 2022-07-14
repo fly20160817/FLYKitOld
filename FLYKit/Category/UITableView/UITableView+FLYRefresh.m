@@ -6,11 +6,10 @@
 //
 
 #import "UITableView+FLYRefresh.h"
+#import <objc/runtime.h>
 #import "FLYExceptionView.h"
 
 @interface UITableView ()
-
-@property (nonatomic, strong) FLYExceptionView * exceptionView;
 
 @end
 
@@ -166,7 +165,7 @@
     //获取关联对象 (object:获取哪个对象 key:增加属性的名称)
     NSString * cellReuseIdentifier= objc_getAssociatedObject(self, "cellReuseIdentifier");
     
-    //如果取出来的是空，就赋值执行set方法，然后重新取一遍
+    //如果取出来的是空，说明没执行过set方法，我们赋值执行set方法，然后重新取一遍并return。
     if ( cellReuseIdentifier == nil )
     {
         self.cellReuseIdentifier = @"cellReuseIdentifier";
@@ -266,21 +265,22 @@
     return pageSize;
 }
 
-- (void)setExceptionView:(FLYExceptionView *)exceptionView
+- (void)setExceptionView:(UIView *)exceptionView
 {
+    //赋值给backgroundView之后，exceptionView的frame就和tableView一样大了。所以不需要给exceptionView设置frame，设置了frame也无效。
+    self.backgroundView = exceptionView;
+    
     objc_setAssociatedObject(self, "exceptionView", exceptionView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(FLYExceptionView *)exceptionView
+-(UIView *)exceptionView
 {
-    FLYExceptionView * exceptionView = objc_getAssociatedObject(self, "exceptionView");
+    UIView * exceptionView = objc_getAssociatedObject(self, "exceptionView");
     
+    //如果外界没给赋值，就自己创建。
     if ( exceptionView == nil )
     {
         self.exceptionView = [[FLYExceptionView alloc] init];
-        self.exceptionView.frame = self.bounds;
-        self.backgroundView = self.exceptionView;
-        
         exceptionView = objc_getAssociatedObject(self, "exceptionView");
     }
     

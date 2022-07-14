@@ -124,6 +124,7 @@
 		044EC98F26C67C45006BB549 /* UIColor+FLYHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FLYHex.m"; sourceTree = "<group>"; };
 		044EC99226C67E47006BB549 /* UIView+FLYLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FLYLayer.h"; sourceTree = "<group>"; };
 		044EC99326C67E47006BB549 /* UIView+FLYLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLYLayer.m"; sourceTree = "<group>"; };
+		044F52C5287E5C6E00948767 /* FLYDataStatusProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLYDataStatusProtocal.h; sourceTree = "<group>"; };
 		04584EBF27D0CA6B00381E4B /* FLYPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYPresentationController.m; sourceTree = "<group>"; };
 		04584EC027D0CA6B00381E4B /* FLYAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLYAnimated.m; sourceTree = "<group>"; };
 		04584EC127D0CA6B00381E4B /* FLYAnimated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLYAnimated.h; sourceTree = "<group>"; };
@@ -815,6 +816,7 @@
 		04C2E85026E8A2FB003E7C0C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				044F52C5287E5C6E00948767 /* FLYDataStatusProtocal.h */,
 				0407514C26DE3476005A97FF /* FLYExceptionView.h */,
 				0407514B26DE3476005A97FF /* FLYExceptionView.m */,
 			);

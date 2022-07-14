@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
+#import "FLYDataStatusProtocal.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +42,14 @@ NS_ASSUME_NONNULL_BEGIN
  每页个数 (默认20)
  */
 @property (nonatomic, assign) NSUInteger pageSize;
+
+/**
+ 异常状态下显示的view
+ ( 1.这个view必须是遵守FLYDataStatusProtocal协议的。
+   2.不需要设置frame，tableView多大它就多大，设置了frame也无效。
+   3.如果不需要改样式可以不赋值，内部有默认实现。）
+ */
+@property (nonatomic, strong) UIView<FLYDataStatusProtocal> * exceptionView;
 
 
 
